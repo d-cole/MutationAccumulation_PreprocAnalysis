@@ -1,14 +1,16 @@
 import subprocess
 import sys
 import time
-#x = call(["ls","-l"])
-#print(x)
-#x = subprocess.Popen("sleep 4",shell=True,stdout=subprocess.PIPE)
-#print(subprocess.Popen.poll(x))
-#print(type(subprocess.Popen.poll(x)))
-
+"""
+autoProc.py
+Runs commands from a file containing commands. Commands are processed in parallel
+with a specified number of threads.
+"""
 
 def getCommands(file_name,commands):
+    """
+    Loads commands from the given file into commands list
+    """
     with open(file_name) as f:
         for line in f:
             commands.append(line[:-1])
@@ -16,37 +18,35 @@ def getCommands(file_name,commands):
     return 
 
 def runCommands(commands,threadCount):
-    print(commands)
+    """
+    Executes commands, checking for free threads every 100sec
+    """
+    #initialize dead subprocesses 
     procs = [-1]*threadCount
     next_command = 0
 
     while next_command < len(commands):
-        print(commands[next_command])
         for i in range(0,len(procs)):
-            if procs[i] == -1:
+            if not procActive(procs[i]):
                 procs[i] = subprocess.Popen(commands[next_command],shell=True,stdout=subprocess.PIPE)
                 next_command+=1
                 break
-        updateProcs(procs)
         time.sleep(100)   
-         
     return
 
-def updateProcs(procs):
-    for i in range(0,len(procs)):
-        if procs[i] != -1:
-            if subprocess.Popen.poll(procs[i]) != None:
-            #Process has ended
-                procs[i] = -1
-    return
+def procActive(proc):
+    """
+    Returns whether a given proccess is active
+    """
+    if proc == -1:
+        return False
+    else:
+        if subprocess.Popen.poll(proc) != None:
+            return False
+    return True
 
 if __name__ == "__main__":
     commands = []
-    file_name = sys.argv[1]
+    file_name,threads = sys.argv[1],sys.argv[2]
     getCommands(file_name,commands)
-    runCommands(commands,3)
-
-
-
-
-
+    runCommands(commands,int(threads))
