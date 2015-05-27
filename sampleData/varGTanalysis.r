@@ -1,3 +1,4 @@
+library(ggplot2)
 setwd("~/Documents/spirodela/sampleData/CC3-3/one01rest00")
 files <- list.files(path="~/Documents/spirodela/sampleData/CC3-3/one01rest00",
                     pattern="*.csv",full.names=F,recursive=FALSE)
@@ -18,22 +19,33 @@ lapply(files,function(x) {
         xlab="Depth")
     dev.off()
 
-    #Plots SNP distributions for every chromosome
     chromosomes = unique(data$CHROM)
     for(chrom in chromosomes){
-        print(chrom)
+        png(file=paste(name,chrom,".jpg",sep="_"))
         sub<-sapply(subset(data,CHROM==chrom,select=POS),as.numeric)
-        print(sub)
-        jpeg(paste(name,chrom,".jpg",sep="_"))
         plot(hist(sub,prob=F,breaks=length(sub)),
              main=paste(name,chrom,".jpg",sep="_"),
              xlab="Position")
         dev.off()
 
     }    
-    
 })
 
+
+#For printing multiple graphs on one page
+# chromosomes = unique(data$CHROM)
+#     rowcol = ceiling(sqrt(length(chromosomes)))
+#     #Plots SNP distributions for every chromosome
+#     png(file=paste(name,"chromosomes",".jpg",sep="_"),width=480*rowcol,height=480*rowcol)
+#     #jpeg(paste(name,"chromosomes",".jpg",sep="_"))
+#     par(mfcol=c(rowcol,rowcol), oma=c(1,1,0,0), mar=c(1,1,1,0), tcl=-0.1, mgp=c(0,0,0))
+#     #par(mfrow = c(length(chromosomes)%/%2 + 1,2),mar=c(35,35,35,35))
+#     for(chrom in chromosomes){
+#         sub<-sapply(subset(data,CHROM==chrom,select=POS),as.numeric)
+#         plot(hist(sub,prob=F,breaks=length(sub)),
+#              main=paste(name,chrom,".jpg",sep="_"),
+#              xlab="Position")
+# #        dev.off()
 
 
 
