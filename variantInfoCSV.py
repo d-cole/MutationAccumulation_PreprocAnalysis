@@ -73,8 +73,8 @@ def writeInfo(line,outFile):
 
 
 if __name__ == "__main__":
-    file_name,out_name = sys.argv[1],sys.argv[2]
-    outFile = open(out_name,'w')
+    file_name = sys.argv[1]
+    outFile = open(file_name[0:-4] + ".csv",'w')
     writeColumns(outFile)
     with open(file_name) as f:
         for line in f:
