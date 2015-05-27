@@ -155,7 +155,7 @@ if __name__ == "__main__":
     one01rest00 = open("one01rest00.txt","w")
     one01rest11= open("one01rest11.txt","w")
     one11rest00 = open("one11rest00.txt","w")
-    one11rest01 = open("one11rest00.txt","w")
+    one11rest01 = open("one11rest01.txt","w")
     with open(file_name) as f:
         for line in f:
             if isDataLine(line): #Check if line contains variant data
