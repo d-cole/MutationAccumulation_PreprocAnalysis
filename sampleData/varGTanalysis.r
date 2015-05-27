@@ -3,21 +3,22 @@ files <- list.files(path="~/Documents/spirodela/sampleData/CC3-3/one01rest00",
                     pattern="*.csv",full.names=F,recursive=FALSE)
 
 remExt <- function(x,ext) {
+    #Removes the provided extension
     return (sub(ext,"",x))
 }
 
 lapply(files,function(x) {
-     data<-read.csv(x,stringsAsFactors=FALSE,na.string=".")
- #    typeof(data$DP)
- # #   print(head(data))
+    data<-read.csv(x,stringsAsFactors=FALSE,na.string=".")
     name<-remExt(x,".csv")
     
- #    jpeg(paste(name,"_DP.jpg",sep=""))
- #    plot(hist(data$DP,prob=F,breaks=length(data$DP)),
- #        main=paste(name,"DP",sep=" "),
- #        xlab="Depth")
- #    dev.off()
+    #Plots depth
+    jpeg(paste(name,"_DP.jpg",sep=""))
+    plot(hist(data$DP,prob=F,breaks=length(data$DP)),
+        main=paste(name,"DP",sep=" "),
+        xlab="Depth")
+    dev.off()
 
+    #Plots SNP distributions for every chromosome
     chromosomes = unique(data$CHROM)
     for(chrom in chromosomes){
         print(chrom)
@@ -29,9 +30,7 @@ lapply(files,function(x) {
              xlab="Position")
         dev.off()
 
-    }
-    break
-    
+    }    
     
 })
 
