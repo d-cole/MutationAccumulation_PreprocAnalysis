@@ -1,6 +1,6 @@
 library(ggplot2)
-setwd("~/Documents/spirodela/sampleData/CC3-3/one01rest00")
-files <- list.files(path="~/Documents/spirodela/sampleData/CC3-3/one01rest00",
+setwd("~/Documents/spirodela/sampleData/CC3-3/allsites/")
+files <- list.files(path="~/Documents/spirodela/sampleData/CC3-3/allsites/",
                     pattern="*.csv",full.names=F,recursive=FALSE)
 
 remExt <- function(x,ext) {
