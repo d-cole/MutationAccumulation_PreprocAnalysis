@@ -9,7 +9,7 @@ read OUTLOC
 for samFile in $FILES*.sam
     do
     outName=${samFile##*/}
-    java -Xmx2g -jar ~/picard-tools-1.96/SamFormatConverter.jar INPUT=$samFile OUTPUT=$OUTLOC${outName/.sam/.bam} &
+    echo "java -Xmx2g -jar ~/picard-tools-1.96/SamFormatConverter.jar INPUT=$samFile OUTPUT=$OUTLOC${outName/.sam/.bam} &"
 done
 
 
