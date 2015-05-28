@@ -4,14 +4,15 @@ files <-list.files(path="~/Documents/spirodela/data/CC3-3/individualData/allCase
 remExt <- function(x,ext){
   return (sub(ext,"",x))
 }
-
-
-
-lapply(files, function(x) {
-  sData<-read.csv(x)
-  head(sData)
-  x_name<-remExt(x,".csv")
-  med_dp<-median(sData$DP,na.nm=TRUE)
-  print(paste(x_name,": ",med_dp,sep=""))
+l <-vector('list',length(files))
+for (i in 1:length(files)){
+    sData<-read.csv(files[i])
+    l[[i]]<-median(sData$DP)
+    names(l)[i]<-remExt(files[i],".csv")
 }
+do.call(cbind,l)
+write.table(l,file="ind_DP_med.csv",append=FALSE,sep=" ",
+            eol="\n",na = "NA",dec=".",row.names=FALSE,
+            col.names=TRUE)
+
 
