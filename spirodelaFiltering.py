@@ -34,8 +34,10 @@ MIN_QD = 2.0
 MAX_FS = 60.0
 MIN_MQ_RANK_SUM = -12.5
 MIN_READ_POS_RANK_SUM = -8.0
+#Set at 2/3rds of number of samples
+MIN_VALID_SAMPLES_DP = int(14.0*(2/3))
 ##### END OF FILTER PARAM. #####
-
+SAMPLE_MEDIANS = []
 
 def isDataLine(line):
     """
@@ -52,20 +54,39 @@ def validSample(sample):
     """
     return "./." not in sample
 
+def getSampleMedians(medianFile):
+    medFile = open(medianFile,"r")
+    for i, line in enumerate(medFile):
+        if i == 1:
+            SAMPLE_MEDIANS = [[float(i)*0.5,float(i)*1.5] for i in line.strip("\n").split(" ")]
+    return 
+
+def validSampleDP(sample_idx,DP):
+    DP = float(DP)
+    if DP >= SAMPLE_MEDIANS[sample_idx][0] and DP <= SAMPLE_MEDIANS[sample_idx][1]:
+        return True 
+    return False
+
 def filterSamples(samples,line,het,hom_ref,hom_alt):
     """
     """
+    numValidDP = 0
     gt_counts={}
-    for s in samples:
-        if validSample(s):
-            s_col = s.split(":") #Should filter all genotype quality > 60?
+    for i in range(0,len(samples)):
+        if validSample(samples[i]):
+            s_col = samples[i].split(":")
+            if validSampleDP(i,s_col[DP]):
+                numValidDP += 1
             if consistantReads(s_col[AD],s_col[DP]):
                 gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
             else:
                 return False
         else:
-            return False
-
+            return False 
+              
+    if numValidDP < MIN_VALID_SAMPLES_DP:
+        return False 
+    
     if (1 in gt_counts.values() and 13 in gt_counts.values()):
         if gt_counts.get("0/0") == 1:
             hom_ref.write(line)            
@@ -131,6 +152,8 @@ def writeFilters(outFile):
     return
     
 if __name__ == "__main__":
+
+    getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/allCases/ind_DP_med.csv")
     file_name,out_name = sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
     #removedBases = open('remBases.txt','w')
@@ -144,7 +167,6 @@ if __name__ == "__main__":
             if isDataLine(line): #Check if line contains variant data
                 line_col = str.split(line)
                 if filterMapQuality(line_col):
-
                     if filterSamples(line_col[9:24],line,het,hom_ref,hom_alt):
                         outFile.write(line)
                 else:
