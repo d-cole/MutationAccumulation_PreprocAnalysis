@@ -55,7 +55,7 @@ def validSample(sample):
 def filterSamples(samples,line,
         one00rest01,one00rest11,
         one01rest11,one01rest00,
-        one11rest00,one11rest01):
+        one11rest00,one11rest01,other):
     """
     """
     gt_counts={}
@@ -70,22 +70,30 @@ def filterSamples(samples,line,
             return False
 
     if (1 in gt_counts.values() and 13 in gt_counts.values()):
+        write = False
         #Homz ref odd one 
-        if gt_counts.get("0/0") == 1 and gt_counts.get("O/1") == 13:
+        if gt_counts.get("0/0") == 1 and gt_counts.get("0/1") == 13:
             one00rest01.write(line)           
+            write = True
         if gt_counts.get("0/0") == 1 and gt_counts.get("1/1") == 13:
             one00rest11.write(line)            
-            
+            write = True            
         #Hetz odd one 
         if gt_counts.get("0/1") == 1 and gt_counts.get("1/1") == 13:
             one01rest11.write(line)
+            write = True
         if gt_counts.get("0/1") == 1 and gt_counts.get("0/0") == 13:
             one01rest00.write(line)        
+            write = True   
         #Homz alt odd one    
         if gt_counts.get("1/1") == 1 and gt_counts.get("0/0") == 13:
            one11rest00.write(line)
+           write = True 
         if gt_counts.get("1/1") == 1 and gt_counts.get("0/1") == 13:
            one11rest01.write(line) 
+           write = True
+        if not write:
+           other.write(line)
         return True
 
 def consistantReads(AD,DP):
@@ -156,6 +164,7 @@ if __name__ == "__main__":
     one01rest11= open("one01rest11.txt","w")
     one11rest00 = open("one11rest00.txt","w")
     one11rest01 = open("one11rest01.txt","w")
+    other = open("other.txt","w")
     with open(file_name) as f:
         for line in f:
             if isDataLine(line): #Check if line contains variant data
@@ -165,7 +174,7 @@ if __name__ == "__main__":
                     if filterSamples(line_col[9:24],line,
                             one00rest01,one00rest11,
                             one01rest11,one01rest00,
-                            one11rest00,one11rest01):
+                            one11rest00,one11rest01,other):
                         outFile.write(line)
                 else:
                     pass

@@ -1,24 +1,15 @@
-#Given a vcf file, writes all filtered variant sites to a specified output file.
 import sys
-
-#CHROM  POS     ID      REF     ALT     QUAL    FILTER  INFO    FORMAT  CC_B    CC_C    CC_D    CC_E    CC_F    CC_G    CC_H    CC_I    CC_J    CC_K    CC_L    CC_M    CC_N    CC_O
-#pseudo0 1       .       C       .       1.51    LowQual AN=28;DP=131;MQ=73.45;MQ0=6     GT:DP   0/0:12  0/0:7   0/0:13  0/0:12  0/0:6   0/0:7   0/0:7   0/0:9   0/0:9   0/0:13  0/0:9   0/0:8   0/0:6   0/0:13
-
-#pseudo0 19      .       G       A       287.25  .       AC=10;AF=0.357;AN=28;BaseQRankSum=-1.618;DP=184;Dels=0.03;FS=0.886;HaplotypeScore=37.0798;InbreedingCoeff=-0.4921;MLEAC=9;MLEAF=0.321;MQ=75.64;MQ0=6;MQRankSum=-0.968;QD=2.16;ReadPosRankSum=1.739;SOR=0.786    GT:AD:DP:GQ:PL  0/1:16,2:18:31:31,0,561 0/1:6,2:8:47:47,0,215   0/0:16,0:16:42:0,42,521 0/1:14,3:17:81:81,0,374 0/1:5,3:8:22:22,0,165   0/0:10,0:10:18:0,18,244 0/0:9,0:9:24:0,24,325   0/1:8,3:11:36:36,0,244  0/1:13,1:14:1:1,0,415   0/1:13,2:15:37:37,0,377 0/0:14,0:14:39:0,39,510 0/1:10,4:14:32:32,0,368 0/1:3,2:5:58:58,0,73    0/1:17,2:20:3:3,0,438i
-
-
 #Sample format
 # GT:AD:DP:GQ:PL
 GT,AD,DP,GQ,PL = 0,1,2,3,4;
-
 #Line format
 ALT,QUAL,FILTER,INFO = 4,5,6,7
 HETZ = "0/1"
 HOMZ_REF = "0/0"
 HOMZ_ALT = "0/0"
-
 #INFO indexes
 MQ,QD,FS,MQ_RANK_SUM,READ_POS_RANK_SUM=11,14,6,13,15
+SAMPLE_MEDIANS = []
 
 ###### FILTER PARAMETERS ######
 MAX_IMPURE_F1 = 3
@@ -35,9 +26,8 @@ MAX_FS = 60.0
 MIN_MQ_RANK_SUM = -12.5
 MIN_READ_POS_RANK_SUM = -8.0
 #Set at 2/3rds of number of samples
-MIN_VALID_SAMPLES_DP = int(14.0*(2/3))
+MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 ##### END OF FILTER PARAM. #####
-SAMPLE_MEDIANS = []
 
 def isDataLine(line):
     """
@@ -59,19 +49,26 @@ def getSampleMedians(medianFile):
     for i, line in enumerate(medFile):
         if i == 1:
             SAMPLE_MEDIANS = [[float(i)*0.5,float(i)*1.5] for i in line.strip("\n").split(" ")]
-    return 
+    return SAMPLE_MEDIANS
 
 def validSampleDP(sample_idx,DP):
     DP = float(DP)
     if DP >= SAMPLE_MEDIANS[sample_idx][0] and DP <= SAMPLE_MEDIANS[sample_idx][1]:
-        return True 
+            return True 
     return False
 
 def filterSamples(samples,line,het,hom_ref,hom_alt):
     """
+    Requirements to pass sample filters
+        - No missing samples
+        - At least 2/3 samples pass individual
+            DP filters
+        - One sample GT must be different than others
+            - This samples must pass individual DP filters 
     """
     numValidDP = 0
     gt_counts={}
+
     for i in range(0,len(samples)):
         if validSample(samples[i]):
             s_col = samples[i].split(":")
@@ -83,25 +80,41 @@ def filterSamples(samples,line,het,hom_ref,hom_alt):
                 return False
         else:
             return False 
-              
+
     if numValidDP < MIN_VALID_SAMPLES_DP:
+        #less than ~2/3 of samples pass DP filters
         return False 
     
     if (1 in gt_counts.values() and 13 in gt_counts.values()):
-        if gt_counts.get("0/0") == 1:
-            hom_ref.write(line)            
-        if gt_counts.get("0/1") == 1:
-            het.write(line)
-        if gt_counts.get("1/1") == 1:
-            hom_alt.write(line)
-        return True
+        #one of the GT is different than the rest
+        if validateMutant(gt_counts,samples):
+            return True
+        else:
+            #1 different GT did not pass filters
+            return False
+
+def validateMutant(gt_counts,samples):
+    """
+    Ensures that odd one out passes its depth filters
+    """
+    for key in gt_counts.keys():
+        if gt_counts.get(key) == 1:
+            break
+
+    for i in range(0,len(samples)):
+        if key in samples[i]:
+            break
+
+    s_col = samples[i].split(":")
+    return validSampleDP(i,samples[i].split(":")[DP])
 
 def consistantReads(AD,DP):
     """
     GT:AD:DP:GQ:PL  0/1:16,2:18:31:31
+    Currently not used
     """
-    AD_REF = AD.split(",")[0]
-    AD_ALT = AD.split(",")[1]
+    #AD_REF = AD.split(",")[0]
+    #AD_ALT = AD.split(",")[1]
     return True
     #return (float(AD_REF) / float(DP) >= 0.9) or (float(AD_ALT) / float(DP) >= 0.9)
 
@@ -153,15 +166,11 @@ def writeFilters(outFile):
     
 if __name__ == "__main__":
 
-    getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/allCases/ind_DP_med.csv")
+    SAMPLE_MEDIANS = getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/allCases/ind_DP_med.csv")
     file_name,out_name = sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
-    #removedBases = open('remBases.txt','w')
-    #invalidLines = open('invalidLines.ttxt','w')
     writeFilters(outFile)
-    het = open("het.txt","w")
-    hom_ref = open("hom_ref","w")
-    hom_alt = open("hom_alt","w")
+
     with open(file_name) as f:
         for line in f:
             if isDataLine(line): #Check if line contains variant data
@@ -169,19 +178,9 @@ if __name__ == "__main__":
                 if filterMapQuality(line_col):
                     if filterSamples(line_col[9:24],line,het,hom_ref,hom_alt):
                         outFile.write(line)
-                else:
-                    pass
-                    #removedBases.write(line)
-            else:
-                pass
-                #invalidLines.write(line)
+
     f.close()
     outFile.close()
-    het.close()
-    hom_ref.close()
-    hom_alt.close()
-    #invalidLines.close()
-    #removedBases.close()
 
 
 
