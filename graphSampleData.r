@@ -1,5 +1,5 @@
-setwd("/Users/Daniel/Documents/vcfParsing/spirodela/sampleData/homRef/")
-files <-list.files(path="/Users/Daniel/Documents/vcfParsing/spirodela/sampleData/homRef/",
+setwd("/Users/Daniel/Documents/vcfParsing/spirodela/data/...")
+files <-list.files(path="/Users/Daniel/Documents/vcfParsing/spirodela/...",
                    pattern="*.csv",full.names=F,recursive=FALSE)
 remExt <- function(x,ext){
   return (sub(ext,"",x))
