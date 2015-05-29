@@ -1,5 +1,6 @@
 import sys
 import spirodelaFiltering
+import time
 
 CC3_3idx = 9
 GP2_3idx = 10
@@ -14,7 +15,6 @@ def getMergeLine(desc_line,ancFile):
             anc_col = anc_line.split()
             merged_line = desc_line.strip("\n") + " " + anc_col[CC3_3idx] + " " + anc_col[GP2_3idx]
             break
-    
     return merged_line
 
 
@@ -24,9 +24,16 @@ if __name__ == "__main__":
     mergeFile = open(merge_name,'w')
 
     with open(desc_loc) as desc_f:
+        start_time = time.process_time()
+        print(start_time)
         for desc_line in desc_f:
             if spirodelaFiltering.isDataLine(desc_line):
                 mergeLine = getMergeLine(desc_line,ancFile)
+
+                end_time = time.process_time()
+                print("Time: " + str(end_time - start_time))
+                sys.exit()
+
                 print("merged line",mergeLine)
                 if mergeLine != "":
                     print(mergeLine)
