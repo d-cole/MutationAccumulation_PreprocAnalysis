@@ -1,6 +1,6 @@
 import sys
 import spirodelaFiltering
-import time
+import timeit
 
 CC3_3idx = 9
 GP2_3idx = 10
@@ -24,14 +24,14 @@ if __name__ == "__main__":
     mergeFile = open(merge_name,'w')
 
     with open(desc_loc) as desc_f:
-        start_time = time.process_time()
+        start_time = timeit.default_timer()
         print(start_time)
         for desc_line in desc_f:
             if spirodelaFiltering.isDataLine(desc_line):
                 mergeLine = getMergeLine(desc_line,ancFile)
 
-                end_time = time.process_time()
-                print("Time: " + str(end_time - start_time))
+                elapsed_time = timeit.default_timer() - start_time
+                print("Time: " + str(elapsed_time))
                 sys.exit()
 
                 print("merged line",mergeLine)
