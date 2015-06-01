@@ -1,6 +1,6 @@
 from vcfDict import vcfDict
 import sys
-
+import spirodelaFiltering
 CC3_3idx = 9
 GP2_3idx = 10
 
@@ -19,22 +19,28 @@ if __name__ == "__main__":
     desc = vcfDict(desc_loc)
     desc.loadDict()
     merge_file = open(merge_loc,"w")
+    
+    #with open(desc_loc) as desc_file:
+    #    for desc_line in desc_file:
+    #        if not spirodelaFiltering.isDataLine(desc_line):
+    #            merge_file.write(desc_line)
+    #        else:
+    #            #data lines start
+    #            break
+
 
     with open(anc_loc) as anc_file:
         for anc_line in anc_file:
-            if spirodela_filtering.isDataLine(anc_line):
+            if spirodelaFiltering.isDataLine(anc_line):
 
                 anc_line_col = str.split(anc_line)
                 anc_line_key = anc_line_col[0] + ":" + anc_line_col[1]
-                desc_line = desc.getLine(line_key)
+                desc_line = desc.getLine(anc_line_key)
 
                 if desc_line != "":
                     merge_file.write(getMergeLine(desc_line,anc_line_col[CC3_3idx],anc_line_col[GP2_3idx]))
-                    print anc_line
-                    print anc_line_key
-                    print desc_line
-                    break
 
+    desc.printDict()
     anc_file.close()
     merge_file.close()
 
