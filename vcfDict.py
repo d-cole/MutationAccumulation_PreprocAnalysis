@@ -30,7 +30,9 @@ class vcfDict:
         Returns the line correspinding to the given key,
         returns "" if line not present.
         """
-        return self.vcf_dict.get(key,"")
+        line = self.vcf_dict.get(key,"")
+        self.vcf_dict.pop(key,None)
+        return line
 
     def printDict(self):
         """
