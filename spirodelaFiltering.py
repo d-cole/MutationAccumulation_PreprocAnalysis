@@ -29,6 +29,12 @@ MIN_READ_POS_RANK_SUM = -8.0
 MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 ##### END OF FILTER PARAM. #####
 
+SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
+"CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
+SAMPLE_COUNT = [0]*14
+SAMPLE_GT_COUNT=[{"0/0":0,"0/1":0,"1/1":0}]*14
+
+
 def isDataLine(line):
     """
     Determines if the line in the vcf file contains
@@ -57,7 +63,7 @@ def validSampleDP(sample_idx,DP):
             return True 
     return False
 
-def filterSamples(samples,line,het,hom_ref,hom_alt):
+def filterSamples(samples,line):
     """
     Requirements to pass sample filters
         - No missing samples
@@ -104,9 +110,24 @@ def validateMutant(gt_counts,samples):
     for i in range(0,len(samples)):
         if key in samples[i]:
             break
-
+    SAMPLE_COUNT[i] = SAMPLE_COUNT[i] + 1
     s_col = samples[i].split(":")
+    try:
+        SAMPLE_GT_COUNT[i][s_col[GT]] = SAMPLE_GT_COUNT[i].get(s_col[GT],0) + 1
+    except:
+        print(SAMPLE_GT_COUNT[i].get(s_col[GT],"0"))
+        print(s_col[GT])
+        sys.exit()
     return validSampleDP(i,samples[i].split(":")[DP])
+
+def writeCounts(outFile):
+    """
+    Writes count data to specified file
+    """
+    for i in range(0,len(SAMPLES)):
+        outFile.write(SAMPLES[i] + ": " + str(SAMPLE_COUNT[i]) +  str(SAMPLE_GT_COUNT[i]) + "\n")  
+        outFile.write(str(SAMPLE_GT_COUNT))  
+    return
 
 def consistantReads(AD,DP):
     """
@@ -167,7 +188,7 @@ def writeFilters(outFile):
 if __name__ == "__main__":
 
     SAMPLE_MEDIANS = getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/allCases/ind_DP_med.csv")
-    file_name,out_name = sys.argv[1],sys.argv[2]
+    file_name,out_name= sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
     writeFilters(outFile)
 
@@ -176,11 +197,16 @@ if __name__ == "__main__":
             if isDataLine(line): #Check if line contains variant data
                 line_col = str.split(line)
                 if filterMapQuality(line_col):
-                    if filterSamples(line_col[9:24],line,het,hom_ref,hom_alt):
+                    if filterSamples(line_col[9:24],line):
                         outFile.write(line)
             else:
                 #info line
                 outFile.write(line)
+
+    count_out = open("sampleCounts","w")
+    writeCounts(count_out)
+
+    count_out.close()
     f.close()
     outFile.close()
 
