@@ -32,8 +32,12 @@ MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
 "CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
 SAMPLE_COUNT = [0]*14
-SAMPLE_GT_COUNT=[{"0/0":0,"0/1":0,"1/1":0}]*14
+SAMPLE_GT_COUNT=[None]*14
+for i in range (0,len(SAMPLE_GT_COUNT)):
+    SAMPLE_GT_COUNT[i] = {"0/0":0,"0/1":0,"1/1":0}
 
+
+CC3_3Midx = 11
 
 def isDataLine(line):
     """
@@ -110,6 +114,11 @@ def validateMutant(gt_counts,samples):
     for i in range(0,len(samples)):
         if key in samples[i]:
             break
+
+    #Filter out CC3-3M
+    #if i == CC3_3Midx:
+    #    return False
+
     SAMPLE_COUNT[i] = SAMPLE_COUNT[i] + 1
     s_col = samples[i].split(":")
     try:
@@ -125,8 +134,7 @@ def writeCounts(outFile):
     Writes count data to specified file
     """
     for i in range(0,len(SAMPLES)):
-        outFile.write(SAMPLES[i] + ": " + str(SAMPLE_COUNT[i]) +  str(SAMPLE_GT_COUNT[i]) + "\n")  
-        outFile.write(str(SAMPLE_GT_COUNT))  
+        outFile.write(SAMPLES[i] + ": " + str(SAMPLE_COUNT[i]) +" "+  str(SAMPLE_GT_COUNT[i]) + "\n")  
     return
 
 def consistantReads(AD,DP):
@@ -146,12 +154,12 @@ def filterMapQuality(line_col):
     info = line_col[INFO].split(";")
     if line_col[ALT] != ".":
         return float(line_col[QUAL]) >= MIN_MAP_QUALITY and \
-        line_col[FILTER] != "LowQual" and \
-        getInfoValue("MQ",info) >= MIN_MQ and \
-        getInfoValue("QD",info) >= MIN_QD and \
-        getInfoValue("FS",info) <= MAX_FS and \
-        getInfoValue("MQRankSum",info) >= MIN_MQ_RANK_SUM and \
-        getInfoValue("ReadPosRankSum",info) >= MIN_READ_POS_RANK_SUM
+        line_col[FILTER] != "LowQual"
+        #getInfoValue("MQ",info) >= MIN_MQ and \
+        #getInfoValue("QD",info) >= MIN_QD and \
+        #getInfoValue("FS",info) <= MAX_FS and \
+        #getInfoValue("MQRankSum",info) >= MIN_MQ_RANK_SUM and \
+        #getInfoValue("ReadPosRankSum",info) >= MIN_READ_POS_RANK_SUM
 
     return False
 
@@ -187,7 +195,7 @@ def writeFilters(outFile):
     
 if __name__ == "__main__":
 
-    SAMPLE_MEDIANS = getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/allCases/ind_DP_med.csv")
+    SAMPLE_MEDIANS = getSampleMedians("/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/ind_DP_med.csv")
     file_name,out_name= sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
     writeFilters(outFile)
