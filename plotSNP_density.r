@@ -1,9 +1,9 @@
 #Plots sample depth and distribution on chromosomes given a .csv file
 library(ggplot2)
-setwd("~/Documents/spirodela/data/CC3-3/readData/allSites/graphs/")
-files <- list.files(path="~/Documents/spirodela/data/CC3-3/vcfFiltes/dpFilters/",
+setwd("/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/dpFilters/")
+files <- list.files(path="/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/dpFilters/",
                     pattern="*.csv",full.names=F,recursive=FALSE)
-
+print(files)
 remExt <- function(x,ext) {
     #Removes the provided extension
     return (sub(ext,"",x))
@@ -24,12 +24,13 @@ lapply(files,function(x) {
     for(chrom in chromosomes){
         png(file=paste(name,chrom,".jpg",sep="_"))
         pos_data<-sapply(subset(data,CHROM==chrom,select=POS),as.numeric)
-        #plot(hist(pos_data,prob=F,breaks=length(pos_data)),
-        #     main=paste(name,chrom,".jpg",sep="_"),
-        #     xlab="Position")
-
-        qplot(pos_data, binwidth = 1.0,geo="histogram",xlab="Position",ylab="Freq")
-        dev.off()
+        max = 
+        plot(hist(pos_data,prob=F,breaks=length(pos_data)),
+             main=paste(name,chrom,".jpg",sep="_"),
+             xlab="Position")
+        #qplot(pos_data,y=NULL,geom="histogram",binwidth=40)
+        #ggplot(pos_data, aes(x=POS)) + geom_histogram(binwidth=40, colour="black", fill="white")
+    dev.off()
 
     }    
 })
