@@ -178,7 +178,9 @@ if __name__ == "__main__":
                 if filterMapQuality(line_col):
                     if filterSamples(line_col[9:24],line,het,hom_ref,hom_alt):
                         outFile.write(line)
-
+            else:
+                #info line
+                outFile.write(line)
     f.close()
     outFile.close()
 
