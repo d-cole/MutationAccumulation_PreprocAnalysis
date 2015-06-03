@@ -39,7 +39,8 @@ if __name__ == "__main__":
 
                 if desc_line != "":
                     merge_file.write(getMergeLine(desc_line,anc_line_col[CC3_3idx],anc_line_col[GP2_3idx]))
-
+                else:
+                    merge_file.write(getMergeLine(desc_line,".","."))
     desc.printDict()
     anc_file.close()
     merge_file.close()
