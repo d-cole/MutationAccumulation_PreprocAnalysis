@@ -6,6 +6,9 @@ TE_ranges = {}
 CHROM,START,STOP = 0,1,2
 
 def loadTEranges(TE_file_loc):
+    """
+    Load TE ranges from a text file of the format CHROM START STOP
+    """
     with open(TE_file_loc) as TE_file:
         for line in TE_file:
             line_col = str.split(line)
@@ -15,9 +18,16 @@ def loadTEranges(TE_file_loc):
     return
 
 def validRange(line):
+    """
+    Determine if the given site is withen any TE range
+    """
+    line_col = str.split(line)
+    chrom = line_col[0]
+    pos = line_col[1]
+# any(lower <= postcode <= upper for (lower, upper) in [(1000, 2249), (2555, 2574), ...])
+    if any(low <= float(pos) <= high for (low,high) in TE_ranges[chrom]):
+        return False
     return True
-
-
 
 if __name__ == "__main__":
     TE_file_loc,vcf_file_loc = sys.argv[1],sys.argv[2]
