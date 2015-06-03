@@ -3,3 +3,4 @@ Description of various filter abbreviations
 f0: LowQual flag, sites with 1/14 GT different, all sample data present
 f1: f0 + removed TE using both Spolyrhiza_290_v2.repeatmasked_assembly_v1_TE_intervals.txt
  and TE_intervals_jan2015_no_plastids_sorted
+f2: f1 + added ancestor
