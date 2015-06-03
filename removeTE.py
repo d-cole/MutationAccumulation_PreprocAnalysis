@@ -25,7 +25,7 @@ def validRange(line):
     chrom = line_col[0]
     pos = line_col[1]
 # any(lower <= postcode <= upper for (lower, upper) in [(1000, 2249), (2555, 2574), ...])
-    if any(low <= float(pos) <= high for (low,high) in TE_ranges[chrom]):
+    if any(float(low) <= float(pos) <= float(high) for (low,high) in TE_ranges[chrom]):
         return False
     return True
 
