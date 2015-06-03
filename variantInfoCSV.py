@@ -19,18 +19,21 @@ InbreedingCoeff,MLEAC,MLEAF,MQ,MQ0,MQRankSum,QD,\
 ReadPosRankSum = 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
 
 COLUMNS = "\"varID\",\"CHROM\",\"POS\",\"REF\",\"ALT\",\"QUAL\",\"FILTER\",\
-\"AC\",\"AF\",\"AN\",\"BaseQRankSum\",\"DP\",\"Dels\",\"FS\",\
+\"AC\",\"AF\",\"AN\",\"BaseQRankSum\",\"siteDP\",\"Dels\",\"FS\",\
 \"HaplotypeScore\",\"InbreedingCoeff\",\"MLEAC\",\"MLEAF\",\"MQ\",\
 \"MQ0\",\"MQRankSum\",\"QD\",\"ReadPosRankSum\""
 
 INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','InbreedingCoeff','MLEAC',\
 'MLEAF','MQ','MQ0,','MQRankSum','QD','ReadPosRankSum']
 
+SAMPLE_COLUMNS = ',\"odd_GT\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\"'
+
 def writeColumns(outFile):
     """
     Writes column names to the .csv file
     """
-    outFile.write(COLUMNS + "\n")
+    outFile.write(COLUMNS + SAMPLE_COLUMNS + "\n")
+
     return
 
 def getValue(tag,info_list):
@@ -43,6 +46,52 @@ def getValue(tag,info_list):
             return "\"" + val[valIdx + len(tag) + 1:] + "\""
     return "\".\"" 
 
+
+def getSampleString(samples):
+    """
+    Pareses the samples and returns a string to write to the .csv file
+    """
+    odd_idx = None
+    gt_dict = {}
+    ad_alt_sum = 0
+    ad_ref_sum = 0
+    csv_string = ""
+
+    #Build dict mapping GT to a list of sample indexes that have that GT
+    for i in range(0,len(samples)):
+        s_col = samples[i].split(":")
+        gt = s_col[GT]
+        ad_split = s_col[AD].split(",")
+        ad_alt = float(ad_split[0])
+        ad_ref = float(ad_split[1])
+
+        ad_alt_sum = ad_alt_sum + ad_alt
+        ad_ref_sum = ad_ref_sum + ad_ref
+        gt_dict.setdefault(gt,[]).append(i)
+    #The GT with one index is the odd GT
+    #append oddGT to the csv_string
+    for key in gt_dict.keys():
+        if len(gt_dict[key]) == 1:
+            odd_idx = gt_dict[key][0]
+            csv_string = '"' + key + '"' + ','
+    odd_sample = samples[odd_idx].split(":")
+
+    #Add the cohortGT the GT that maps to 13 samples
+    for key in gt_dict.keys():
+        if len(gt_dict[key]) == 13:
+            csv_string = csv_string + '"' + key + '"' + ','
+
+    #Add ADalt and ADref to csv string
+    csv_string = csv_string + '"' + odd_sample[AD].split(",")[0] + '","' + odd_sample[AD].split(",")[1] + '",'
+
+    #add ADaltSum and ADrefSum to the csv_string
+    csv_string = csv_string + '"' + str(ad_alt_sum) + '",' + '"' + str(ad_ref_sum) + '",'
+
+    csv_string = csv_string + '"' + odd_sample[GQ] + '",'
+    #Add PL to csv_string
+    csv_string = csv_string + '"' + odd_sample[PL] + '"'
+
+    return csv_string
 
 def writeInfo(line,outFile):
     """
@@ -68,7 +117,10 @@ def writeInfo(line,outFile):
     for item in infoData:
         csvLine = csvLine + item + ","
     #remove last ","
-    csvLine = csvLine[:-1]
+    csvLine = csvLine + getSampleString(line_col[9:23])
+
+    #ancestor = line_col[23]
+
     outFile.write(csvLine + "\n")
 
 
