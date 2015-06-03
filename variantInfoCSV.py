@@ -120,7 +120,7 @@ def writeInfo(line,outFile):
     csvLine = csvLine + getSampleString(line_col[9:23])
 
     #ancestor = line_col[23]
-
+    csvLine = csvLine + getAncestorInfo(ancestor)
     outFile.write(csvLine + "\n")
 
 
