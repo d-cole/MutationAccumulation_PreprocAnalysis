@@ -39,3 +39,9 @@ class vcfDict:
         
         """
         print(self.vcf_dict)
+
+    def writeDict(outFile):
+        for key in self.vcf_dict.keys():
+            outFile.write(self.vcf_dict[key])
+        return
+
