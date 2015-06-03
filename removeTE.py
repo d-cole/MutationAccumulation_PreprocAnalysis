@@ -17,5 +17,7 @@ def loadTEranges(TE_file_loc):
 
 if __name__ == "__main__":
     TE_file_loc = sys.argv[1]
+    out_file = open("te_output.txt","w")
     loadTEranges(TE_file_loc)
-    print TE_ranges
+    out_file.write(TE_ranges)
+    out_file.close()
