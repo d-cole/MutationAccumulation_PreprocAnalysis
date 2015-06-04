@@ -26,7 +26,7 @@ COLUMNS = "\"varID\",\"CHROM\",\"POS\",\"REF\",\"ALT\",\"QUAL\",\"FILTER\",\
 INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','InbreedingCoeff','MLEAC',\
 'MLEAF','MQ','MQ0,','MQRankSum','QD','ReadPosRankSum']
 
-SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\"'
+SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
 
 SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
 "CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
@@ -80,7 +80,7 @@ def getSampleString(samples):
     odd_sample = samples[odd_idx].split(":")
     
     #Add which sample was the odd one out
-    csv_string = csv_string + '"' + SAMPLES[odd_idx] '",'
+    csv_string = csv_string + '"' + SAMPLES[odd_idx] +'",'
 
     #Add the cohortGT the GT that maps to 13 samples
     for key in gt_dict.keys():
@@ -100,7 +100,13 @@ def getSampleString(samples):
     return csv_string
 
 def getAncestorInfo(ancestor):
-
+    anc_string = ""
+    if ancestor != ".":
+        anc_col = ancestor.split(":")
+        anc_string = anc_string + ',"' + anc_col[-1] + '","' + ":".join(anc_col[0:len(anc_col) - 1]) + '"'
+        return anc_string
+    else:
+        return ',".","."'
 
 def writeInfo(line,outFile):
     """
@@ -127,8 +133,12 @@ def writeInfo(line,outFile):
         csvLine = csvLine + item + ","
     #remove last ","
     csvLine = csvLine + getSampleString(line_col[9:23])
-
-    ancestor = line_col[23]
+    try:
+        ancestor = line_col[23]
+    except:
+        
+        print line_col
+        sys.exit()
     csvLine = csvLine + getAncestorInfo(ancestor)
     outFile.write(csvLine + "\n")
 
