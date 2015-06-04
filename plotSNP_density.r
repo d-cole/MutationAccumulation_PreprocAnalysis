@@ -1,7 +1,7 @@
 #Plots sample depth and distribution on chromosomes given a .csv file
 library(ggplot2)
-setwd("/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/dpFilters/")
-files <- list.files(path="/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/dpFilters/",
+setwd("/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/")
+files <- list.files(path="/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/",
                     pattern="*.csv",full.names=F,recursive=FALSE)
 print(files)
 remExt <- function(x,ext) {
@@ -24,7 +24,6 @@ lapply(files,function(x) {
     for(chrom in chromosomes){
         png(file=paste(name,chrom,".jpg",sep="_"))
         pos_data<-sapply(subset(data,CHROM==chrom,select=POS),as.numeric)
-        max = 
         plot(hist(pos_data,prob=F,breaks=length(pos_data)),
              main=paste(name,chrom,".jpg",sep="_"),
              xlab="Position")
