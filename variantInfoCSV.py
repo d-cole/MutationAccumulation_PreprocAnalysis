@@ -93,6 +93,9 @@ def getSampleString(samples):
 
     return csv_string
 
+def getAncestorInfo(ancestor):
+
+
 def writeInfo(line,outFile):
     """
     Writes data for the variant site to a .csv file
@@ -119,7 +122,7 @@ def writeInfo(line,outFile):
     #remove last ","
     csvLine = csvLine + getSampleString(line_col[9:23])
 
-    #ancestor = line_col[23]
+    ancestor = line_col[23]
     csvLine = csvLine + getAncestorInfo(ancestor)
     outFile.write(csvLine + "\n")
 
