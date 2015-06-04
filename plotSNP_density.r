@@ -13,9 +13,10 @@ lapply(files,function(x) {
     data<-read.csv(x,stringsAsFactors=FALSE,na.string=".")
     name<-remExt(x,".csv")
     
+    dp_data<-sapply(subset(data,select=siteDP),as.numeric)    
     #Plots depth
     jpeg(paste(name,"_DP.jpg",sep=""))
-    plot(hist(data$DP,prob=F,breaks=length(data$DP)),
+    plot(hist(dp_data,prob=F,breaks=length(dp_data)),
         main=paste(name,"DP",sep=" "),
         xlab="Depth")
     dev.off()

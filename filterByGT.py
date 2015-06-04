@@ -29,7 +29,7 @@ MIN_GQ = 60
 MIN_F0_DP = 10
 FILTER_TXF1_F4 = True
 
-MIN_MQ = 40
+MIN_MQ = 00
 MIN_QD = 2.0
 MAX_FS = 60.0
 MIN_MQ_RANK_SUM = -12.5
@@ -62,7 +62,7 @@ def filterSamples(samples,line,
     for s in samples:
         if validSample(s):
             s_col = s.split(":") #Should filter all genotype quality > 60?
-            if consistantReads(s_col[AD],s_col[DP]):
+            if consistantReads(0,0):
                 gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
             else:
                 return False
@@ -100,8 +100,8 @@ def consistantReads(AD,DP):
     """
     GT:AD:DP:GQ:PL  0/1:16,2:18:31:31
     """
-    AD_REF = AD.split(",")[0]
-    AD_ALT = AD.split(",")[1]
+#    AD_REF = AD.split(",")[0]
+#    AD_ALT = AD.split(",")[1]
     return True
     #return (float(AD_REF) / float(DP) >= 0.9) or (float(AD_ALT) / float(DP) >= 0.9)
 
@@ -111,15 +111,15 @@ def filterMapQuality(line_col):
     """
     info = line_col[INFO].split(";")
     if line_col[ALT] != ".":
-        return float(line_col[QUAL]) >= MIN_MAP_QUALITY and \
-        line_col[FILTER] != "LowQual" and \
-        getInfoValue("MQ",info) >= MIN_MQ and \
-        getInfoValue("QD",info) >= MIN_QD and \
-        getInfoValue("FS",info) <= MAX_FS and \
-        getInfoValue("MQRankSum",info) >= MIN_MQ_RANK_SUM and \
-        getInfoValue("ReadPosRankSum",info) >= MIN_READ_POS_RANK_SUM
+        return float(line_col[QUAL]) >= MIN_MAP_QUALITY
+        #return line_col[FILTER] != "LowQual"
+ #       getInfoValue("MQ",info) >= MIN_MQ and \
+ #       getInfoValue("QD",info) >= MIN_QD and \
+ #       getInfoValue("FS",info) <= MAX_FS and \
+ #       getInfoValue("MQRankSum",info) >= MIN_MQ_RANK_SUM and \
+ #       getInfoValue("ReadPosRankSum",info) >= MIN_READ_POS_RANK_SUM
 
-    return False
+    return True
 
 def getInfoValue(tag,info_list):
     """
@@ -138,15 +138,15 @@ def writeFilters(outFile):
     Writes the filter parameters to file
     """
     filters = "##FILTER PARAMETERS##" + "\n" + \
-                "#MIN_MAP_QUALITY: " + str(MIN_MAP_QUALITY) + "\n" + \
-                "#MIN_IMPURE_READS: " + str(MIN_IMPURE_READS) + "\n" + \
-                "#MIN_ALT_READ: " + str(MIN_ALT_READ) +  "\n" +\
-                "#MIN_GQ: " + str(MIN_GQ) +  "\n" +\
-                "#MIN_MQ(info): " + str(MIN_MQ) + "\n" +\
-                "#MIN_QD: " + str(MIN_QD) + "\n" +\
-                "#MAX_FS: " + str(MAX_FS) + "\n" +\
-                "#MIN_MQ_RANK_SUM: " + str(MIN_MQ_RANK_SUM) + "\n" +\
-                "#MIN_READ_POS_RANK_SUM: " + str(MIN_READ_POS_RANK_SUM) + "\n"
+                "#MIN_MAP_QUALITY: " + str(MIN_MAP_QUALITY) + "\n"
+#                "#MIN_IMPURE_READS: " + str(MIN_IMPURE_READS) + "\n" + \
+#                "#MIN_ALT_READ: " + str(MIN_ALT_READ) +  "\n" +\
+#                "#MIN_GQ: " + str(MIN_GQ) +  "\n" +\
+#                "#MIN_MQ(info): " + str(MIN_MQ) + "\n" +\
+#                "#MIN_QD: " + str(MIN_QD) + "\n" +\
+#                "#MAX_FS: " + str(MAX_FS) + "\n" +\
+#                "#MIN_MQ_RANK_SUM: " + str(MIN_MQ_RANK_SUM) + "\n" +\
+#                "#MIN_READ_POS_RANK_SUM: " + str(MIN_READ_POS_RANK_SUM) + "\n"
 
     outFile.write(filters)
     return
@@ -171,7 +171,7 @@ if __name__ == "__main__":
                 line_col = str.split(line)
                 if filterMapQuality(line_col):
 
-                    if filterSamples(line_col[9:24],line,
+                    if filterSamples(line_col[9:23],line,
                             one00rest01,one00rest11,
                             one01rest11,one01rest00,
                             one11rest00,one11rest01,other):
