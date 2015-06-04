@@ -8,7 +8,7 @@ def getMergeLine(desc_line,CC3_sample,GP2_sample):
     """
     Returns the desc_line with the given sample information appended
     """
-    return desc_line.strip("\n") + " " + CC3_sample + " " + GP2_sample + "\n"
+    return desc_line.strip("\n") + ":" + CC3_sample + " " + GP2_sample + "\n"
 
 
 if __name__ == "__main__":
@@ -39,7 +39,7 @@ if __name__ == "__main__":
                 desc_line = desc.getLine(anc_line_key)
 
                 if desc_line != "":
-                    merge_file.write(getMergeLine(desc_line,anc_line_col[CC3_3idx],""))
+                    merge_file.write(getMergeLine(desc_line,anc_line_col[REF] +"/"+ anc_line_col[ALT],""))
                 else:
                     #merge_file.write(getMergeLine(desc_line,".","."))
     desc.printDict()
