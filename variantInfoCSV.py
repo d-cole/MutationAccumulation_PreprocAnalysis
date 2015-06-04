@@ -24,7 +24,7 @@ COLUMNS = "\"varID\",\"CHROM\",\"POS\",\"REF\",\"ALT\",\"QUAL\",\"FILTER\",\
 \"MQ0\",\"MQRankSum\",\"QD\",\"ReadPosRankSum\""
 
 INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','InbreedingCoeff','MLEAC',\
-'MLEAF','MQ','MQ0,','MQRankSum','QD','ReadPosRankSum']
+'MLEAF','MQ','MQ0','MQRankSum','QD','ReadPosRankSum']
 
 SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
 
