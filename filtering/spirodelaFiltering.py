@@ -10,6 +10,7 @@ HOMZ_ALT = "0/0"
 #INFO indexes
 MQ,QD,FS,MQ_RANK_SUM,READ_POS_RANK_SUM=11,14,6,13,15
 SAMPLE_MEDIANS = []
+CC3_3Midx = 11
 
 ###### FILTER PARAMETERS ######
 MAX_IMPURE_F1 = 3
@@ -28,7 +29,6 @@ MIN_READ_POS_RANK_SUM = -8.0
 #Set at 2/3rds of number of samples
 MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 ##### END OF FILTER PARAM. #####
-
 SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
 "CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
 SAMPLE_COUNT = [0]*14
@@ -37,7 +37,6 @@ for i in range (0,len(SAMPLE_GT_COUNT)):
     SAMPLE_GT_COUNT[i] = {"0/0":0,"0/1":0,"1/1":0}
 
 
-CC3_3Midx = 11
 
 def isDataLine(line):
     """
@@ -82,14 +81,18 @@ def filterSamples(samples,line):
     for i in range(0,len(samples)):
         if validSample(samples[i]):
             s_col = samples[i].split(":")
+
             if validSampleDP(i,s_col[DP]):
                 numValidDP += 1
+
             if consistantReads(s_col[AD],s_col[DP]):
                 gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
+                
             else:
                 return False
         else:
             return False 
+
 
     if numValidDP < MIN_VALID_SAMPLES_DP:
         #less than ~2/3 of samples pass DP filters
