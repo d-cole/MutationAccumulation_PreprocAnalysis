@@ -1,6 +1,8 @@
 import sys
 ALT,QUAL,FILTER,INFO = 4,5,6,7
 MIN_MAP_QUALITY = 0
+CC3_3Midx = 11
+REMOVE_CC3_3M = True
 
 def isDataLine(line):
     """
@@ -36,7 +38,25 @@ def sampleFiltering(samples):
     if (1 in gt_counts.values() and 13 in gt_counts.values()):
         return True
 
-    return False
+    return filterMutant(gt_counts,samples)
+
+def filterMutant(gt_counts,samples):
+    """
+    Filters on the odd GT individual
+    """
+    for key in gt_counts.keys():
+        if gt_counts.get(key) == 1:
+            break
+
+    for i in range(0,len(samples)):
+        if key in samples[i]:
+            break
+
+    if REMOVE_CC3_3M:
+        if i == CC3_3Midx:
+            return False
+
+    return True
 
 
 if __name__ == "__main__":
