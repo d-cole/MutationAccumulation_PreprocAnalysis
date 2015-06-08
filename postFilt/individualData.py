@@ -4,8 +4,10 @@ import sys
 
 #GT:AD:DP:GQ:PL  1/1:1,29:30:47:1037,47,0
 GT,AD,DP,GQ,PL = 0,1,2,3,4
-SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
-"CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
+#SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
+#"CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
+
+SAMPLES = ["GP2-3_B", "GP2-3_C", "GP2-3_D", "GP2-3_E", "GP2-3_F", "GP2-3_G", "GP2-3_H", "GP2-3_I", "GP2-3_J", "GP2-3_K", "GP2-3_L", "GP2-3_M", "GP2-3_N", "GP2-3_O"]
 COLUMNS = ["\"GT\"","\"AD_REF\"","\"AD_ALT\"","\"DP\"","\"GQ\"","\"PL\""]
 
 def writeColumns(columns,outFile):

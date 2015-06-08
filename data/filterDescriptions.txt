@@ -1,0 +1,16 @@
+Filtering abbreviation meanings:
+
+f0: 
+ - Remove sites with 'LowQual' tag present
+ - All sites must have 1 GT different and 13 the same
+ - For CC3-3 if the odd GT is CC3-3M the site is removed
+ - This was used to calculate median DP for individual samples
+
+f1:
+ - f0 + added individual DP filtering
+ - For a site to pass:
+    2/3 of individuals must pass individual median DP filter
+    To pass DP filter must be in range 0.5*MedDP < x < 1.5*MedDP
+    Mutant sample had to pass individual DP filter
+
+
