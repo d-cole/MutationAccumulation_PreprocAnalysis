@@ -1,4 +1,4 @@
-import spirodelaFiltering
+import filteringMethods
 import sys
 #
 #TE = {Pseudo0:[(x,y),(z,l)...],Pseudo1:[(m,x)...]...}
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
     with open(vcf_file_loc) as vcf_file:
         for line in vcf_file:
-            if spirodelaFiltering.isDataLine(line):
+            if filteringMethods.isDataLine(line):
                 if validRange(line):
                     trimmed_vcf.write(line)
                 else:
