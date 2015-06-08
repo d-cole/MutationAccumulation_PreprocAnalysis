@@ -1,4 +1,3 @@
-import spirodelaFiltering
 import sys
 """
 variantInfoCSV.py
@@ -28,8 +27,21 @@ INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','In
 
 SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
 
-SAMPLES = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
+SAMPLES_CC = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
 "CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
+
+
+SAMPLES_GP = ["GP2-3_B", "GP2-3_C", "GP2-3_D", "GP2-3_E", "GP2-3_F", "GP2-3_G",\
+ "GP2-3_H", "GP2-3_I", "GP2-3_J", "GP2-3_K", "GP2-3_L", "GP2-3_M", "GP2-3_N", "GP2-3_O"]
+
+
+def isDataLine(line):
+    """
+    Determines in line contains site data
+    """
+    if len(line) > 1:
+        return line[0] != "#"
+    return False
 
 def writeColumns(outFile):
     """
@@ -80,7 +92,7 @@ def getSampleString(samples):
     odd_sample = samples[odd_idx].split(":")
     
     #Add which sample was the odd one out
-    csv_string = csv_string + '"' + SAMPLES[odd_idx] +'",'
+    csv_string = csv_string + '"' + SAMPLES_GP[odd_idx] +'",'
 
     #Add the cohortGT the GT that maps to 13 samples
     for key in gt_dict.keys():
@@ -149,7 +161,7 @@ if __name__ == "__main__":
     writeColumns(outFile)
     with open(file_name) as f:
         for line in f:
-            if spirodelaFiltering.isDataLine(line):
+            if isDataLine(line):
                     writeInfo(line,outFile)
     f.close()
     outFile.close()     

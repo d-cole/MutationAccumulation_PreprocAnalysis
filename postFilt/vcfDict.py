@@ -1,6 +1,4 @@
-import spirodelaFiltering
 import sys
-
 class vcfDict:
     """
     Represents a hastable for vcf files
@@ -8,9 +6,19 @@ class vcfDict:
     file_loc = ""
     vcfFile = None
     vcf_dict = {}
+    
 
     def __init__(self,file_loc):
         self.file_loc = file_loc
+    
+    def isDataLine(self,line):
+        """
+        Determines in line contains site data
+        """
+        if len(line) > 1:
+            return line[0] != "#"
+        return False
+
 
     def loadDict(self):
         """
@@ -19,7 +27,7 @@ class vcfDict:
         """
         with open(self.file_loc) as f:
             for line in f:
-                if spirodelaFiltering.isDataLine(line):
+                if self.isDataLine(line):
                     line_col = str.split(line)
                     line_key = line_col[0] + ":"+line_col[1]
                     self.vcf_dict[line_key] = self.vcf_dict.get(line_key,line)

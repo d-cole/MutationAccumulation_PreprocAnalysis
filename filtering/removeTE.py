@@ -1,9 +1,18 @@
-import filteringMethods
 import sys
 #
 #TE = {Pseudo0:[(x,y),(z,l)...],Pseudo1:[(m,x)...]...}
 TE_ranges = {}
 CHROM,START,STOP = 0,1,2
+
+def isDataLine(line):
+    """
+    Determines in line contains site data
+    """
+    if len(line) > 1:
+        return line[0] != "#"
+    return False
+
+
 
 def loadTEranges(TE_file_loc):
     """
@@ -38,7 +47,7 @@ if __name__ == "__main__":
 
     with open(vcf_file_loc) as vcf_file:
         for line in vcf_file:
-            if filteringMethods.isDataLine(line):
+            if isDataLine(line):
                 if validRange(line):
                     trimmed_vcf.write(line)
                 else:
