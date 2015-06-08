@@ -41,6 +41,16 @@ invisible(lapply(sample_names,function(x) print(paste(x,NROW(all_samples[all_sam
 
 
 
+jpeg(paste("GP2-3_f4","_oddGQ.jpg",sep=""))
+plot(hist(all_samples$odd_GQ,prob=F,100),
+   main=paste("GP2-3_f4","_oddGQ",sep=""),
+   xlab="Genotype Quality")
+dev.off()
+
+
+
+
+
 
 
 
