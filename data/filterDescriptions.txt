@@ -13,4 +13,21 @@ f1:
     To pass DP filter must be in range 0.5*MedDP < x < 1.5*MedDP
     Mutant sample had to pass individual DP filter
 
+f2:
+ - f1 + remove TE regions
+ - removed sites that were inside the ranges specified by:
+    Spolyrhiza_290_v2.repeatmasked_assembly_v1_TE_intervals.txt
+    TE_intervals_jan2015_no_plastids_sorted
 
+f3:
+ - f2 + merged with ancestor
+ - For sites where ancestor was present added ancestor sample at end of samples
+    format: <GT:AD:DP>:REF/ALT
+ - For sites where ancestor was not present added "."
+
+f4:
+ - f3 + removed sites common between both genotypes
+ - Compared CC3-3_f3.vcf and GP2-3_f3.vcf and noted common sites
+    - These are sites common to both genotypes after the f3 filtering
+
+       
