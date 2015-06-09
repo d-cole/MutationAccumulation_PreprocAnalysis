@@ -1,7 +1,7 @@
 ALT,QUAL,FILTER,INFO = 4,5,6,7
-MIN_MAP_QUALITY = 0
+MIN_MAP_QUALITY = 0 
 GT,AD,DP,GQ,PL = 0,1,2,3,4;
-
+MIN_MUT_GQ = 98
 class filterMethods():
 
     def __init__(self,medianFileLoc):
@@ -91,5 +91,6 @@ class filterMethods():
         if remMut:
             if i == mutIdx:
                 return False
-
+        if int(samples[i].split(":")[GQ]) < MIN_MUT_GQ:
+            return False
         return self.validSampleDP(i,samples[i].split(":")[DP])

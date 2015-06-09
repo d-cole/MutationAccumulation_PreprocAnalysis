@@ -148,9 +148,7 @@ def writeInfo(line,outFile):
     try:
         ancestor = line_col[23]
     except:
-        
-        print line_col
-        sys.exit()
+        ancestor = "."        
     csvLine = csvLine + getAncestorInfo(ancestor)
     outFile.write(csvLine + "\n")
 

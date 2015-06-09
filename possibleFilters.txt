@@ -1,0 +1,24 @@
+MQ
+
+QD
+
+QD Rank sum
+
+Read Pos Rank sum 
+ - 
+
+Fisher strand bias
+ - outputs phred scaled p-value, higher the number, higher chance of strand bias
+
+
+SNP density
+ - Pseudo0 ~2.1+06
+ - Pseudo19 ~300,000
+ - Pseudo20 ~275,000
+ - Pseudo22 ~0 & 250,000
+ - Pseudo23 ~500,000
+ - Pseudo26 ~700,000
+
+
+Areas where ADref + ADalt < DP
+	- third base not included (see pseudo18  898407)
