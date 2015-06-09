@@ -1,17 +1,12 @@
-#Plots sample depth and distribution on chromosomes given a .csv file
 library(ggplot2)
-setwd("/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/")
-files <- list.files(path="/Users/Daniel/Documents/spirodela/data/CC3-3/vcfFiles/",
-                    pattern="*.csv",full.names=F,recursive=FALSE)
-print(files)
-remExt <- function(x,ext) {
-    #Removes the provided extension
-    return (sub(ext,"",x))
-}
+args <- commandArgs(TRUE)
 
-lapply(files,function(x) {
+
+
+
+lapply(args,function(x) {
     data<-read.csv(x,stringsAsFactors=FALSE,na.string=".")
-    name<-remExt(x,".csv")
+    name<-sub(".csv","",x)
     
     dp_data<-sapply(subset(data,select=siteDP),as.numeric)    
     #Plots depth
