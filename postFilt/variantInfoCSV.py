@@ -92,7 +92,7 @@ def getSampleString(samples):
     odd_sample = samples[odd_idx].split(":")
     
     #Add which sample was the odd one out
-    csv_string = csv_string + '"' + SAMPLES_GP[odd_idx] +'",'
+    csv_string = csv_string + '"' + SAMPLES_CC[odd_idx] +'",'
 
     #Add the cohortGT the GT that maps to 13 samples
     for key in gt_dict.keys():

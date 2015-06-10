@@ -19,7 +19,7 @@ for (s_gt in odd_GT) {
             
             #if (NROW(all_samples[all_samples$odd_GT==s_gt & all_samples$cohort_GT==c_GT,]) != 0){
             #    plotGQ(all_samples[all_samples$odd_GT==s_gt & all_samples$cohort_GT==c_GT,],paste("CC3-3_f4_","o",gsub("/",".",s_gt),":c",gsub("/",".",c_GT),".jpg",sep=""),paste("Genotype Quality: CC3-3_f4 oddGT:",s_gt,"  cohortGT:",c_GT," n = ",NROW(all_samples[all_samples$odd_GT==s_gt & all_samples$cohort_GT==c_GT,]),sep=""))
-            }
+            #}
         }
     }
 }
