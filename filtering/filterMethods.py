@@ -1,9 +1,11 @@
 ALT,QUAL,FILTER,INFO = 4,5,6,7
 MIN_MAP_QUALITY = 0 
 GT,AD,DP,GQ,PL = 0,1,2,3,4;
-MIN_MUT_GQ = 0
+MIN_MUT_GQ = 20
 HETZ='0/1'
 CHROM=0
+DELS = 5
+MAX_DELS = 0.0
 class filterMethods():
 
     def __init__(self,medianFileLoc):
@@ -38,9 +40,35 @@ class filterMethods():
         """
         if len(line) > 1:
             return line[0] != "#"
-        
 
         return False
+    
+    def validInfoValue(self,tag,info,min_bound = None,max_bound = None):
+        """
+        Returns whether the specified info value is withen the given range
+        If 'tag' is not found returns true
+        """
+        info_col = info.split(";")
+        val = None
+        val_pass = False
+
+        for inf in info_col:
+            if tag in inf:
+               val = float(inf[inf.find("=") + 1:])
+       
+        if val == None:
+            return True
+ 
+        if min_bound != None and max_bound != None:
+            return (val >= min_bound and val <= max_bound)
+
+        else:
+            if min_bound != None:
+                return val >= min_bound
+            if max_bound != None:
+                return val <= max_bound
+            else:
+                return True  
 
     def siteFiltering(self,line_col):
         """
@@ -53,7 +81,8 @@ class filterMethods():
 
         if line_col[ALT] != ".":
             return float(line_col[QUAL] >= MIN_MAP_QUALITY) and \
-                line_col[FILTER] != "LowQual"
+                line_col[FILTER] != "LowQual" and \
+                self.validInfoValue("Dels",line_col[INFO],None,None)
         return False
 
     def sampleFiltering(self,samples,remSample,mutIdx):
@@ -99,6 +128,7 @@ class filterMethods():
         if remMut:
             if i == mutIdx:
                 return False
-        if int(samples[i].split(":")[GQ]) < MIN_MUT_GQ:
+        if int(samples[i].split(":")[GQ]) <= MIN_MUT_GQ:
             return False
+
         return self.validSampleDP(i,samples[i].split(":")[DP])

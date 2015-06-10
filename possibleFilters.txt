@@ -3,8 +3,11 @@ QD
 QD Rank sum
 Read Pos Rank sum 
 
+FILTER ON DELS
+
 Fisher strand bias
  - outputs phred scaled p-value, higher the number, higher chance of strand bias
+ - depending on coverage better to use SOR (strands odds ratio)
 
 A-H  SALT
 I-P Natural
@@ -34,3 +37,16 @@ GP2-3
 
 CC3-3
  - 
+
+
+pseudo10        2845875               2819815 -> Hscore=28.3
+Haplotype = 50.31  CC3-3E
+CC3-3C
+
+
+pseudo19:3,274,869-3,274,908  (3274882)  CC3-3D
+Haplotype = 1.2914
+
+pseudo1 606676
+Hscore = 1.4132
+FS= 84
