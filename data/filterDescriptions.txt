@@ -30,4 +30,8 @@ f4:
  - Compared CC3-3_f3.vcf and GP2-3_f3.vcf and noted common sites
     - These are sites common to both genotypes after the f3 filtering
 
-       
+f5:
+ - f4 + removed sites where cohort is 0/1 
+
+f6:
+ - f5 + remove sites on pseudo0

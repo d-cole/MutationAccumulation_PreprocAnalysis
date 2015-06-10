@@ -1,7 +1,9 @@
 ALT,QUAL,FILTER,INFO = 4,5,6,7
 MIN_MAP_QUALITY = 0 
 GT,AD,DP,GQ,PL = 0,1,2,3,4;
-MIN_MUT_GQ = 98
+MIN_MUT_GQ = 0
+HETZ='0/1'
+CHROM=0
 class filterMethods():
 
     def __init__(self,medianFileLoc):
@@ -36,6 +38,8 @@ class filterMethods():
         """
         if len(line) > 1:
             return line[0] != "#"
+        
+
         return False
 
     def siteFiltering(self,line_col):
@@ -44,6 +48,9 @@ class filterMethods():
             - presence of ALT base
             - no LowQual flag
         """
+        if line_col[CHROM] == 'pseudo0':
+            return False        
+
         if line_col[ALT] != ".":
             return float(line_col[QUAL] >= MIN_MAP_QUALITY) and \
                 line_col[FILTER] != "LowQual"
@@ -72,7 +79,8 @@ class filterMethods():
             return False
 
         if (1 in gt_counts.values() and 13 in gt_counts.values()):
-            return self.filterMutant(gt_counts,samples,remSample,mutIdx)
+            if gt_counts.get(HETZ,0) != 13:
+                return self.filterMutant(gt_counts,samples,remSample,mutIdx)
 
         return False
 

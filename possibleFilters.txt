@@ -1,15 +1,13 @@
 MQ
-
 QD
-
 QD Rank sum
-
 Read Pos Rank sum 
- - 
 
 Fisher strand bias
  - outputs phred scaled p-value, higher the number, higher chance of strand bias
 
+A-H  SALT
+I-P Natural
 
 SNP density
  - Pseudo0 ~2.1+06
@@ -19,6 +17,20 @@ SNP density
  - Pseudo23 ~500,000
  - Pseudo26 ~700,000
 
-
 Areas where ADref + ADalt < DP
 	- third base not included (see pseudo18  898407)
+
+ADalt / ADaltSUM -> 1
+   - purity
+
+Genotype Quality cutoffs
+  -where next most likely is 0/0
+
+NEW SNP plots
+GP2-3
+ - pseudo 14 2e+06
+ - pseudo 17 2000000
+ - pseudo 19 400000
+
+CC3-3
+ - 
