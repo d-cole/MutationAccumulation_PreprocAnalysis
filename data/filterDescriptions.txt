@@ -35,3 +35,6 @@ f5:
 
 f6:
  - f5 + remove sites on pseudo0
+
+f7:
+ - f6 + removed all sites where 'mutant' had GQ < 20
