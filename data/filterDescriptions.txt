@@ -31,10 +31,13 @@ f4:
     - These are sites common to both genotypes after the f3 filtering
 
 f5:
- - f4 + removed sites where cohort is not 0/0
+ - f4 + removed sites where cohort was 0/1
 
 f6:
  - f5 + remove sites on pseudo0
 
 f7:
  - f6 + removed all sites where 'mutant' had GQ < 20
+
+f8:
+ - removed all sites where mutant was not 0/1 and cohort was not 0/0
