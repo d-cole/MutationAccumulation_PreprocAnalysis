@@ -77,8 +77,8 @@ def getSampleString(samples):
         s_col = samples[i].split(":")
         gt = s_col[GT]
         ad_split = s_col[AD].split(",")
-        ad_alt = float(ad_split[0])
-        ad_ref = float(ad_split[1])
+        ad_alt = float(ad_split[1])
+        ad_ref = float(ad_split[0])
 
         ad_alt_sum = ad_alt_sum + ad_alt
         ad_ref_sum = ad_ref_sum + ad_ref
@@ -100,7 +100,7 @@ def getSampleString(samples):
             csv_string = csv_string + '"' + key + '"' + ','
 
     #Add ADalt and ADref to csv string
-    csv_string = csv_string + '"' + odd_sample[AD].split(",")[0] + '","' + odd_sample[AD].split(",")[1] + '",'
+    csv_string = csv_string + '"' + odd_sample[AD].split(",")[1] + '","' + odd_sample[AD].split(",")[0] + '",'
 
     #add ADaltSum and ADrefSum to the csv_string
     csv_string = csv_string + '"' + str(ad_alt_sum) + '",' + '"' + str(ad_ref_sum) + '",'

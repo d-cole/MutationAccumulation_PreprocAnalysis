@@ -16,22 +16,14 @@ if(length(args) < 1) {
   cat("Please specify location of .csv file")
 }
 all_samples<-read.csv(args,stringsAsFactors=FALSE,na.string=".")
-
 all_samples <- transform(all_samples,alt_ADvADSum = AD_alt/AD_altSum)
-all_samples <- transform(all_samples,ref_ADvADsum = AD_ref/AD_refSum)
-#print(head(all_samples))
-#jpeg(paste("CC3-3_f4","_ADvADSum.jpg",sep=""))
-#plot(hist(all_samples[all_samples$odd_GT=='0/1' & all_samples$cohort_GT=='0/0',]$ADvADSum,prob=F,100),
-#   main=paste("CC3-3_f4","_ADvADSum",sep=""),
-#   xlab="mutant AD alt / AD Sum")
-#dev.off()
+print(head(all_samples))
 
-print(class(all_samples[all_samples$odd_GT=='0/1' & all_samples$cohort_GT=='1/1',]$ref_ADvADsum))
-case_AD <- (all_samples[all_samples$odd_GT=='0/1' & all_samples$cohort_GT=='1/1',]$ref_ADvADsum)
-
-jpeg("CC3-3_f4_o0.1_c1.1_ADref.ADrefSum.jpg")
-plot(hist(case_AD,prob=F),
-    main="CC3-3_f4 oddGT:0/1 cohort:1/1 (Odd AD ref)/(AD ref Sum)",xlab="Odd AD ref)/(AD alt Ref)")
+case_AD <- (all_samples[all_samples$odd_GT=='0/1' & all_samples$cohort_GT=='0/0',all_samples$alt_ADvADsum])
+str(case_AD)
+jpeg("CC3-3_f7_o0.1_c0.0_ADalt.ADaltSum.jpg")
+plot(hist((all_samples$AD_alt/all_samples$AD_altSum),prob=F,50),
+    main="CC3-3_f7 (Mutant alt reads) / (Sum of alt reads)",xlab="(Odd AD alt)/(AD alt Sum)")
 dev.off()
 
 
