@@ -1,0 +1,7 @@
+Everyone homozygous ref + mutant case
+Passed all filters
+Disregarded pseudo0
+TE removal
+
+158Mb Spirodela polyrhiza
+
