@@ -1,1296 +1,387 @@
-[1] "cor:  AC AC"
-[1] NA
-[1] "cov:  AC AC"
-[1] 0
-[1] "cor:  AC AF"
-[1] NA
-[1] "cov:  AC AF"
-[1] 0
-[1] "cor:  AC AN"
-[1] NA
-[1] "cov:  AC AN"
-[1] 0
-[1] "cor:  AC BaseQRankSum"
-[1] NA
-[1] "cov:  AC BaseQRankSum"
-[1] 0
-[1] "cor:  AC siteDP"
-[1] NA
-[1] "cov:  AC siteDP"
-[1] 0
-[1] "cor:  AC Dels"
-[1] NA
-[1] "cov:  AC Dels"
-[1] 0
-[1] "cor:  AC FS"
-[1] NA
-[1] "cov:  AC FS"
-[1] 0
-[1] "cor:  AC HaplotypeScore"
-[1] NA
-[1] "cov:  AC HaplotypeScore"
-[1] 0
-[1] "cor:  AC InbreedingCoeff"
-[1] NA
-[1] "cov:  AC InbreedingCoeff"
-[1] 0
-[1] "cor:  AC MLEAC"
-[1] NA
-[1] "cov:  AC MLEAC"
-[1] 0
-[1] "cor:  AC MLEAF"
-[1] NA
-[1] "cov:  AC MLEAF"
-[1] 0
-[1] "cor:  AC MQ"
-[1] NA
-[1] "cov:  AC MQ"
-[1] 0
-[1] "cor:  AC MQ0"
-[1] NA
-[1] "cov:  AC MQ0"
-[1] 0
-[1] "cor:  AC MQRankSum"
-[1] NA
-[1] "cov:  AC MQRankSum"
-[1] 0
-[1] "cor:  AC QD"
-[1] NA
-[1] "cov:  AC QD"
-[1] 0
-[1] "cor:  AC ReadPosRankSum"
-[1] NA
-[1] "cov:  AC ReadPosRankSum"
-[1] 0
-[1] "cor:  AC SOR"
-[1] NA
-[1] "cov:  AC SOR"
-[1] 0
-[1] "cor:  AC mAltvAltSum"
-[1] NA
-[1] "cov:  AC mAltvAltSum"
-[1] 0
-[1] "cor:  AF AC"
-[1] NA
-[1] "cov:  AF AC"
-[1] 0
-[1] "cor:  AF AF"
-[1] NA
-[1] "cov:  AF AF"
-[1] 0
-[1] "cor:  AF AN"
-[1] NA
-[1] "cov:  AF AN"
-[1] 0
-[1] "cor:  AF BaseQRankSum"
-[1] NA
-[1] "cov:  AF BaseQRankSum"
-[1] 0
-[1] "cor:  AF siteDP"
-[1] NA
-[1] "cov:  AF siteDP"
-[1] 0
-[1] "cor:  AF Dels"
-[1] NA
-[1] "cov:  AF Dels"
-[1] 0
-[1] "cor:  AF FS"
-[1] NA
-[1] "cov:  AF FS"
-[1] 0
-[1] "cor:  AF HaplotypeScore"
-[1] NA
-[1] "cov:  AF HaplotypeScore"
-[1] 0
-[1] "cor:  AF InbreedingCoeff"
-[1] NA
-[1] "cov:  AF InbreedingCoeff"
-[1] 0
-[1] "cor:  AF MLEAC"
-[1] NA
-[1] "cov:  AF MLEAC"
-[1] 0
-[1] "cor:  AF MLEAF"
-[1] NA
-[1] "cov:  AF MLEAF"
-[1] 0
-[1] "cor:  AF MQ"
-[1] NA
-[1] "cov:  AF MQ"
-[1] 0
-[1] "cor:  AF MQ0"
-[1] NA
-[1] "cov:  AF MQ0"
-[1] 0
-[1] "cor:  AF MQRankSum"
-[1] NA
-[1] "cov:  AF MQRankSum"
-[1] 0
-[1] "cor:  AF QD"
-[1] NA
-[1] "cov:  AF QD"
-[1] 0
-[1] "cor:  AF ReadPosRankSum"
-[1] NA
-[1] "cov:  AF ReadPosRankSum"
-[1] 0
-[1] "cor:  AF SOR"
-[1] NA
-[1] "cov:  AF SOR"
-[1] 0
-[1] "cor:  AF mAltvAltSum"
-[1] NA
-[1] "cov:  AF mAltvAltSum"
-[1] 0
-[1] "cor:  AN AC"
-[1] NA
-[1] "cov:  AN AC"
-[1] 0
-[1] "cor:  AN AF"
-[1] NA
-[1] "cov:  AN AF"
-[1] 0
-[1] "cor:  AN AN"
-[1] NA
-[1] "cov:  AN AN"
-[1] 0
-[1] "cor:  AN BaseQRankSum"
-[1] NA
-[1] "cov:  AN BaseQRankSum"
-[1] 0
-[1] "cor:  AN siteDP"
-[1] NA
-[1] "cov:  AN siteDP"
-[1] 0
-[1] "cor:  AN Dels"
-[1] NA
-[1] "cov:  AN Dels"
-[1] 0
-[1] "cor:  AN FS"
-[1] NA
-[1] "cov:  AN FS"
-[1] 0
-[1] "cor:  AN HaplotypeScore"
-[1] NA
-[1] "cov:  AN HaplotypeScore"
-[1] 0
-[1] "cor:  AN InbreedingCoeff"
-[1] NA
-[1] "cov:  AN InbreedingCoeff"
-[1] 0
-[1] "cor:  AN MLEAC"
-[1] NA
-[1] "cov:  AN MLEAC"
-[1] 0
-[1] "cor:  AN MLEAF"
-[1] NA
-[1] "cov:  AN MLEAF"
-[1] 0
-[1] "cor:  AN MQ"
-[1] NA
-[1] "cov:  AN MQ"
-[1] 0
-[1] "cor:  AN MQ0"
-[1] NA
-[1] "cov:  AN MQ0"
-[1] 0
-[1] "cor:  AN MQRankSum"
-[1] NA
-[1] "cov:  AN MQRankSum"
-[1] 0
-[1] "cor:  AN QD"
-[1] NA
-[1] "cov:  AN QD"
-[1] 0
-[1] "cor:  AN ReadPosRankSum"
-[1] NA
-[1] "cov:  AN ReadPosRankSum"
-[1] 0
-[1] "cor:  AN SOR"
-[1] NA
-[1] "cov:  AN SOR"
-[1] 0
-[1] "cor:  AN mAltvAltSum"
-[1] NA
-[1] "cov:  AN mAltvAltSum"
-[1] 0
-[1] "cor:  BaseQRankSum AC"
-[1] NA
-[1] "cov:  BaseQRankSum AC"
-[1] 0
-[1] "cor:  BaseQRankSum AF"
-[1] NA
-[1] "cov:  BaseQRankSum AF"
-[1] 0
-[1] "cor:  BaseQRankSum AN"
-[1] NA
-[1] "cov:  BaseQRankSum AN"
-[1] 0
-[1] "cor:  BaseQRankSum BaseQRankSum"
-[1] 1
-[1] "cov:  BaseQRankSum BaseQRankSum"
-[1] 3.427924
-[1] "cor:  BaseQRankSum siteDP"
-[1] -0.2381067
-[1] "cov:  BaseQRankSum siteDP"
-[1] -35.43905
-[1] "cor:  BaseQRankSum Dels"
-[1] -0.335928
-[1] "cov:  BaseQRankSum Dels"
-[1] -0.03306491
-[1] "cor:  BaseQRankSum FS"
-[1] -0.335928
-[1] "cov:  BaseQRankSum FS"
-[1] -0.03306491
-[1] "cor:  BaseQRankSum HaplotypeScore"
-[1] -0.2868468
-[1] "cov:  BaseQRankSum HaplotypeScore"
-[1] -15.8006
-[1] "cor:  BaseQRankSum InbreedingCoeff"
-[1] 0.118543
-[1] "cov:  BaseQRankSum InbreedingCoeff"
-[1] 0.001822473
-[1] "cor:  BaseQRankSum MLEAC"
-[1] NA
-[1] "cov:  BaseQRankSum MLEAC"
-[1] 0
-[1] "cor:  BaseQRankSum MLEAF"
-[1] NA
-[1] "cov:  BaseQRankSum MLEAF"
-[1] 0
-[1] "cor:  BaseQRankSum MQ"
-[1] 0.09064781
-[1] "cov:  BaseQRankSum MQ"
-[1] 1.406532
-[1] "cor:  BaseQRankSum MQ0"
-[1] -0.1218463
-[1] "cov:  BaseQRankSum MQ0"
-[1] -2.218948
-[1] "cor:  BaseQRankSum MQRankSum"
-[1] 0.1517035
-[1] "cov:  BaseQRankSum MQRankSum"
-[1] 0.9428691
-[1] "cor:  BaseQRankSum QD"
-[1] 0.09429559
-[1] "cov:  BaseQRankSum QD"
-[1] 0.259729
-[1] "cor:  BaseQRankSum ReadPosRankSum"
-[1] 0.2281056
-[1] "cov:  BaseQRankSum ReadPosRankSum"
-[1] 0.8139897
-[1] "cor:  BaseQRankSum SOR"
-[1] -0.05327099
-[1] "cov:  BaseQRankSum SOR"
-[1] -0.1329284
-[1] "cor:  BaseQRankSum mAltvAltSum"
-[1] 0.2777261
-[1] "cov:  BaseQRankSum mAltvAltSum"
-[1] 0.1508295
-[1] "cor:  siteDP AC"
-[1] NA
-[1] "cov:  siteDP AC"
-[1] 0
-[1] "cor:  siteDP AF"
-[1] NA
-[1] "cov:  siteDP AF"
-[1] 0
-[1] "cor:  siteDP AN"
-[1] NA
-[1] "cov:  siteDP AN"
-[1] 0
-[1] "cor:  siteDP BaseQRankSum"
-[1] -0.2381067
-[1] "cov:  siteDP BaseQRankSum"
-[1] -35.43905
-[1] "cor:  siteDP siteDP"
-[1] 1
-[1] "cov:  siteDP siteDP"
-[1] 6462.34
-[1] "cor:  siteDP Dels"
-[1] 0.5728325
-[1] "cov:  siteDP Dels"
-[1] 2.448094
-[1] "cor:  siteDP FS"
-[1] 0.5728325
-[1] "cov:  siteDP FS"
-[1] 2.448094
-[1] "cor:  siteDP HaplotypeScore"
-[1] 0.6281819
-[1] "cov:  siteDP HaplotypeScore"
-[1] 1502.409
-[1] "cor:  siteDP InbreedingCoeff"
-[1] -0.07650174
-[1] "cov:  siteDP InbreedingCoeff"
-[1] -0.05106647
-[1] "cor:  siteDP MLEAC"
-[1] NA
-[1] "cov:  siteDP MLEAC"
-[1] 0
-[1] "cor:  siteDP MLEAF"
-[1] NA
-[1] "cov:  siteDP MLEAF"
-[1] 0
-[1] "cor:  siteDP MQ"
-[1] -0.2573718
-[1] "cov:  siteDP MQ"
-[1] -173.3934
-[1] "cor:  siteDP MQ0"
-[1] 0.4481959
-[1] "cov:  siteDP MQ0"
-[1] 354.3905
-[1] "cor:  siteDP MQRankSum"
-[1] -0.4068104
-[1] "cov:  siteDP MQRankSum"
-[1] -109.781
-[1] "cor:  siteDP QD"
-[1] -0.1540093
-[1] "cov:  siteDP QD"
-[1] -18.41855
-[1] "cor:  siteDP ReadPosRankSum"
-[1] -0.06480126
-[1] "cov:  siteDP ReadPosRankSum"
-[1] -10.04028
-[1] "cor:  siteDP SOR"
-[1] -0.0840324
-[1] "cov:  siteDP SOR"
-[1] -9.104436
-[1] "cor:  siteDP mAltvAltSum"
-[1] -0.3265115
-[1] "cov:  siteDP mAltvAltSum"
-[1] -7.699233
-[1] "cor:  Dels AC"
-[1] NA
-[1] "cov:  Dels AC"
-[1] 0
-[1] "cor:  Dels AF"
-[1] NA
-[1] "cov:  Dels AF"
-[1] 0
-[1] "cor:  Dels AN"
-[1] NA
-[1] "cov:  Dels AN"
-[1] 0
-[1] "cor:  Dels BaseQRankSum"
-[1] -0.335928
-[1] "cov:  Dels BaseQRankSum"
-[1] -0.03306491
-[1] "cor:  Dels siteDP"
-[1] 0.5728325
-[1] "cov:  Dels siteDP"
-[1] 2.448094
-[1] "cor:  Dels Dels"
-[1] 1
-[1] "cov:  Dels Dels"
-[1] 0.002826253
-[1] "cor:  Dels FS"
-[1] 1
-[1] "cov:  Dels FS"
-[1] 0.002826253
-[1] "cor:  Dels HaplotypeScore"
-[1] 0.7728353
-[1] "cov:  Dels HaplotypeScore"
-[1] 1.222363
-[1] "cor:  Dels InbreedingCoeff"
-[1] -0.1168888
-[1] "cov:  Dels InbreedingCoeff"
-[1] -5.159982e-05
-[1] "cor:  Dels MLEAC"
-[1] NA
-[1] "cov:  Dels MLEAC"
-[1] 0
-[1] "cor:  Dels MLEAF"
-[1] NA
-[1] "cov:  Dels MLEAF"
-[1] 0
-[1] "cor:  Dels MQ"
-[1] -0.2936399
-[1] "cov:  Dels MQ"
-[1] -0.1308269
-[1] "cor:  Dels MQ0"
-[1] 0.3232849
-[1] "cov:  Dels MQ0"
-[1] 0.1690481
-[1] "cor:  Dels MQRankSum"
-[1] -0.1730907
-[1] "cov:  Dels MQRankSum"
-[1] -0.0308901
-[1] "cor:  Dels QD"
-[1] -0.0960434
-[1] "cov:  Dels QD"
-[1] -0.007596025
-[1] "cor:  Dels ReadPosRankSum"
-[1] -0.07222021
-[1] "cov:  Dels ReadPosRankSum"
-[1] -0.007399999
-[1] "cor:  Dels SOR"
-[1] -0.02981877
-[1] "cov:  Dels SOR"
-[1] -0.002136518
-[1] "cor:  Dels mAltvAltSum"
-[1] -0.2290789
-[1] "cov:  Dels mAltvAltSum"
-[1] -0.003572273
-[1] "cor:  FS AC"
-[1] NA
-[1] "cov:  FS AC"
-[1] 0
-[1] "cor:  FS AF"
-[1] NA
-[1] "cov:  FS AF"
-[1] 0
-[1] "cor:  FS AN"
-[1] NA
-[1] "cov:  FS AN"
-[1] 0
-[1] "cor:  FS BaseQRankSum"
-[1] -0.335928
-[1] "cov:  FS BaseQRankSum"
-[1] -0.03306491
-[1] "cor:  FS siteDP"
-[1] 0.5728325
-[1] "cov:  FS siteDP"
-[1] 2.448094
-[1] "cor:  FS Dels"
-[1] 1
-[1] "cov:  FS Dels"
-[1] 0.002826253
-[1] "cor:  FS FS"
-[1] 1
-[1] "cov:  FS FS"
-[1] 0.002826253
-[1] "cor:  FS HaplotypeScore"
-[1] 0.7728353
-[1] "cov:  FS HaplotypeScore"
-[1] 1.222363
-[1] "cor:  FS InbreedingCoeff"
-[1] -0.1168888
-[1] "cov:  FS InbreedingCoeff"
-[1] -5.159982e-05
-[1] "cor:  FS MLEAC"
-[1] NA
-[1] "cov:  FS MLEAC"
-[1] 0
-[1] "cor:  FS MLEAF"
-[1] NA
-[1] "cov:  FS MLEAF"
-[1] 0
-[1] "cor:  FS MQ"
-[1] -0.2936399
-[1] "cov:  FS MQ"
-[1] -0.1308269
-[1] "cor:  FS MQ0"
-[1] 0.3232849
-[1] "cov:  FS MQ0"
-[1] 0.1690481
-[1] "cor:  FS MQRankSum"
-[1] -0.1730907
-[1] "cov:  FS MQRankSum"
-[1] -0.0308901
-[1] "cor:  FS QD"
-[1] -0.0960434
-[1] "cov:  FS QD"
-[1] -0.007596025
-[1] "cor:  FS ReadPosRankSum"
-[1] -0.07222021
-[1] "cov:  FS ReadPosRankSum"
-[1] -0.007399999
-[1] "cor:  FS SOR"
-[1] -0.02981877
-[1] "cov:  FS SOR"
-[1] -0.002136518
-[1] "cor:  FS mAltvAltSum"
-[1] -0.2290789
-[1] "cov:  FS mAltvAltSum"
-[1] -0.003572273
-[1] "cor:  HaplotypeScore AC"
-[1] NA
-[1] "cov:  HaplotypeScore AC"
-[1] 0
-[1] "cor:  HaplotypeScore AF"
-[1] NA
-[1] "cov:  HaplotypeScore AF"
-[1] 0
-[1] "cor:  HaplotypeScore AN"
-[1] NA
-[1] "cov:  HaplotypeScore AN"
-[1] 0
-[1] "cor:  HaplotypeScore BaseQRankSum"
-[1] -0.2868468
-[1] "cov:  HaplotypeScore BaseQRankSum"
-[1] -15.8006
-[1] "cor:  HaplotypeScore siteDP"
-[1] 0.6281819
-[1] "cov:  HaplotypeScore siteDP"
-[1] 1502.409
-[1] "cor:  HaplotypeScore Dels"
-[1] 0.7728353
-[1] "cov:  HaplotypeScore Dels"
-[1] 1.222363
-[1] "cor:  HaplotypeScore FS"
-[1] 0.7728353
-[1] "cov:  HaplotypeScore FS"
-[1] 1.222363
-[1] "cor:  HaplotypeScore HaplotypeScore"
-[1] 1
-[1] "cov:  HaplotypeScore HaplotypeScore"
-[1] 885.1476
-[1] "cor:  HaplotypeScore InbreedingCoeff"
-[1] -0.1101735
-[1] "cov:  HaplotypeScore InbreedingCoeff"
-[1] -0.02721791
-[1] "cor:  HaplotypeScore MLEAC"
-[1] NA
-[1] "cov:  HaplotypeScore MLEAC"
-[1] 0
-[1] "cor:  HaplotypeScore MLEAF"
-[1] NA
-[1] "cov:  HaplotypeScore MLEAF"
-[1] 0
-[1] "cor:  HaplotypeScore MQ"
-[1] -0.341122
-[1] "cov:  HaplotypeScore MQ"
-[1] -85.05388
-[1] "cor:  HaplotypeScore MQ0"
-[1] 0.3083829
-[1] "cov:  HaplotypeScore MQ0"
-[1] 90.24382
-[1] "cor:  HaplotypeScore MQRankSum"
-[1] -0.1031258
-[1] "cov:  HaplotypeScore MQRankSum"
-[1] -10.29948
-[1] "cor:  HaplotypeScore QD"
-[1] -0.04334596
-[1] "cov:  HaplotypeScore QD"
-[1] -1.918535
-[1] "cor:  HaplotypeScore ReadPosRankSum"
-[1] -0.05005973
-[1] "cov:  HaplotypeScore ReadPosRankSum"
-[1] -2.870541
-[1] "cor:  HaplotypeScore SOR"
-[1] 0.01455568
-[1] "cov:  HaplotypeScore SOR"
-[1] 0.5836488
-[1] "cor:  HaplotypeScore mAltvAltSum"
-[1] -0.2402033
-[1] "cov:  HaplotypeScore mAltvAltSum"
-[1] -2.09624
-[1] "cor:  InbreedingCoeff AC"
-[1] NA
-[1] "cov:  InbreedingCoeff AC"
-[1] 0
-[1] "cor:  InbreedingCoeff AF"
-[1] NA
-[1] "cov:  InbreedingCoeff AF"
-[1] 0
-[1] "cor:  InbreedingCoeff AN"
-[1] NA
-[1] "cov:  InbreedingCoeff AN"
-[1] 0
-[1] "cor:  InbreedingCoeff BaseQRankSum"
-[1] 0.118543
-[1] "cov:  InbreedingCoeff BaseQRankSum"
-[1] 0.001822473
-[1] "cor:  InbreedingCoeff siteDP"
-[1] -0.07650174
-[1] "cov:  InbreedingCoeff siteDP"
-[1] -0.05106647
-[1] "cor:  InbreedingCoeff Dels"
-[1] -0.1168888
-[1] "cov:  InbreedingCoeff Dels"
-[1] -5.159982e-05
-[1] "cor:  InbreedingCoeff FS"
-[1] -0.1168888
-[1] "cov:  InbreedingCoeff FS"
-[1] -5.159982e-05
-[1] "cor:  InbreedingCoeff HaplotypeScore"
-[1] -0.1101735
-[1] "cov:  InbreedingCoeff HaplotypeScore"
-[1] -0.02721791
-[1] "cor:  InbreedingCoeff InbreedingCoeff"
-[1] 1
-[1] "cov:  InbreedingCoeff InbreedingCoeff"
-[1] 6.895078e-05
-[1] "cor:  InbreedingCoeff MLEAC"
-[1] NA
-[1] "cov:  InbreedingCoeff MLEAC"
-[1] 0
-[1] "cor:  InbreedingCoeff MLEAF"
-[1] NA
-[1] "cov:  InbreedingCoeff MLEAF"
-[1] 0
-[1] "cor:  InbreedingCoeff MQ"
-[1] 0.1580329
-[1] "cov:  InbreedingCoeff MQ"
-[1] 0.0109975
-[1] "cor:  InbreedingCoeff MQ0"
-[1] -0.06666187
-[1] "cov:  InbreedingCoeff MQ0"
-[1] -0.005444605
-[1] "cor:  InbreedingCoeff MQRankSum"
-[1] 0.3376018
-[1] "cov:  InbreedingCoeff MQRankSum"
-[1] 0.009410538
-[1] "cor:  InbreedingCoeff QD"
-[1] 0.04423909
-[1] "cov:  InbreedingCoeff QD"
-[1] 0.0005464987
-[1] "cor:  InbreedingCoeff ReadPosRankSum"
-[1] -0.005628606
-[1] "cov:  InbreedingCoeff ReadPosRankSum"
-[1] -9.008197e-05
-[1] "cor:  InbreedingCoeff SOR"
-[1] -0.1826206
-[1] "cov:  InbreedingCoeff SOR"
-[1] -0.002043764
-[1] "cor:  InbreedingCoeff mAltvAltSum"
-[1] 0.4990678
-[1] "cov:  InbreedingCoeff mAltvAltSum"
-[1] 0.001215579
-[1] "cor:  MLEAC AC"
-[1] NA
-[1] "cov:  MLEAC AC"
-[1] 0
-[1] "cor:  MLEAC AF"
-[1] NA
-[1] "cov:  MLEAC AF"
-[1] 0
-[1] "cor:  MLEAC AN"
-[1] NA
-[1] "cov:  MLEAC AN"
-[1] 0
-[1] "cor:  MLEAC BaseQRankSum"
-[1] NA
-[1] "cov:  MLEAC BaseQRankSum"
-[1] 0
-[1] "cor:  MLEAC siteDP"
-[1] NA
-[1] "cov:  MLEAC siteDP"
-[1] 0
-[1] "cor:  MLEAC Dels"
-[1] NA
-[1] "cov:  MLEAC Dels"
-[1] 0
-[1] "cor:  MLEAC FS"
-[1] NA
-[1] "cov:  MLEAC FS"
-[1] 0
-[1] "cor:  MLEAC HaplotypeScore"
-[1] NA
-[1] "cov:  MLEAC HaplotypeScore"
-[1] 0
-[1] "cor:  MLEAC InbreedingCoeff"
-[1] NA
-[1] "cov:  MLEAC InbreedingCoeff"
-[1] 0
-[1] "cor:  MLEAC MLEAC"
-[1] NA
-[1] "cov:  MLEAC MLEAC"
-[1] 0
-[1] "cor:  MLEAC MLEAF"
-[1] NA
-[1] "cov:  MLEAC MLEAF"
-[1] 0
-[1] "cor:  MLEAC MQ"
-[1] NA
-[1] "cov:  MLEAC MQ"
-[1] 0
-[1] "cor:  MLEAC MQ0"
-[1] NA
-[1] "cov:  MLEAC MQ0"
-[1] 0
-[1] "cor:  MLEAC MQRankSum"
-[1] NA
-[1] "cov:  MLEAC MQRankSum"
-[1] 0
-[1] "cor:  MLEAC QD"
-[1] NA
-[1] "cov:  MLEAC QD"
-[1] 0
-[1] "cor:  MLEAC ReadPosRankSum"
-[1] NA
-[1] "cov:  MLEAC ReadPosRankSum"
-[1] 0
-[1] "cor:  MLEAC SOR"
-[1] NA
-[1] "cov:  MLEAC SOR"
-[1] 0
-[1] "cor:  MLEAC mAltvAltSum"
-[1] NA
-[1] "cov:  MLEAC mAltvAltSum"
-[1] 0
-[1] "cor:  MLEAF AC"
-[1] NA
-[1] "cov:  MLEAF AC"
-[1] 0
-[1] "cor:  MLEAF AF"
-[1] NA
-[1] "cov:  MLEAF AF"
-[1] 0
-[1] "cor:  MLEAF AN"
-[1] NA
-[1] "cov:  MLEAF AN"
-[1] 0
-[1] "cor:  MLEAF BaseQRankSum"
-[1] NA
-[1] "cov:  MLEAF BaseQRankSum"
-[1] 0
-[1] "cor:  MLEAF siteDP"
-[1] NA
-[1] "cov:  MLEAF siteDP"
-[1] 0
-[1] "cor:  MLEAF Dels"
-[1] NA
-[1] "cov:  MLEAF Dels"
-[1] 0
-[1] "cor:  MLEAF FS"
-[1] NA
-[1] "cov:  MLEAF FS"
-[1] 0
-[1] "cor:  MLEAF HaplotypeScore"
-[1] NA
-[1] "cov:  MLEAF HaplotypeScore"
-[1] 0
-[1] "cor:  MLEAF InbreedingCoeff"
-[1] NA
-[1] "cov:  MLEAF InbreedingCoeff"
-[1] 0
-[1] "cor:  MLEAF MLEAC"
-[1] NA
-[1] "cov:  MLEAF MLEAC"
-[1] 0
-[1] "cor:  MLEAF MLEAF"
-[1] NA
-[1] "cov:  MLEAF MLEAF"
-[1] 0
-[1] "cor:  MLEAF MQ"
-[1] NA
-[1] "cov:  MLEAF MQ"
-[1] 0
-[1] "cor:  MLEAF MQ0"
-[1] NA
-[1] "cov:  MLEAF MQ0"
-[1] 0
-[1] "cor:  MLEAF MQRankSum"
-[1] NA
-[1] "cov:  MLEAF MQRankSum"
-[1] 0
-[1] "cor:  MLEAF QD"
-[1] NA
-[1] "cov:  MLEAF QD"
-[1] 0
-[1] "cor:  MLEAF ReadPosRankSum"
-[1] NA
-[1] "cov:  MLEAF ReadPosRankSum"
-[1] 0
-[1] "cor:  MLEAF SOR"
-[1] NA
-[1] "cov:  MLEAF SOR"
-[1] 0
-[1] "cor:  MLEAF mAltvAltSum"
-[1] NA
-[1] "cov:  MLEAF mAltvAltSum"
-[1] 0
-[1] "cor:  MQ AC"
-[1] NA
-[1] "cov:  MQ AC"
-[1] 0
-[1] "cor:  MQ AF"
-[1] NA
-[1] "cov:  MQ AF"
-[1] 0
-[1] "cor:  MQ AN"
-[1] NA
-[1] "cov:  MQ AN"
-[1] 0
-[1] "cor:  MQ BaseQRankSum"
-[1] 0.09064781
-[1] "cov:  MQ BaseQRankSum"
-[1] 1.406532
-[1] "cor:  MQ siteDP"
-[1] -0.2573718
-[1] "cov:  MQ siteDP"
-[1] -173.3934
-[1] "cor:  MQ Dels"
-[1] -0.2936399
-[1] "cov:  MQ Dels"
-[1] -0.1308269
-[1] "cor:  MQ FS"
-[1] -0.2936399
-[1] "cov:  MQ FS"
-[1] -0.1308269
-[1] "cor:  MQ HaplotypeScore"
-[1] -0.341122
-[1] "cov:  MQ HaplotypeScore"
-[1] -85.05388
-[1] "cor:  MQ InbreedingCoeff"
-[1] 0.1580329
-[1] "cov:  MQ InbreedingCoeff"
-[1] 0.0109975
-[1] "cor:  MQ MLEAC"
-[1] NA
-[1] "cov:  MQ MLEAC"
-[1] 0
-[1] "cor:  MQ MLEAF"
-[1] NA
-[1] "cov:  MQ MLEAF"
-[1] 0
-[1] "cor:  MQ MQ"
-[1] 1
-[1] "cov:  MQ MQ"
-[1] 70.23493
-[1] "cor:  MQ MQ0"
-[1] -0.4191936
-[1] "cov:  MQ MQ0"
-[1] -34.55497
-[1] "cor:  MQ MQRankSum"
-[1] 0.1066218
-[1] "cov:  MQ MQRankSum"
-[1] 2.999595
-[1] "cor:  MQ QD"
-[1] 0.01380272
-[1] "cov:  MQ QD"
-[1] 0.1720896
-[1] "cor:  MQ ReadPosRankSum"
-[1] -0.08398213
-[1] "cov:  MQ ReadPosRankSum"
-[1] -1.356535
-[1] "cor:  MQ SOR"
-[1] -0.1683036
-[1] "cov:  MQ SOR"
-[1] -1.900997
-[1] "cor:  MQ mAltvAltSum"
-[1] 0.3055136
-[1] "cov:  MQ mAltvAltSum"
-[1] 0.751037
-[1] "cor:  MQ0 AC"
-[1] NA
-[1] "cov:  MQ0 AC"
-[1] 0
-[1] "cor:  MQ0 AF"
-[1] NA
-[1] "cov:  MQ0 AF"
-[1] 0
-[1] "cor:  MQ0 AN"
-[1] NA
-[1] "cov:  MQ0 AN"
-[1] 0
-[1] "cor:  MQ0 BaseQRankSum"
-[1] -0.1218463
-[1] "cov:  MQ0 BaseQRankSum"
-[1] -2.218948
-[1] "cor:  MQ0 siteDP"
-[1] 0.4481959
-[1] "cov:  MQ0 siteDP"
-[1] 354.3905
-[1] "cor:  MQ0 Dels"
-[1] 0.3232849
-[1] "cov:  MQ0 Dels"
-[1] 0.1690481
-[1] "cor:  MQ0 FS"
-[1] 0.3232849
-[1] "cov:  MQ0 FS"
-[1] 0.1690481
-[1] "cor:  MQ0 HaplotypeScore"
-[1] 0.3083829
-[1] "cov:  MQ0 HaplotypeScore"
-[1] 90.24382
-[1] "cor:  MQ0 InbreedingCoeff"
-[1] -0.06666187
-[1] "cov:  MQ0 InbreedingCoeff"
-[1] -0.005444605
-[1] "cor:  MQ0 MLEAC"
-[1] NA
-[1] "cov:  MQ0 MLEAC"
-[1] 0
-[1] "cor:  MQ0 MLEAF"
-[1] NA
-[1] "cov:  MQ0 MLEAF"
-[1] 0
-[1] "cor:  MQ0 MQ"
-[1] -0.4191936
-[1] "cov:  MQ0 MQ"
-[1] -34.55497
-[1] "cor:  MQ0 MQ0"
-[1] 1
-[1] "cov:  MQ0 MQ0"
-[1] 96.74724
-[1] "cor:  MQ0 MQRankSum"
-[1] -0.2883872
-[1] "cov:  MQ0 MQRankSum"
-[1] -9.522155
-[1] "cor:  MQ0 QD"
-[1] -0.02305563
-[1] "cov:  MQ0 QD"
-[1] -0.3373726
-[1] "cor:  MQ0 ReadPosRankSum"
-[1] 0.1182323
-[1] "cov:  MQ0 ReadPosRankSum"
-[1] 2.241418
-[1] "cor:  MQ0 SOR"
-[1] -0.101037
-[1] "cov:  MQ0 SOR"
-[1] -1.339402
-[1] "cor:  MQ0 mAltvAltSum"
-[1] -0.2950479
-[1] "cov:  MQ0 mAltvAltSum"
-[1] -0.8512673
-[1] "cor:  MQRankSum AC"
-[1] NA
-[1] "cov:  MQRankSum AC"
-[1] 0
-[1] "cor:  MQRankSum AF"
-[1] NA
-[1] "cov:  MQRankSum AF"
-[1] 0
-[1] "cor:  MQRankSum AN"
-[1] NA
-[1] "cov:  MQRankSum AN"
-[1] 0
-[1] "cor:  MQRankSum BaseQRankSum"
-[1] 0.1517035
-[1] "cov:  MQRankSum BaseQRankSum"
-[1] 0.9428691
-[1] "cor:  MQRankSum siteDP"
-[1] -0.4068104
-[1] "cov:  MQRankSum siteDP"
-[1] -109.781
-[1] "cor:  MQRankSum Dels"
-[1] -0.1730907
-[1] "cov:  MQRankSum Dels"
-[1] -0.0308901
-[1] "cor:  MQRankSum FS"
-[1] -0.1730907
-[1] "cov:  MQRankSum FS"
-[1] -0.0308901
-[1] "cor:  MQRankSum HaplotypeScore"
-[1] -0.1031258
-[1] "cov:  MQRankSum HaplotypeScore"
-[1] -10.29948
-[1] "cor:  MQRankSum InbreedingCoeff"
-[1] 0.3376018
-[1] "cov:  MQRankSum InbreedingCoeff"
-[1] 0.009410538
-[1] "cor:  MQRankSum MLEAC"
-[1] NA
-[1] "cov:  MQRankSum MLEAC"
-[1] 0
-[1] "cor:  MQRankSum MLEAF"
-[1] NA
-[1] "cov:  MQRankSum MLEAF"
-[1] 0
-[1] "cor:  MQRankSum MQ"
-[1] 0.1066218
-[1] "cov:  MQRankSum MQ"
-[1] 2.999595
-[1] "cor:  MQRankSum MQ0"
-[1] -0.2883872
-[1] "cov:  MQRankSum MQ0"
-[1] -9.522155
-[1] "cor:  MQRankSum MQRankSum"
-[1] 1
-[1] "cov:  MQRankSum MQRankSum"
-[1] 11.26886
-[1] "cor:  MQRankSum QD"
-[1] 0.02518212
-[1] "cov:  MQRankSum QD"
-[1] 0.1257609
-[1] "cor:  MQRankSum ReadPosRankSum"
-[1] -0.009860003
-[1] "cov:  MQRankSum ReadPosRankSum"
-[1] -0.06379469
-[1] "cor:  MQRankSum SOR"
-[1] -0.01795473
-[1] "cov:  MQRankSum SOR"
-[1] -0.08123261
-[1] "cor:  MQRankSum mAltvAltSum"
-[1] 0.5924978
-[1] "cov:  MQRankSum mAltvAltSum"
-[1] 0.5834194
-[1] "cor:  QD AC"
-[1] NA
-[1] "cov:  QD AC"
-[1] 0
-[1] "cor:  QD AF"
-[1] NA
-[1] "cov:  QD AF"
-[1] 0
-[1] "cor:  QD AN"
-[1] NA
-[1] "cov:  QD AN"
-[1] 0
-[1] "cor:  QD BaseQRankSum"
-[1] 0.09429559
-[1] "cov:  QD BaseQRankSum"
-[1] 0.259729
-[1] "cor:  QD siteDP"
-[1] -0.1540093
-[1] "cov:  QD siteDP"
-[1] -18.41855
-[1] "cor:  QD Dels"
-[1] -0.0960434
-[1] "cov:  QD Dels"
-[1] -0.007596025
-[1] "cor:  QD FS"
-[1] -0.0960434
-[1] "cov:  QD FS"
-[1] -0.007596025
-[1] "cor:  QD HaplotypeScore"
-[1] -0.04334596
-[1] "cov:  QD HaplotypeScore"
-[1] -1.918535
-[1] "cor:  QD InbreedingCoeff"
-[1] 0.04423909
-[1] "cov:  QD InbreedingCoeff"
-[1] 0.0005464987
-[1] "cor:  QD MLEAC"
-[1] NA
-[1] "cov:  QD MLEAC"
-[1] 0
-[1] "cor:  QD MLEAF"
-[1] NA
-[1] "cov:  QD MLEAF"
-[1] 0
-[1] "cor:  QD MQ"
-[1] 0.01380272
-[1] "cov:  QD MQ"
-[1] 0.1720896
-[1] "cor:  QD MQ0"
-[1] -0.02305563
-[1] "cov:  QD MQ0"
-[1] -0.3373726
-[1] "cor:  QD MQRankSum"
-[1] 0.02518212
-[1] "cov:  QD MQRankSum"
-[1] 0.1257609
-[1] "cor:  QD QD"
-[1] 1
-[1] "cov:  QD QD"
-[1] 2.213231
-[1] "cor:  QD ReadPosRankSum"
-[1] 0.06921315
-[1] "cov:  QD ReadPosRankSum"
-[1] 0.1984584
-[1] "cor:  QD SOR"
-[1] -0.04568107
-[1] "cov:  QD SOR"
-[1] -0.09159272
-[1] "cor:  QD mAltvAltSum"
-[1] 0.1719284
-[1] "cov:  QD mAltvAltSum"
-[1] 0.07502658
-[1] "cor:  ReadPosRankSum AC"
-[1] NA
-[1] "cov:  ReadPosRankSum AC"
-[1] 0
-[1] "cor:  ReadPosRankSum AF"
-[1] NA
-[1] "cov:  ReadPosRankSum AF"
-[1] 0
-[1] "cor:  ReadPosRankSum AN"
-[1] NA
-[1] "cov:  ReadPosRankSum AN"
-[1] 0
-[1] "cor:  ReadPosRankSum BaseQRankSum"
-[1] 0.2281056
-[1] "cov:  ReadPosRankSum BaseQRankSum"
-[1] 0.8139897
-[1] "cor:  ReadPosRankSum siteDP"
-[1] -0.06480126
-[1] "cov:  ReadPosRankSum siteDP"
-[1] -10.04028
-[1] "cor:  ReadPosRankSum Dels"
-[1] -0.07222021
-[1] "cov:  ReadPosRankSum Dels"
-[1] -0.007399999
-[1] "cor:  ReadPosRankSum FS"
-[1] -0.07222021
-[1] "cov:  ReadPosRankSum FS"
-[1] -0.007399999
-[1] "cor:  ReadPosRankSum HaplotypeScore"
-[1] -0.05005973
-[1] "cov:  ReadPosRankSum HaplotypeScore"
-[1] -2.870541
-[1] "cor:  ReadPosRankSum InbreedingCoeff"
-[1] -0.005628606
-[1] "cov:  ReadPosRankSum InbreedingCoeff"
-[1] -9.008197e-05
-[1] "cor:  ReadPosRankSum MLEAC"
-[1] NA
-[1] "cov:  ReadPosRankSum MLEAC"
-[1] 0
-[1] "cor:  ReadPosRankSum MLEAF"
-[1] NA
-[1] "cov:  ReadPosRankSum MLEAF"
-[1] 0
-[1] "cor:  ReadPosRankSum MQ"
-[1] -0.08398213
-[1] "cov:  ReadPosRankSum MQ"
-[1] -1.356535
-[1] "cor:  ReadPosRankSum MQ0"
-[1] 0.1182323
-[1] "cov:  ReadPosRankSum MQ0"
-[1] 2.241418
-[1] "cor:  ReadPosRankSum MQRankSum"
-[1] -0.009860003
-[1] "cov:  ReadPosRankSum MQRankSum"
-[1] -0.06379469
-[1] "cor:  ReadPosRankSum QD"
-[1] 0.06921315
-[1] "cov:  ReadPosRankSum QD"
-[1] 0.1984584
-[1] "cor:  ReadPosRankSum ReadPosRankSum"
-[1] 1
-[1] "cov:  ReadPosRankSum ReadPosRankSum"
-[1] 3.714795
-[1] "cor:  ReadPosRankSum SOR"
-[1] 0.1118676
-[1] "cov:  ReadPosRankSum SOR"
-[1] 0.2905916
-[1] "cor:  ReadPosRankSum mAltvAltSum"
-[1] 0.05504897
-[1] "cov:  ReadPosRankSum mAltvAltSum"
-[1] 0.03112223
-[1] "cor:  SOR AC"
-[1] NA
-[1] "cov:  SOR AC"
-[1] 0
-[1] "cor:  SOR AF"
-[1] NA
-[1] "cov:  SOR AF"
-[1] 0
-[1] "cor:  SOR AN"
-[1] NA
-[1] "cov:  SOR AN"
-[1] 0
-[1] "cor:  SOR BaseQRankSum"
-[1] -0.05327099
-[1] "cov:  SOR BaseQRankSum"
-[1] -0.1329284
-[1] "cor:  SOR siteDP"
-[1] -0.0840324
-[1] "cov:  SOR siteDP"
-[1] -9.104436
-[1] "cor:  SOR Dels"
-[1] -0.02981877
-[1] "cov:  SOR Dels"
-[1] -0.002136518
-[1] "cor:  SOR FS"
-[1] -0.02981877
-[1] "cov:  SOR FS"
-[1] -0.002136518
-[1] "cor:  SOR HaplotypeScore"
-[1] 0.01455568
-[1] "cov:  SOR HaplotypeScore"
-[1] 0.5836488
-[1] "cor:  SOR InbreedingCoeff"
-[1] -0.1826206
-[1] "cov:  SOR InbreedingCoeff"
-[1] -0.002043764
-[1] "cor:  SOR MLEAC"
-[1] NA
-[1] "cov:  SOR MLEAC"
-[1] 0
-[1] "cor:  SOR MLEAF"
-[1] NA
-[1] "cov:  SOR MLEAF"
-[1] 0
-[1] "cor:  SOR MQ"
-[1] -0.1683036
-[1] "cov:  SOR MQ"
-[1] -1.900997
-[1] "cor:  SOR MQ0"
-[1] -0.101037
-[1] "cov:  SOR MQ0"
-[1] -1.339402
-[1] "cor:  SOR MQRankSum"
-[1] -0.01795473
-[1] "cov:  SOR MQRankSum"
-[1] -0.08123261
-[1] "cor:  SOR QD"
-[1] -0.04568107
-[1] "cov:  SOR QD"
-[1] -0.09159272
-[1] "cor:  SOR ReadPosRankSum"
-[1] 0.1118676
-[1] "cov:  SOR ReadPosRankSum"
-[1] 0.2905916
-[1] "cor:  SOR SOR"
-[1] 1
-[1] "cov:  SOR SOR"
-[1] 1.816447
-[1] "cor:  SOR mAltvAltSum"
-[1] -0.2297299
-[1] "cov:  SOR mAltvAltSum"
-[1] -0.09082031
-[1] "cor:  mAltvAltSum AC"
-[1] NA
-[1] "cov:  mAltvAltSum AC"
-[1] 0
-[1] "cor:  mAltvAltSum AF"
-[1] NA
-[1] "cov:  mAltvAltSum AF"
-[1] 0
-[1] "cor:  mAltvAltSum AN"
-[1] NA
-[1] "cov:  mAltvAltSum AN"
-[1] 0
-[1] "cor:  mAltvAltSum BaseQRankSum"
-[1] 0.2777261
-[1] "cov:  mAltvAltSum BaseQRankSum"
-[1] 0.1508295
-[1] "cor:  mAltvAltSum siteDP"
-[1] -0.3265115
-[1] "cov:  mAltvAltSum siteDP"
-[1] -7.699233
-[1] "cor:  mAltvAltSum Dels"
-[1] -0.2290789
-[1] "cov:  mAltvAltSum Dels"
-[1] -0.003572273
-[1] "cor:  mAltvAltSum FS"
-[1] -0.2290789
-[1] "cov:  mAltvAltSum FS"
-[1] -0.003572273
-[1] "cor:  mAltvAltSum HaplotypeScore"
-[1] -0.2402033
-[1] "cov:  mAltvAltSum HaplotypeScore"
-[1] -2.09624
-[1] "cor:  mAltvAltSum InbreedingCoeff"
-[1] 0.4990678
-[1] "cov:  mAltvAltSum InbreedingCoeff"
-[1] 0.001215579
-[1] "cor:  mAltvAltSum MLEAC"
-[1] NA
-[1] "cov:  mAltvAltSum MLEAC"
-[1] 0
-[1] "cor:  mAltvAltSum MLEAF"
-[1] NA
-[1] "cov:  mAltvAltSum MLEAF"
-[1] 0
-[1] "cor:  mAltvAltSum MQ"
-[1] 0.3055136
-[1] "cov:  mAltvAltSum MQ"
-[1] 0.751037
-[1] "cor:  mAltvAltSum MQ0"
-[1] -0.2950479
-[1] "cov:  mAltvAltSum MQ0"
-[1] -0.8512673
-[1] "cor:  mAltvAltSum MQRankSum"
-[1] 0.5924978
-[1] "cov:  mAltvAltSum MQRankSum"
-[1] 0.5834194
-[1] "cor:  mAltvAltSum QD"
-[1] 0.1719284
-[1] "cov:  mAltvAltSum QD"
-[1] 0.07502658
-[1] "cor:  mAltvAltSum ReadPosRankSum"
-[1] 0.05504897
-[1] "cov:  mAltvAltSum ReadPosRankSum"
-[1] 0.03112223
-[1] "cor:  mAltvAltSum SOR"
-[1] -0.2297299
-[1] "cov:  mAltvAltSum SOR"
-[1] -0.09082031
-[1] "cor:  mAltvAltSum mAltvAltSum"
-[1] 1
-[1] "cov:  mAltvAltSum mAltvAltSum"
-[1] 0.08604155
+           varID   CHROM    POS REF ALT  QUAL FILTER AC    AF AN BaseQRankSum
+1  pseudo1:10420 pseudo1  10420   C   T 49.55     NA  1 0.036 28       -0.843
+2  pseudo1:10800 pseudo1  10800   T   C 46.50     NA  1 0.036 28        1.754
+3  pseudo1:11208 pseudo1  11208   A   G 90.50     NA  1 0.036 28        1.581
+4  pseudo1:11234 pseudo1  11234   G   A 33.50     NA  1 0.036 28        1.635
+5 pseudo1:422214 pseudo1 422214   G   T 39.50     NA  1 0.036 28        0.185
+6 pseudo1:443504 pseudo1 443504   A   G 41.50     NA  1 0.036 28       -1.442
+  siteDP Dels     FS HaplotypeScore InbreedingCoeff MLEAC MLEAF    MQ MQ0
+1    268    0  1.783         0.4900         -0.0400     1 0.036 87.88   1
+2    423    0 11.945         0.7583         -0.0371     1 0.036 91.08   0
+3    395    0 22.591         0.6839         -0.0372     1 0.036 95.78   0
+4    377    0 25.696         0.4918         -0.0371     1 0.036 96.58   0
+5    375    0  0.000         0.2119         -0.0370     1 0.036 98.76   0
+6    325    0 10.002         1.3209         -0.0373     1 0.036 95.86   2
+  MQRankSum   QD ReadPosRankSum   SOR odd_GT odd_sample cohort_GT AD_alt AD_ref
+1    -5.147 2.36          0.730 1.027    0/1    CC3-3_G       0/0      5     16
+2    -7.249 1.94          1.565 5.726    0/1    CC3-3_O       0/0      5     19
+3    -7.309 3.62          1.794 2.854    0/1    CC3-3_F       0/0      6     19
+4    -6.055 1.46         -1.811 4.975    0/1    CC3-3_F       0/0      4     19
+5    -1.372 2.47          0.115 0.382    0/1    CC3-3_K       0/0      3     13
+6    -5.055 2.31          0.138 3.421    0/1    CC3-3_F       0/0      5     13
+  AD_altSum AD_refSum odd_GQ    odd_PL Anc_GT              Anc_sample
+1        12       255     85  85,0,529    C/T   0/0:12,1:13:7:0,7,466
+2        20       402     82  82,0,683    T/C   0/0:11,1:12:0:0,0,432
+3        21       374     99 126,0,634    A/G 0/1:10,2:12:44:44,0,347
+4        13       364     69  69,0,671   <NA>                    <NA>
+5         4       370     75  75,0,445    G/.               0/0:14:14
+6         9       315     77  77,0,405    A/.               0/0:11:11
+           varID   CHROM    POS REF ALT  QUAL FILTER AC    AF AN BaseQRankSum
+1  pseudo1:10420 pseudo1  10420   C   T 49.55     NA  1 0.036 28       -0.843
+2  pseudo1:10800 pseudo1  10800   T   C 46.50     NA  1 0.036 28        1.754
+3  pseudo1:11208 pseudo1  11208   A   G 90.50     NA  1 0.036 28        1.581
+4  pseudo1:11234 pseudo1  11234   G   A 33.50     NA  1 0.036 28        1.635
+5 pseudo1:422214 pseudo1 422214   G   T 39.50     NA  1 0.036 28        0.185
+6 pseudo1:443504 pseudo1 443504   A   G 41.50     NA  1 0.036 28       -1.442
+  siteDP Dels     FS HaplotypeScore InbreedingCoeff MLEAC MLEAF    MQ MQ0
+1    268    0  1.783         0.4900         -0.0400     1 0.036 87.88   1
+2    423    0 11.945         0.7583         -0.0371     1 0.036 91.08   0
+3    395    0 22.591         0.6839         -0.0372     1 0.036 95.78   0
+4    377    0 25.696         0.4918         -0.0371     1 0.036 96.58   0
+5    375    0  0.000         0.2119         -0.0370     1 0.036 98.76   0
+6    325    0 10.002         1.3209         -0.0373     1 0.036 95.86   2
+  MQRankSum   QD ReadPosRankSum   SOR odd_GT odd_sample cohort_GT AD_alt AD_ref
+1    -5.147 2.36          0.730 1.027    0/1    CC3-3_G       0/0      5     16
+2    -7.249 1.94          1.565 5.726    0/1    CC3-3_O       0/0      5     19
+3    -7.309 3.62          1.794 2.854    0/1    CC3-3_F       0/0      6     19
+4    -6.055 1.46         -1.811 4.975    0/1    CC3-3_F       0/0      4     19
+5    -1.372 2.47          0.115 0.382    0/1    CC3-3_K       0/0      3     13
+6    -5.055 2.31          0.138 3.421    0/1    CC3-3_F       0/0      5     13
+  AD_altSum AD_refSum odd_GQ    odd_PL Anc_GT              Anc_sample
+1        12       255     85  85,0,529    C/T   0/0:12,1:13:7:0,7,466
+2        20       402     82  82,0,683    T/C   0/0:11,1:12:0:0,0,432
+3        21       374     99 126,0,634    A/G 0/1:10,2:12:44:44,0,347
+4        13       364     69  69,0,671   <NA>                    <NA>
+5         4       370     75  75,0,445    G/.               0/0:14:14
+6         9       315     77  77,0,405    A/.               0/0:11:11
+  mAltvAltSum
+1   0.4166667
+2   0.2500000
+3   0.2857143
+4   0.3076923
+5   0.7500000
+6   0.5555556
+cor:  AC AC:  [1] NA
+cor:  AC AF:  [1] NA
+cor:  AC AN:  [1] NA
+cor:  AC BaseQRankSum:  [1] NA
+cor:  AC siteDP:  [1] NA
+cor:  AC Dels:  [1] NA
+cor:  AC FS:  [1] NA
+cor:  AC HaplotypeScore:  [1] NA
+cor:  AC InbreedingCoeff:  [1] NA
+cor:  AC MLEAC:  [1] NA
+cor:  AC MLEAF:  [1] NA
+cor:  AC MQ:  [1] NA
+cor:  AC MQ0:  [1] NA
+cor:  AC MQRankSum:  [1] NA
+cor:  AC QD:  [1] NA
+cor:  AC ReadPosRankSum:  [1] NA
+cor:  AC SOR:  [1] NA
+cor:  AC mAltvAltSum:  [1] NA
+cor:  AF AC:  [1] NA
+cor:  AF AF:  [1] NA
+cor:  AF AN:  [1] NA
+cor:  AF BaseQRankSum:  [1] NA
+cor:  AF siteDP:  [1] NA
+cor:  AF Dels:  [1] NA
+cor:  AF FS:  [1] NA
+cor:  AF HaplotypeScore:  [1] NA
+cor:  AF InbreedingCoeff:  [1] NA
+cor:  AF MLEAC:  [1] NA
+cor:  AF MLEAF:  [1] NA
+cor:  AF MQ:  [1] NA
+cor:  AF MQ0:  [1] NA
+cor:  AF MQRankSum:  [1] NA
+cor:  AF QD:  [1] NA
+cor:  AF ReadPosRankSum:  [1] NA
+cor:  AF SOR:  [1] NA
+cor:  AF mAltvAltSum:  [1] NA
+cor:  AN AC:  [1] NA
+cor:  AN AF:  [1] NA
+cor:  AN AN:  [1] NA
+cor:  AN BaseQRankSum:  [1] NA
+cor:  AN siteDP:  [1] NA
+cor:  AN Dels:  [1] NA
+cor:  AN FS:  [1] NA
+cor:  AN HaplotypeScore:  [1] NA
+cor:  AN InbreedingCoeff:  [1] NA
+cor:  AN MLEAC:  [1] NA
+cor:  AN MLEAF:  [1] NA
+cor:  AN MQ:  [1] NA
+cor:  AN MQ0:  [1] NA
+cor:  AN MQRankSum:  [1] NA
+cor:  AN QD:  [1] NA
+cor:  AN ReadPosRankSum:  [1] NA
+cor:  AN SOR:  [1] NA
+cor:  AN mAltvAltSum:  [1] NA
+cor:  BaseQRankSum AC:  [1] NA
+cor:  BaseQRankSum AF:  [1] NA
+cor:  BaseQRankSum AN:  [1] NA
+cor:  BaseQRankSum BaseQRankSum:  [1] 1
+cor:  BaseQRankSum siteDP:  [1] -0.2381067
+cor:  BaseQRankSum Dels:  [1] -0.335928
+cor:  BaseQRankSum FS:  [1] -0.08756568
+cor:  BaseQRankSum HaplotypeScore:  [1] -0.2868468
+cor:  BaseQRankSum InbreedingCoeff:  [1] 0.118543
+cor:  BaseQRankSum MLEAC:  [1] NA
+cor:  BaseQRankSum MLEAF:  [1] NA
+cor:  BaseQRankSum MQ:  [1] 0.09064781
+cor:  BaseQRankSum MQ0:  [1] -0.1218463
+cor:  BaseQRankSum MQRankSum:  [1] 0.1517035
+cor:  BaseQRankSum QD:  [1] 0.09429559
+cor:  BaseQRankSum ReadPosRankSum:  [1] 0.2281056
+cor:  BaseQRankSum SOR:  [1] -0.05327099
+cor:  BaseQRankSum mAltvAltSum:  [1] 0.2777261
+cor:  siteDP AC:  [1] NA
+cor:  siteDP AF:  [1] NA
+cor:  siteDP AN:  [1] NA
+cor:  siteDP BaseQRankSum:  [1] -0.2381067
+cor:  siteDP siteDP:  [1] 1
+cor:  siteDP Dels:  [1] 0.5728325
+cor:  siteDP FS:  [1] -0.07037924
+cor:  siteDP HaplotypeScore:  [1] 0.6281819
+cor:  siteDP InbreedingCoeff:  [1] -0.07650174
+cor:  siteDP MLEAC:  [1] NA
+cor:  siteDP MLEAF:  [1] NA
+cor:  siteDP MQ:  [1] -0.2573718
+cor:  siteDP MQ0:  [1] 0.4481959
+cor:  siteDP MQRankSum:  [1] -0.4068104
+cor:  siteDP QD:  [1] -0.1540093
+cor:  siteDP ReadPosRankSum:  [1] -0.06480126
+cor:  siteDP SOR:  [1] -0.0840324
+cor:  siteDP mAltvAltSum:  [1] -0.3265115
+cor:  Dels AC:  [1] NA
+cor:  Dels AF:  [1] NA
+cor:  Dels AN:  [1] NA
+cor:  Dels BaseQRankSum:  [1] -0.335928
+cor:  Dels siteDP:  [1] 0.5728325
+cor:  Dels Dels:  [1] 1
+cor:  Dels FS:  [1] -0.003599588
+cor:  Dels HaplotypeScore:  [1] 0.7728353
+cor:  Dels InbreedingCoeff:  [1] -0.1168888
+cor:  Dels MLEAC:  [1] NA
+cor:  Dels MLEAF:  [1] NA
+cor:  Dels MQ:  [1] -0.2936399
+cor:  Dels MQ0:  [1] 0.3232849
+cor:  Dels MQRankSum:  [1] -0.1730907
+cor:  Dels QD:  [1] -0.0960434
+cor:  Dels ReadPosRankSum:  [1] -0.07222021
+cor:  Dels SOR:  [1] -0.02981877
+cor:  Dels mAltvAltSum:  [1] -0.2290789
+cor:  FS AC:  [1] NA
+cor:  FS AF:  [1] NA
+cor:  FS AN:  [1] NA
+cor:  FS BaseQRankSum:  [1] -0.08756568
+cor:  FS siteDP:  [1] -0.07037924
+cor:  FS Dels:  [1] -0.003599588
+cor:  FS FS:  [1] 1
+cor:  FS HaplotypeScore:  [1] 0.004417085
+cor:  FS InbreedingCoeff:  [1] -0.3062849
+cor:  FS MLEAC:  [1] NA
+cor:  FS MLEAF:  [1] NA
+cor:  FS MQ:  [1] -0.1150855
+cor:  FS MQ0:  [1] -0.07122368
+cor:  FS MQRankSum:  [1] -0.1480266
+cor:  FS QD:  [1] -0.03174223
+cor:  FS ReadPosRankSum:  [1] 0.04458992
+cor:  FS SOR:  [1] 0.8613504
+cor:  FS mAltvAltSum:  [1] -0.356397
+cor:  HaplotypeScore AC:  [1] NA
+cor:  HaplotypeScore AF:  [1] NA
+cor:  HaplotypeScore AN:  [1] NA
+cor:  HaplotypeScore BaseQRankSum:  [1] -0.2868468
+cor:  HaplotypeScore siteDP:  [1] 0.6281819
+cor:  HaplotypeScore Dels:  [1] 0.7728353
+cor:  HaplotypeScore FS:  [1] 0.004417085
+cor:  HaplotypeScore HaplotypeScore:  [1] 1
+cor:  HaplotypeScore InbreedingCoeff:  [1] -0.1101735
+cor:  HaplotypeScore MLEAC:  [1] NA
+cor:  HaplotypeScore MLEAF:  [1] NA
+cor:  HaplotypeScore MQ:  [1] -0.341122
+cor:  HaplotypeScore MQ0:  [1] 0.3083829
+cor:  HaplotypeScore MQRankSum:  [1] -0.1031258
+cor:  HaplotypeScore QD:  [1] -0.04334596
+cor:  HaplotypeScore ReadPosRankSum:  [1] -0.05005973
+cor:  HaplotypeScore SOR:  [1] 0.01455568
+cor:  HaplotypeScore mAltvAltSum:  [1] -0.2402033
+cor:  InbreedingCoeff AC:  [1] NA
+cor:  InbreedingCoeff AF:  [1] NA
+cor:  InbreedingCoeff AN:  [1] NA
+cor:  InbreedingCoeff BaseQRankSum:  [1] 0.118543
+cor:  InbreedingCoeff siteDP:  [1] -0.07650174
+cor:  InbreedingCoeff Dels:  [1] -0.1168888
+cor:  InbreedingCoeff FS:  [1] -0.3062849
+cor:  InbreedingCoeff HaplotypeScore:  [1] -0.1101735
+cor:  InbreedingCoeff InbreedingCoeff:  [1] 1
+cor:  InbreedingCoeff MLEAC:  [1] NA
+cor:  InbreedingCoeff MLEAF:  [1] NA
+cor:  InbreedingCoeff MQ:  [1] 0.1580329
+cor:  InbreedingCoeff MQ0:  [1] -0.06666187
+cor:  InbreedingCoeff MQRankSum:  [1] 0.3376018
+cor:  InbreedingCoeff QD:  [1] 0.04423909
+cor:  InbreedingCoeff ReadPosRankSum:  [1] -0.005628606
+cor:  InbreedingCoeff SOR:  [1] -0.1826206
+cor:  InbreedingCoeff mAltvAltSum:  [1] 0.4990678
+cor:  MLEAC AC:  [1] NA
+cor:  MLEAC AF:  [1] NA
+cor:  MLEAC AN:  [1] NA
+cor:  MLEAC BaseQRankSum:  [1] NA
+cor:  MLEAC siteDP:  [1] NA
+cor:  MLEAC Dels:  [1] NA
+cor:  MLEAC FS:  [1] NA
+cor:  MLEAC HaplotypeScore:  [1] NA
+cor:  MLEAC InbreedingCoeff:  [1] NA
+cor:  MLEAC MLEAC:  [1] NA
+cor:  MLEAC MLEAF:  [1] NA
+cor:  MLEAC MQ:  [1] NA
+cor:  MLEAC MQ0:  [1] NA
+cor:  MLEAC MQRankSum:  [1] NA
+cor:  MLEAC QD:  [1] NA
+cor:  MLEAC ReadPosRankSum:  [1] NA
+cor:  MLEAC SOR:  [1] NA
+cor:  MLEAC mAltvAltSum:  [1] NA
+cor:  MLEAF AC:  [1] NA
+cor:  MLEAF AF:  [1] NA
+cor:  MLEAF AN:  [1] NA
+cor:  MLEAF BaseQRankSum:  [1] NA
+cor:  MLEAF siteDP:  [1] NA
+cor:  MLEAF Dels:  [1] NA
+cor:  MLEAF FS:  [1] NA
+cor:  MLEAF HaplotypeScore:  [1] NA
+cor:  MLEAF InbreedingCoeff:  [1] NA
+cor:  MLEAF MLEAC:  [1] NA
+cor:  MLEAF MLEAF:  [1] NA
+cor:  MLEAF MQ:  [1] NA
+cor:  MLEAF MQ0:  [1] NA
+cor:  MLEAF MQRankSum:  [1] NA
+cor:  MLEAF QD:  [1] NA
+cor:  MLEAF ReadPosRankSum:  [1] NA
+cor:  MLEAF SOR:  [1] NA
+cor:  MLEAF mAltvAltSum:  [1] NA
+cor:  MQ AC:  [1] NA
+cor:  MQ AF:  [1] NA
+cor:  MQ AN:  [1] NA
+cor:  MQ BaseQRankSum:  [1] 0.09064781
+cor:  MQ siteDP:  [1] -0.2573718
+cor:  MQ Dels:  [1] -0.2936399
+cor:  MQ FS:  [1] -0.1150855
+cor:  MQ HaplotypeScore:  [1] -0.341122
+cor:  MQ InbreedingCoeff:  [1] 0.1580329
+cor:  MQ MLEAC:  [1] NA
+cor:  MQ MLEAF:  [1] NA
+cor:  MQ MQ:  [1] 1
+cor:  MQ MQ0:  [1] -0.4191936
+cor:  MQ MQRankSum:  [1] 0.1066218
+cor:  MQ QD:  [1] 0.01380272
+cor:  MQ ReadPosRankSum:  [1] -0.08398213
+cor:  MQ SOR:  [1] -0.1683036
+cor:  MQ mAltvAltSum:  [1] 0.3055136
+cor:  MQ0 AC:  [1] NA
+cor:  MQ0 AF:  [1] NA
+cor:  MQ0 AN:  [1] NA
+cor:  MQ0 BaseQRankSum:  [1] -0.1218463
+cor:  MQ0 siteDP:  [1] 0.4481959
+cor:  MQ0 Dels:  [1] 0.3232849
+cor:  MQ0 FS:  [1] -0.07122368
+cor:  MQ0 HaplotypeScore:  [1] 0.3083829
+cor:  MQ0 InbreedingCoeff:  [1] -0.06666187
+cor:  MQ0 MLEAC:  [1] NA
+cor:  MQ0 MLEAF:  [1] NA
+cor:  MQ0 MQ:  [1] -0.4191936
+cor:  MQ0 MQ0:  [1] 1
+cor:  MQ0 MQRankSum:  [1] -0.2883872
+cor:  MQ0 QD:  [1] -0.02305563
+cor:  MQ0 ReadPosRankSum:  [1] 0.1182323
+cor:  MQ0 SOR:  [1] -0.101037
+cor:  MQ0 mAltvAltSum:  [1] -0.2950479
+cor:  MQRankSum AC:  [1] NA
+cor:  MQRankSum AF:  [1] NA
+cor:  MQRankSum AN:  [1] NA
+cor:  MQRankSum BaseQRankSum:  [1] 0.1517035
+cor:  MQRankSum siteDP:  [1] -0.4068104
+cor:  MQRankSum Dels:  [1] -0.1730907
+cor:  MQRankSum FS:  [1] -0.1480266
+cor:  MQRankSum HaplotypeScore:  [1] -0.1031258
+cor:  MQRankSum InbreedingCoeff:  [1] 0.3376018
+cor:  MQRankSum MLEAC:  [1] NA
+cor:  MQRankSum MLEAF:  [1] NA
+cor:  MQRankSum MQ:  [1] 0.1066218
+cor:  MQRankSum MQ0:  [1] -0.2883872
+cor:  MQRankSum MQRankSum:  [1] 1
+cor:  MQRankSum QD:  [1] 0.02518212
+cor:  MQRankSum ReadPosRankSum:  [1] -0.009860003
+cor:  MQRankSum SOR:  [1] -0.01795473
+cor:  MQRankSum mAltvAltSum:  [1] 0.5924978
+cor:  QD AC:  [1] NA
+cor:  QD AF:  [1] NA
+cor:  QD AN:  [1] NA
+cor:  QD BaseQRankSum:  [1] 0.09429559
+cor:  QD siteDP:  [1] -0.1540093
+cor:  QD Dels:  [1] -0.0960434
+cor:  QD FS:  [1] -0.03174223
+cor:  QD HaplotypeScore:  [1] -0.04334596
+cor:  QD InbreedingCoeff:  [1] 0.04423909
+cor:  QD MLEAC:  [1] NA
+cor:  QD MLEAF:  [1] NA
+cor:  QD MQ:  [1] 0.01380272
+cor:  QD MQ0:  [1] -0.02305563
+cor:  QD MQRankSum:  [1] 0.02518212
+cor:  QD QD:  [1] 1
+cor:  QD ReadPosRankSum:  [1] 0.06921315
+cor:  QD SOR:  [1] -0.04568107
+cor:  QD mAltvAltSum:  [1] 0.1719284
+cor:  ReadPosRankSum AC:  [1] NA
+cor:  ReadPosRankSum AF:  [1] NA
+cor:  ReadPosRankSum AN:  [1] NA
+cor:  ReadPosRankSum BaseQRankSum:  [1] 0.2281056
+cor:  ReadPosRankSum siteDP:  [1] -0.06480126
+cor:  ReadPosRankSum Dels:  [1] -0.07222021
+cor:  ReadPosRankSum FS:  [1] 0.04458992
+cor:  ReadPosRankSum HaplotypeScore:  [1] -0.05005973
+cor:  ReadPosRankSum InbreedingCoeff:  [1] -0.005628606
+cor:  ReadPosRankSum MLEAC:  [1] NA
+cor:  ReadPosRankSum MLEAF:  [1] NA
+cor:  ReadPosRankSum MQ:  [1] -0.08398213
+cor:  ReadPosRankSum MQ0:  [1] 0.1182323
+cor:  ReadPosRankSum MQRankSum:  [1] -0.009860003
+cor:  ReadPosRankSum QD:  [1] 0.06921315
+cor:  ReadPosRankSum ReadPosRankSum:  [1] 1
+cor:  ReadPosRankSum SOR:  [1] 0.1118676
+cor:  ReadPosRankSum mAltvAltSum:  [1] 0.05504897
+cor:  SOR AC:  [1] NA
+cor:  SOR AF:  [1] NA
+cor:  SOR AN:  [1] NA
+cor:  SOR BaseQRankSum:  [1] -0.05327099
+cor:  SOR siteDP:  [1] -0.0840324
+cor:  SOR Dels:  [1] -0.02981877
+cor:  SOR FS:  [1] 0.8613504
+cor:  SOR HaplotypeScore:  [1] 0.01455568
+cor:  SOR InbreedingCoeff:  [1] -0.1826206
+cor:  SOR MLEAC:  [1] NA
+cor:  SOR MLEAF:  [1] NA
+cor:  SOR MQ:  [1] -0.1683036
+cor:  SOR MQ0:  [1] -0.101037
+cor:  SOR MQRankSum:  [1] -0.01795473
+cor:  SOR QD:  [1] -0.04568107
+cor:  SOR ReadPosRankSum:  [1] 0.1118676
+cor:  SOR SOR:  [1] 1
+cor:  SOR mAltvAltSum:  [1] -0.2297299
+cor:  mAltvAltSum AC:  [1] NA
+cor:  mAltvAltSum AF:  [1] NA
+cor:  mAltvAltSum AN:  [1] NA
+cor:  mAltvAltSum BaseQRankSum:  [1] 0.2777261
+cor:  mAltvAltSum siteDP:  [1] -0.3265115
+cor:  mAltvAltSum Dels:  [1] -0.2290789
+cor:  mAltvAltSum FS:  [1] -0.356397
+cor:  mAltvAltSum HaplotypeScore:  [1] -0.2402033
+cor:  mAltvAltSum InbreedingCoeff:  [1] 0.4990678
+cor:  mAltvAltSum MLEAC:  [1] NA
+cor:  mAltvAltSum MLEAF:  [1] NA
+cor:  mAltvAltSum MQ:  [1] 0.3055136
+cor:  mAltvAltSum MQ0:  [1] -0.2950479
+cor:  mAltvAltSum MQRankSum:  [1] 0.5924978
+cor:  mAltvAltSum QD:  [1] 0.1719284
+cor:  mAltvAltSum ReadPosRankSum:  [1] 0.05504897
+cor:  mAltvAltSum SOR:  [1] -0.2297299
+cor:  mAltvAltSum mAltvAltSum:  [1] 1

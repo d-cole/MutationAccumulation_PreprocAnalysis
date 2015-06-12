@@ -5,12 +5,14 @@ Creates a .csv file with the variant information
 """
 
 #SAMPLE INDICES
-GT,AD,DP,GQ,PL = 0,1,2,3,4
+GT,AD,sDP,GQ,PL = 0,1,2,3,4
 
 HETZ = "0/1"
 MIN_GQ = 60
 INFO = 7
 MIN_ALT_READ = 3
+
+
 
 #INFO INDICES
 AC,AF,AN,BaseQRankSum,DP,Dels,FS,HaplotypeScore, \
@@ -25,7 +27,7 @@ COLUMNS = "\"varID\",\"CHROM\",\"POS\",\"REF\",\"ALT\",\"QUAL\",\"FILTER\",\
 INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','InbreedingCoeff','MLEAC',\
 'MLEAF','MQ','MQ0','MQRankSum','QD','ReadPosRankSum','SOR']
 
-SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
+SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"odd_DP\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
 
 SAMPLES_CC = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
 "CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
@@ -101,6 +103,9 @@ def getSampleString(samples):
 
     #Add ADalt and ADref to csv string
     csv_string = csv_string + '"' + odd_sample[AD].split(",")[1] + '","' + odd_sample[AD].split(",")[0] + '",'
+    
+    #Add odd_DP to csv string
+    csv_string = csv_string + '"' + odd_sample[sDP] + '",'    
 
     #add ADaltSum and ADrefSum to the csv_string
     csv_string = csv_string + '"' + str(ad_alt_sum) + '",' + '"' + str(ad_ref_sum) + '",'
