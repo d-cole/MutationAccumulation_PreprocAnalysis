@@ -1,4 +1,4 @@
-x#!/usr/bin/Rscript
+#!/usr/bin/Rscript
 
 #Columns
 #"varID","CHROM","POS","REF","ALT","QUAL","FILTER","AC",
@@ -28,78 +28,37 @@ all_samples <-transform(all_samples,MLEAC = as.numeric(MLEAC),MLEAF=as.numeric(M
     SOR=as.numeric(SOR))
 
 
-#cat("# sites AD_alt <= 3:   ")
-#print(NROW(all_samples[all_samples$AD_alt <= 3,]))
 
-print(NROW(all_samples))
-print(NROW(all_samples[is.na(all_samples$Anc_sample),]))
+hard_filter<-all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,]
 
-#for (i in all_samples[is.na(all_samples$Anc_sample),1]){
-#    print(i)
+print(NROW(hard_filter))
+print(NROW(hard_filter[hard_filter$AD_alt > 3,]))
+samples<-unique(hard_filter$odd_sample)
+#print(samples)
+
+#for (i in samples){
+#    cat(i)
+#    print(NROW(hard_filter[hard_filter$odd_sample == i,]))
+#
 #}
-
-#print(NROW(all_samples[(all_samples$AD_ref + all_samples$AD_alt) < all_samples$odd_DP & is.na(all_samples$Anc_sample),]))
-#print(head(all_samples[(all_samples$AD_ref + all_samples$AD_alt) < all_samples$odd_DP,]))
-
-
-#Plot mutant alternate reads
-jpeg("CC3-3_f8_ADvAltSum.jpg")
-plot(hist((all_samples$mAltvAltSum),prob=F,breaks="FD"),
-    main="CC3-3_f8 Mutant alt reads/ alt Sum",xlab="Odd AD alt")
-dev.off()
-
-jpeg("CC3-3_f8_noAnc_ADAltSum.jpg")
-plot(hist(all_samples[is.na(all_samples$Anc_sample),37],prob=F,breaks="FD"),
-    main="CC3-3_f8 mutant alt/altsum for no anc")
-dev.off()
-
-jpeg("CC3-3_f8_Anc_ADAltSum.jpg")
-plot(hist(all_samples[!is.na(all_samples$Anc_sample),37],prob=F,breaks="FD"),
-    main="CC3-3_f8 mutant alt/altsum for only anc")
-dev.off()
-
-print(NROW(all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,]))
-
-for (i in all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,c(1,26)]){
-
-    cat(i)
-    cat("\n")
-
-
-
-}
-
-#print(head(all_samples))
-#cols = c("AC","AF","AN","BaseQRankSum","siteDP","Dels","FS","HaplotypeScore","InbreedingCoeff","MLEAC","MLEAF","MQ","MQ0","MQRankSum","QD","ReadPosRankSum","SOR","mAltvAltSum")
-
-
-#for (c in cols){
-#    for (k in cols){
-#    cat(paste("cor: ",c,k,sep=" "))
-#    cat(":  ")
-#    print(cor(all_samples[[c]],all_samples[[k]],method="pearson"))
 #
- #   print(paste("cov: ",c,k,sep=" "))
- #   print(cov(all_samples[[c]],all_samples[[k]],method="pearson"))
-#      
-#    }
+#print(NROW(all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,]))
 #
+#for (i in all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,c(1,26)]){
 #
-##}
-#for (x in all_samples[all_samples$Dels > 0.0,1]){
-#    cat(x)
+#    cat(i)
 #    cat("\n")
-
-
 #}
 
-#jpeg("HaplotypeScore-Dels.jpg")
-#with(all_samples,plot(HaplotypeScore,Dels,main="HAPvDELS"))
-#dev.off()
 
-#jpeg("FSvHaplotyeScore.jpg")
-#with(all_samples,plot(HaplotypeScore, FS,main="HAPvFS"))
-#dev.off()
+
+
+
+
+
+
+
+
 
 
 

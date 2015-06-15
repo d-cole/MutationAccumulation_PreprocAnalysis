@@ -8,11 +8,11 @@ DELS = 5
 MAX_DELS = 0.0
 class filterMethods():
 
-    def __init__(self):
-        pass
-    #def __init__(self,medianFileLoc):
-    #    self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
-    #    self.MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
+#    def __init__(self):
+#        pass
+    def __init__(self,medianFileLoc):
+        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
+        self.MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 
 
     def getSampleMedians(self,medianFileLoc):
@@ -104,16 +104,31 @@ class filterMethods():
                 self.validInfoValue("Dels",line_col[INFO],None,None)#not necessary
         return False
 
-    def callSampleFiltering(self,samples):
+    def callSampleFiltering(self,line_col):
         """
         Filters samples based on the requirements for callable sites
         """
+        samples = line_col[9:]
         gt_counts={}
+        numValidDP = 0
+
+        if line_col[ALT] == ".":
+            DPidx = 1
+        else:
+            DPidx = 2
+    
         for i in range(0,len(samples)):
             if "./." not in samples[i]:
                 s_col = samples[i].split(":")
 
+                if self.validSampleDP(i,s_col[DPidx]:
+                    numValidDP +=1
+
                 gt_counts[s_col[0]] = get_counts.get(s_col[0],0) + 1
+        
+        if numValidDP < self.MIN_VALID_SAMPLES_DP:
+            return False
+
 
         return ((gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13) \
             or (gt_counts.get(HOMZ) == 14))
