@@ -1,4 +1,4 @@
-#!/usr/bin/Rscript
+x#!/usr/bin/Rscript
 
 #Columns
 #"varID","CHROM","POS","REF","ALT","QUAL","FILTER","AC",

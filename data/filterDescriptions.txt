@@ -1,7 +1,10 @@
+Filtering for SNP detection
+
 Filtering abbreviation meanings:
 
 f0: 
  - Remove sites with 'LowQual' tag present
+ - ignore sites where missing sample info
  - All sites must have 1 GT different and 13 the same
  - For CC3-3 if the odd GT is CC3-3M the site is removed
  - This was used to calculate median DP for individual samples
