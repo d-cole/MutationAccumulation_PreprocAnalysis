@@ -101,9 +101,7 @@ class filterMethods():
         if line_col[ALT] != ".":
             return float(line_col[QUAL] >= MIN_MAP_QUALITY) and \
                 line_col[FILTER] != "LowQual" and \
-
-                #Not necessary
-                self.validInfoValue("Dels",line_col[INFO],None,None)
+                self.validInfoValue("Dels",line_col[INFO],None,None)#not necessary
         return False
 
     def callSampleFiltering(self,samples):
