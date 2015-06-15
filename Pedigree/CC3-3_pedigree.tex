@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+\usepackage[landscape,width=15in,height=11.5in,top=.5in,bottom=.5in]{geometry}
+\usepackage{verbatim}
+\usepackage{calc,fancyhdr}
+\usepackage{enumitem}
+\usepackage{tkz-berge}
+\usetikzlibrary {positioning}
+\usepackage{indentfirst}
+
+
+% Headings.
+%\pagestyle{fancy}
+\let\headrule\empty
+\let\footrule\empty
+\chead{CC3-3 Pedigree}
+\begin{document}
+
+
+$$
+\begin {tikzpicture}[->,>=stealth',level distance = 2.5cm,
+level 1/.style={sibling distance=5.0cm},
+level 2/.style={sibling distance=2cm},
+level 3/.style={sibling distance=0.90cm}]
+
+\node[circle,draw] (ANC){ANC}
+	child {node [circle,draw] (I) {I}
+		%I's children
+		child{node [circle,draw] (B) {B}
+			%B's children
+			child{node [circle,draw] (K) {K}}
+			child{node [circle,draw] (C) {C}}
+		}
+		child{node [circle,draw] (J) {J}
+			%J's children
+			child{node [circle,draw] (G) {G}}
+			child{node [circle,draw] (O) {O}}
+		}
+		child{node [circle,draw] (N) {N}}
+		child{node [circle,draw] (F) {F}}
+	}
+	child {node [circle,draw] (A) {A}
+		%A's children
+		child{node [circle,draw] (L) {L}}
+		child{node [circle,draw] (D) {D}}
+	}
+	child {node [circle,draw] (E) {E}
+		%E's children
+		child{node [circle,draw] (P) {P}}
+		child{node [circle,draw] (H) {H}}
+	}
+	child {node [circle, draw] (M) {M}};
+
+\end{tikzpicture}
+$$
+
+
+
+
+
+\end{document}

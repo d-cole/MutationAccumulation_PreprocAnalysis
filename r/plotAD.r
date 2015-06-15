@@ -22,10 +22,19 @@ all_samples$mAltvAltSum <- all_samples$AD_alt/all_samples$AD_altSum
 
 
 #Plot mutant alternate reads / sum of alternate reads at site
-jpeg("CC3-3_f8_ADalt.ADaltSum.jpg")
-plot(hist((all_samples$mAltvAltSum),prob=F,breaks="FD"),
-    main="CC3-3_f8 (Mutant alt reads) / (Sum of site alt reads)",xlab="(Odd AD alt)/(AD alt Sum)")
+#jpeg("CC3-3_f8_ADalt.ADaltSum.jpg")
+#plot(hist((all_samples$mAltvAltSum),prob=F,breaks="FD"),
+#    main="CC3-3_f8 (Mutant alt reads) / (Sum of site alt reads)",xlab="(Odd AD alt)/(AD alt Sum)")
+#dev.off()
+#
+
+jpeg("CC3-3_F8_ADaltSum.jpg")
+plot(hist((all_samples$AD_altSum),prob=F,breaks="FD"),
+    main="CC3_f8 AD alt Sum",xlab="AD alt sum")
 dev.off()
+
+
+
 
 #jpeg("oddGQ-mAltvAltSum.jpg")
 #with(all_samples,plot(odd_GQ ~ mAltvAltSum))
