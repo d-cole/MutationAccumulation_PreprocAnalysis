@@ -8,9 +8,11 @@ DELS = 5
 MAX_DELS = 0.0
 class filterMethods():
 
-    def __init__(self,medianFileLoc):
-        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
-        self.MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
+    def __init__(self):
+        pass
+    #def __init__(self,medianFileLoc):
+    #    self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
+    #    self.MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
 
 
     def getSampleMedians(self,medianFileLoc):
@@ -68,11 +70,28 @@ class filterMethods():
             if max_bound != None:
                 return val <= max_bound
             else:
-                return True  
+                return True 
+
+
+    def callSiteFiltering(self,line_col):
+        """
+        Filters the site for:
+            - on chromosome 'pseudo0'
+            - no LowQual flag
+            - 
+        """
+        if line_col[CHROM] == 'pseudo0':
+            return False  
+
+        return float(line_Col[QUAL] >= MIN_MAP_QUALITY) and \
+            line_col[FILTER] != "LowQual"
+
+
 
     def siteFiltering(self,line_col):
         """
         Filters the site for:
+            - on chromosome 'pseudo0'
             - presence of ALT base
             - no LowQual flag
         """
@@ -82,8 +101,26 @@ class filterMethods():
         if line_col[ALT] != ".":
             return float(line_col[QUAL] >= MIN_MAP_QUALITY) and \
                 line_col[FILTER] != "LowQual" and \
+
+                #Not necessary
                 self.validInfoValue("Dels",line_col[INFO],None,None)
         return False
+
+    def callSampleFiltering(self,samples):
+        """
+        Filters samples based on the requirements for callable sites
+        """
+        gt_counts={}
+        for i in range(0,len(samples)):
+            if "./." not in samples[i]:
+                s_col = samples[i].split(":")
+
+                gt_counts[s_col[0]] = get_counts.get(s_col[0],0) + 1
+
+        return ((gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13) \
+            or (gt_counts.get(HOMZ) == 14))
+
+
 
     def sampleFiltering(self,samples,remSample,mutIdx):
         """
