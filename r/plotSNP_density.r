@@ -1,30 +1,26 @@
 library(ggplot2)
 args <- commandArgs(TRUE)
-
-
-
-
+pos_idx <- 3
 lapply(args,function(x) {
     data<-read.csv(x,stringsAsFactors=FALSE,na.string=".")
     name<-sub(".csv","",x)
-    
-    dp_data<-sapply(subset(data,select=siteDP),as.numeric)    
-    #Plots depth
-    jpeg(paste(name,"_DP.jpg",sep=""))
-    plot(hist(dp_data,prob=F,breaks=length(dp_data)),
-        main=paste(name,"DP",sep=" "),
-        xlab="Depth")
-    dev.off()
+    data<-transform(data,POS=as.numeric(POS))
+
+    window_size<-1000
 
     chromosomes = unique(data$CHROM)
     for(chrom in chromosomes){
-        png(file=paste(name,chrom,".jpg",sep="_"))
         pos_data<-sapply(subset(data,CHROM==chrom,select=POS),as.numeric)
-        plot(hist(pos_data,prob=F,breaks=length(pos_data)),
-             main=paste(name,chrom,".jpg",sep="_"),
+        min_pos = min(pos_data)
+        max_pos = max(pos_data)
+
+        break_seq = seq(from=min_pos,to=max_pos + window_size,by=window_size)
+
+        png(file=paste(name,chrom,".jpg",sep="_"))
+        plot(hist(data[data$CHROM == chrom,pos_idx],prob=F,break_seq),
+             main=paste(name,chrom,".jpg",sep="_"),ylim=c(0,35),
              xlab="Position")
-        #qplot(pos_data,y=NULL,geom="histogram",binwidth=40)
-        #ggplot(pos_data, aes(x=POS)) + geom_histogram(binwidth=40, colour="black", fill="white")
+
     dev.off()
 
     }    
