@@ -44,3 +44,10 @@ f7:
 
 f8:
  - removed all sites where mutant was not 0/1 and cohort was not 0/0
+
+f9:
+ - Removed sites where the read counts for ALT/REF bases did not pass the binomial filter
+ - The binomial filter asks: Assuming the mutant is truly heterozygous, what is the probability of getting the given combination of ALT/REF reads? If the probability is < 10^-2 the site is disregarded 
+
+f10:
+ - Removed sites where the frequency of alternate reads in any non-mutant sample was > 2%

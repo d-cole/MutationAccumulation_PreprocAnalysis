@@ -29,8 +29,6 @@ all_samples <-transform(all_samples,MLEAC = as.numeric(MLEAC),MLEAF=as.numeric(M
 
 binom <- function(alt,ref){
     n<- alt+ref
-#    return(pbinom(alt,n,0.5))
-    print(alt)
     if (pbinom(alt,n,0.5) > 0.01){
         return(TRUE)
     }
@@ -39,11 +37,13 @@ binom <- function(alt,ref){
 
 
 binom_count <-0
+print(head(all_samples[all_samples$AD_alt + all_samples$AD_ref < all_samples$odd_DP,]))
 
 for (i in 1:nrow(all_samples)){
     if (binom(all_samples[i,"AD_alt"],all_samples[i,"AD_ref"])){
         binom_count<-binom_count+1
-}
+        cat(paste(all_samples[i,"varID"],"\n"))
+    }
 }
 print(binom_count)
 print(NROW(all_samples))
