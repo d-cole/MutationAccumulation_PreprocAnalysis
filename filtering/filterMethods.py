@@ -6,6 +6,7 @@ HETZ,HOMZ='0/1','0/0'
 CHROM=0
 DELS = 5
 MAX_DELS = 0.0
+MAX_FREQ_ALT = 0.02
 class filterMethods():
 
 #    def __init__(self):
@@ -121,7 +122,7 @@ class filterMethods():
             if "./." not in samples[i]:
                 s_col = samples[i].split(":")
 
-                if self.validSampleDP(i,s_col[DPidx]:
+                if self.validSampleDP(i,s_col[DPidx]):
                     numValidDP +=1
 
                 gt_counts[s_col[0]] = get_counts.get(s_col[0],0) + 1
@@ -159,9 +160,26 @@ class filterMethods():
 
         if (1 in gt_counts.values() and 13 in gt_counts.values()):
             if gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13:
-                return self.filterMutant(gt_counts,samples,remSample,mutIdx)
+                return self.filterMutant(gt_counts,samples,remSample,mutIdx) and self.filterGroup(samples)
 
         return False
+
+    def filterGroup(self,samples):
+        """
+        Filters group samples:
+            - No sample with MAX_FREQ_ALT of its reads being alternate
+        """
+        alt_count = 0
+        ref_count = 0
+    
+        for s in samples:
+            s_col = s.split(":")
+            if s_col[GT] == HOMZ:
+                #Do not add mutant to counts
+                alt_count  += float(s_col[AD].split(",")[1])
+                ref_count += float(s_col[AD].split(",")[0])
+
+        return not (alt_count/ref_count > MAX_FREQ_ALT)
 
     def filterMutant(self,gt_counts,samples,remMut,mutIdx):
         """
