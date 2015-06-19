@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.1.15)  15 JUN 2015 14:51
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.1.15)  19 JUN 2015 10:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -575,24 +575,32 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 19.
 
-[1
 
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./CC3-3_pedigree.aux) ) 
+./CC3-3_pedigree.tex:51: Package tikz Error: Giving up on this path. Did you fo
+rget a semicolon?.
+
+See the tikz package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.51 	child {node [circle, draw] (M) {M}};
+                                          
+? 
+./CC3-3_pedigree.tex:51: Emergency stop.
+ ...                                              
+                                                  
+l.51 	child {node [circle, draw] (M) {M}};
+                                          
+End of file on the terminal!
+
+ 
 Here is how much of TeX's memory you used:
- 12189 strings out of 493315
- 228076 string characters out of 6137904
- 303643 words of memory out of 5000000
- 15395 multiletter control sequences out of 15000+600000
+ 12077 strings out of 493315
+ 226501 string characters out of 6137904
+ 294329 words of memory out of 5000000
+ 15287 multiletter control sequences out of 15000+600000
  6376 words of font info for 23 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 70i,13n,59p,490b,1195s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2013/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr12.pfb>
-Output written on CC3-3_pedigree.pdf (1 page, 14317 bytes).
-PDF statistics:
- 15 PDF objects out of 1000 (max. 8388607)
- 10 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 13 words of extra memory for PDF output out of 10000 (max. 10000000)
-
+ 70i,13n,59p,490b,1191s stack positions out of 5000i,500n,10000p,200000b,80000s
+./CC3-3_pedigree.tex:51:  ==> Fatal error occurred, no output PDF file produced
+!
