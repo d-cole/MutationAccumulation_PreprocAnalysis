@@ -6,7 +6,7 @@ lapply(args,function(x) {
     name<-sub(".csv","",x)
     data<-transform(data,POS=as.numeric(POS))
 
-    window_size<-1000
+    window_size<-10000
 
     chromosomes = unique(data$CHROM)
     for(chrom in chromosomes){
