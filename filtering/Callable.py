@@ -11,7 +11,7 @@ if __name__ == "__main__":
             if filterManager.isDataLine(line):
                 line_col = str.split(line)
                 if filterManager.callSiteFiltering(line_col):
-                    if filterManager.callSampleFilterin(line_col[9:]):
+                    if filterManager.callSampleFiltering(line_col):
                         vcf_out.write(line)
             else:
                 #Write header information
