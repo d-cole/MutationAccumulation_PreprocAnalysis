@@ -11,9 +11,9 @@ class filterMethods():
 
 #    def __init__(self):
 #        pass
-    def __init__(self,medianFileLoc):
+    def __init__(self,medianFileLoc,sampleCount):
         self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
-        self.MIN_VALID_SAMPLES_DP = int(14.0*(2.0/3.0))
+        self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
 
 
     def getSampleMedians(self,medianFileLoc):
@@ -144,23 +144,34 @@ class filterMethods():
         """
         gt_counts={}
         numValidDP = 0
+        het_count  = 1
+        hom_count = 13
+    
+        if remSample:
+            hom_count = 12 
+        
 
         for i in range(0,len(samples)):
             if "./." not in samples[i]:
-                s_col = samples[i].split(":")
+                if i != mutIdx:
+ 
+                    s_col = samples[i].split(":")
 
-                if self.validSampleDP(i,s_col[DP]):
-                    numValidDP += 1
+                    if self.validSampleDP(i,s_col[DP]):
+                        numValidDP += 1
 
-                gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
+                    gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
+        
+            else:
+                #return false if missing sample is present
+                return False
 
         if numValidDP < self.MIN_VALID_SAMPLES_DP:
             #less than 2/3 of samples passed DP filters
             return False
 
-        if (1 in gt_counts.values() and 13 in gt_counts.values()):
-            if gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13:
-                return self.filterMutant(gt_counts,samples,remSample,mutIdx) and self.filterGroup(samples)
+        if gt_counts.get(HETZ,0) == het_count and gt_counts.get(HOMZ,0) == hom_count:
+            return self.filterMutant(gt_counts,samples,remSample,mutIdx) and self.filterGroup(samples)
 
         return False
 
