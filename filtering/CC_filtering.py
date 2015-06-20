@@ -8,7 +8,7 @@ if __name__ == "__main__":
     file_loc,out_name = sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
     sampleMediansLoc = "/Users/Daniel/Documents/spirodela/data/CC3-3/individualData/ind_DP_med_v2_f0.csv"
-    filterManager = filterMethods(sampleMediansLoc)
+    filterManager = filterMethods(sampleMediansLoc,13)
 
     with open(file_loc) as f:
         for line in f:
