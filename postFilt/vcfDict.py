@@ -3,14 +3,12 @@ class vcfDict:
     """
     Represents a hastable for vcf files
     """
-    file_loc = ""
-    vcfFile = None
-    vcf_dict = {}
-    
 
     def __init__(self,file_loc):
         self.file_loc = file_loc
-    
+        self.vcf_dict = {}
+        self.vcfFile = None 
+
     def isDataLine(self,line):
         """
         Determines in line contains site data
@@ -38,14 +36,25 @@ class vcfDict:
         Returns the line correspinding to the given key,
         returns "" if line not present.
         """
-        print 
         line = self.vcf_dict.get(key,"")
         self.vcf_dict.pop(key,None)
         return line
 
+    def getSize(self):
+        """
+        Returns the number of keys in the dict
+        """
+        return len(self.vcf_dict)
+
+    def getKeys(self):
+        """
+        Returns a list of keys contained in the dict
+        """
+        return self.vcf_dict.keys()
+
     def printDict(self):
         """
-        
+        prints out the dictionary        
         """
         print(self.vcf_dict)
 

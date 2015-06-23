@@ -1,6 +1,9 @@
 from vcfDict import vcfDict
 import sys
 REF,ALT = 3,4
+"""
+Prints out sites that two .vcf files share
+"""
 
 def isDataLine(line):
     """
