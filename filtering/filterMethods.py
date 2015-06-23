@@ -88,7 +88,6 @@ class filterMethods():
             line_col[FILTER] != "LowQual"
 
 
-
     def siteFiltering(self,line_col):
         """
         Filters the site for:

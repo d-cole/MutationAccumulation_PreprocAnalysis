@@ -5,7 +5,7 @@ from filterMethods import filterMethods
 if __name__ == "__main__":
     vcf_in_loc,vcf_out_loc = sys.argv[1],sys.argv[2]
     vcf_out = open(vcf_out_loc,"w")
-    filterManager = filterMethods("/data/daniel.cole/spirodela/data/CC3-3/individualData/ind_DP_med_v2_f0.csv") 
+    filterManager = filterMethods("/data/daniel.cole/spirodela/data/CC3-3/individualData/ind_DP_med_v2_f0.csv",14) 
     with open(vcf_in_loc) as vcf_file:
         for line in vcf_file:
             if filterManager.isDataLine(line):
