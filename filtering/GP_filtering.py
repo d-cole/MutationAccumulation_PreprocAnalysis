@@ -5,8 +5,8 @@ REMOVE_CC3_3M = False
 if __name__ == "__main__":
     file_loc,out_name = sys.argv[1],sys.argv[2]
     outFile = open(out_name,'w')
-    sampleMediansLoc = "/Users/Daniel/Documents/spirodela/data/GP2-3/individualData/ind_DP_med_f0.csv"
-    filterManager = filterMethods(sampleMediansLoc)
+    sampleMediansLoc = "/data/daniel.cole/spirodela/data/GP2-3/individualData/ind_DP_med_f0.csv"
+    filterManager = filterMethods(sampleMediansLoc,14)
 
     with open(file_loc) as f:
         for line in f:
