@@ -9,7 +9,7 @@ GT,AD,DP,GQ,PL = 0,1,2,3,4
 
 SAMPLES = ["GP2-3_B", "GP2-3_C", "GP2-3_D", "GP2-3_E", "GP2-3_F", "GP2-3_G", "GP2-3_H", "GP2-3_I", "GP2-3_J", "GP2-3_K", "GP2-3_L", "GP2-3_M", "GP2-3_N", "GP2-3_O"]
 COLUMNS = ["\"GT\"","\"AD_REF\"","\"AD_ALT\"","\"DP\"","\"GQ\"","\"PL\""]
-
+SAMPLE_COUNT = [0]*14
 def writeColumns(columns,outFile):
     column_string = ""
     for j in columns:
@@ -24,7 +24,7 @@ def countIndividuals(samples):
     #print(len(samples))
     for i in range(0,len(samples)):
         if "./." not in (samples[i]):
-            if samples[i].split(":")[0] == HOM_ALT:
+            if samples[i].split(":")[0] == '0/1':
                 SAMPLE_COUNT[i] = SAMPLE_COUNT[i] + 1
     return
 
@@ -50,15 +50,22 @@ def isDataLine(line):
 
 if __name__ == "__main__":
     file_name = sys.argv[1]
-    for i in range(0,len(SAMPLES)):
-        outFile = open(SAMPLES[i] + ".csv",'w')
-        with open(file_name) as f:
-            writeColumns(COLUMNS,outFile)
-            for line in f:
-                if isDataLine(line):
-                    line_col = str.split(line)
-                    outFile.write(parseIndividual(line_col[9+i]) + "\n")
-                    
-        f.close()
-        outFile.close()
-
+    with open(file_name) as f:
+        for line in f:
+            if isDataLine(line):
+                sline = str.split(line)
+                countIndividuals(sline[9:])
+    f.close()
+    print(SAMPLE_COUNT)
+#    for i in range(0,len(SAMPLES)):
+#        outFile = open(SAMPLES[i] + ".csv",'w')
+#        with open(file_name) as f:
+#            writeColumns(COLUMNS,outFile)
+#            for line in f:
+#                if isDataLine(line):
+#                    line_col = str.split(line)
+#                    outFile.write(parseIndividual(line_col[9+i]) + "\n")
+#                    
+#        f.close()
+#        outFile.close()
+#

@@ -84,9 +84,8 @@ class filterMethods():
         if line_col[CHROM] == 'pseudo0':
             return False  
 
-        return float(line_Col[QUAL] >= MIN_MAP_QUALITY) and \
+        return float(line_col[QUAL] >= MIN_MAP_QUALITY) and \
             line_col[FILTER] != "LowQual"
-
 
 
     def siteFiltering(self,line_col):
@@ -125,14 +124,16 @@ class filterMethods():
                 if self.validSampleDP(i,s_col[DPidx]):
                     numValidDP +=1
 
-                gt_counts[s_col[0]] = get_counts.get(s_col[0],0) + 1
+                gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
         
         if numValidDP < self.MIN_VALID_SAMPLES_DP:
             return False
+        
+        if (gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13):
+            return True
 
-
-        return ((gt_counts.get(HETZ,0) == 1 and gt_counts.get(HOMZ,0) == 13) \
-            or (gt_counts.get(HOMZ) == 14))
+        if (gt_counts.get(HOMZ) == 14):
+            return True
 
 
 
