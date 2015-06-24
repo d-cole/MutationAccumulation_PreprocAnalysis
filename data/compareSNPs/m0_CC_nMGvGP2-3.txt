@@ -1,0 +1,6 @@
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_m0.vcf: 479852
+Number of total shared sites: 317152 (CC_BCDEFHIJKLNO_m0.vcf:70%, GP2-3_m0.vcf:66%)
+Number of shared sites with same alt base: 311482 (98% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 135213 (29%)
+Number of unmatched sites in GP2-3_m0.vcf: 162700 (33%)
