@@ -6,7 +6,7 @@ read FILES
 echo "Enter directory to write .bam files: "
 read OUTLOC
 
-for samFile in $FILES*.sam
+for samFile in $FILES*.vcf
     do
     outName=${samFile##*/}
     echo "java -Xmx2g -jar ~/picard-tools-1.96/SamFormatConverter.jar INPUT=$samFile OUTPUT=$OUTLOC${outName/.sam/.bam} &"
