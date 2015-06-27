@@ -1,0 +1,6 @@
+Size of CC_G_m0.vcf: 333825
+Size of CC_M_m0.vcf: 306771
+Number of total shared sites: 262837 (CC_G_m0.vcf:78%, CC_M_m0.vcf:85%)
+Number of shared sites with same alt base: 262166 (99% of shared sites)
+Number of unmatched sites in CC_G_m0.vcf: 70988 (21%)
+Number of unmatched sites in CC_M_m0.vcf: 43934 (14%)
