@@ -28,7 +28,10 @@ plot(hist((CC_samples$GQ),prob=F,breaks="FD"),
     main="",xlab="")
 dev.off()
 
-
+jpeg("GP.jpg")
+plot(hist((CC_samples$GQ),prob=F,breaks="FD"),
+    main="",xlab="")
+dev.off()
 
 
 
