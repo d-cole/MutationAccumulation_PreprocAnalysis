@@ -34,3 +34,213 @@ Number of total shared sites: 165343 (CC_D_m0.vcf:64%, GP2-3_E_m0.vcf:59%)
 Number of shared sites with same alt base: 164655 (99% of shared sites)
 Number of unmatched sites in CC_D_m0.vcf: 90777 (35%)
 Number of unmatched sites in GP2-3_E_m0.vcf: 112289 (40%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Number of total shared sites: 452365 (A:100%, B:100%)
+Number of shared sites with same alt base: 452365 (100% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 0 (0%)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 0 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_B_m0.vcf: 259217
+Number of total shared sites: 258982 (A:57%, B:99%)
+Number of shared sites with same alt base: 257880 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 193383 (42%)
+Number of unmatched sites in CC_B_m0.vcf: 235 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_C_m0.vcf: 258670
+Number of total shared sites: 258428 (A:57%, B:99%)
+Number of shared sites with same alt base: 257365 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 193937 (42%)
+Number of unmatched sites in CC_C_m0.vcf: 242 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_D_m0.vcf: 256120
+Number of total shared sites: 255836 (A:56%, B:99%)
+Number of shared sites with same alt base: 254698 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 196529 (43%)
+Number of unmatched sites in CC_D_m0.vcf: 284 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_E_m0.vcf: 263161
+Number of total shared sites: 262530 (A:58%, B:99%)
+Number of shared sites with same alt base: 261416 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 189835 (41%)
+Number of unmatched sites in CC_E_m0.vcf: 631 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_F_m0.vcf: 254604
+Number of total shared sites: 254360 (A:56%, B:99%)
+Number of shared sites with same alt base: 253274 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 198005 (43%)
+Number of unmatched sites in CC_F_m0.vcf: 244 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_G_m0.vcf: 313424
+Number of total shared sites: 236552 (A:52%, B:75%)
+Number of shared sites with same alt base: 234967 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 215813 (47%)
+Number of unmatched sites in CC_G_m0.vcf: 76872 (24%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_H_m0.vcf: 260889
+Number of total shared sites: 260630 (A:57%, B:99%)
+Number of shared sites with same alt base: 259487 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 191735 (42%)
+Number of unmatched sites in CC_H_m0.vcf: 259 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_I_m0.vcf: 261088
+Number of total shared sites: 260822 (A:57%, B:99%)
+Number of shared sites with same alt base: 259704 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 191543 (42%)
+Number of unmatched sites in CC_I_m0.vcf: 266 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_J_m0.vcf: 261786
+Number of total shared sites: 261539 (A:57%, B:99%)
+Number of shared sites with same alt base: 260444 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 190826 (42%)
+Number of unmatched sites in CC_J_m0.vcf: 247 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_K_m0.vcf: 258068
+Number of total shared sites: 257758 (A:56%, B:99%)
+Number of shared sites with same alt base: 256722 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 194607 (43%)
+Number of unmatched sites in CC_K_m0.vcf: 310 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_L_m0.vcf: 262647
+Number of total shared sites: 262405 (A:58%, B:99%)
+Number of shared sites with same alt base: 261301 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 189960 (41%)
+Number of unmatched sites in CC_L_m0.vcf: 242 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_M_m0.vcf: 285262
+Number of total shared sites: 199526 (A:44%, B:69%)
+Number of shared sites with same alt base: 197941 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 252839 (55%)
+Number of unmatched sites in CC_M_m0.vcf: 85736 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_N_m0.vcf: 253525
+Number of total shared sites: 252628 (A:55%, B:99%)
+Number of shared sites with same alt base: 251553 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 199737 (44%)
+Number of unmatched sites in CC_N_m0.vcf: 897 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of CC_O_m0.vcf: 259450
+Number of total shared sites: 259162 (A:57%, B:99%)
+Number of shared sites with same alt base: 258032 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 193203 (42%)
+Number of unmatched sites in CC_O_m0.vcf: 288 (0%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_B_m0.vcf: 280448
+Number of total shared sites: 195661 (A:43%, B:69%)
+Number of shared sites with same alt base: 194048 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 256704 (56%)
+Number of unmatched sites in GP2-3_B_m0.vcf: 84787 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_C_m0.vcf: 274950
+Number of total shared sites: 191151 (A:42%, B:69%)
+Number of shared sites with same alt base: 189601 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 261214 (57%)
+Number of unmatched sites in GP2-3_C_m0.vcf: 83799 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_D_m0.vcf: 282824
+Number of total shared sites: 197340 (A:43%, B:69%)
+Number of shared sites with same alt base: 195681 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 255025 (56%)
+Number of unmatched sites in GP2-3_D_m0.vcf: 85484 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_E_m0.vcf: 277632
+Number of total shared sites: 192668 (A:42%, B:69%)
+Number of shared sites with same alt base: 191072 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 259697 (57%)
+Number of unmatched sites in GP2-3_E_m0.vcf: 84964 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_F_m0.vcf: 283480
+Number of total shared sites: 198018 (A:43%, B:69%)
+Number of shared sites with same alt base: 196467 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 254347 (56%)
+Number of unmatched sites in GP2-3_F_m0.vcf: 85462 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_G_m0.vcf: 279483
+Number of total shared sites: 194737 (A:43%, B:69%)
+Number of shared sites with same alt base: 193151 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 257628 (56%)
+Number of unmatched sites in GP2-3_G_m0.vcf: 84746 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_H_m0.vcf: 284886
+Number of total shared sites: 198780 (A:43%, B:69%)
+Number of shared sites with same alt base: 197160 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 253585 (56%)
+Number of unmatched sites in GP2-3_H_m0.vcf: 86106 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_I_m0.vcf: 288204
+Number of total shared sites: 201823 (A:44%, B:70%)
+Number of shared sites with same alt base: 200273 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 250542 (55%)
+Number of unmatched sites in GP2-3_I_m0.vcf: 86381 (29%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_J_m0.vcf: 279614
+Number of total shared sites: 194936 (A:43%, B:69%)
+Number of shared sites with same alt base: 193360 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 257429 (56%)
+Number of unmatched sites in GP2-3_J_m0.vcf: 84678 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_K_m0.vcf: 282590
+Number of total shared sites: 197400 (A:43%, B:69%)
+Number of shared sites with same alt base: 195885 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 254965 (56%)
+Number of unmatched sites in GP2-3_K_m0.vcf: 85190 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_L_m0.vcf: 279521
+Number of total shared sites: 194582 (A:43%, B:69%)
+Number of shared sites with same alt base: 193049 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 257783 (56%)
+Number of unmatched sites in GP2-3_L_m0.vcf: 84939 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_M_m0.vcf: 282588
+Number of total shared sites: 196803 (A:43%, B:69%)
+Number of shared sites with same alt base: 195222 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 255562 (56%)
+Number of unmatched sites in GP2-3_M_m0.vcf: 85785 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_N_m0.vcf: 290178
+Number of total shared sites: 202773 (A:44%, B:69%)
+Number of shared sites with same alt base: 201286 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 249592 (55%)
+Number of unmatched sites in GP2-3_N_m0.vcf: 87405 (30%)
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Size of GP2-3_O_m0.vcf: 283652
+Number of total shared sites: 197688 (A:43%, B:69%)
+Number of shared sites with same alt base: 196073 (99% of shared sites)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 254677 (56%)
+Number of unmatched sites in GP2-3_O_m0.vcf: 85964 (30%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_BCDEFHIJKLNO_m0.vcf: 452365
+Number of total shared sites: 258982 (A:99%, B:57%)
+Number of shared sites with same alt base: 257880 (99% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 235 (0%)
+Number of unmatched sites in CC_BCDEFHIJKLNO_m0.vcf: 193383 (42%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_B_m0.vcf: 259217
+Number of total shared sites: 259217 (A:100%, B:100%)
+Number of shared sites with same alt base: 259217 (100% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 0 (0%)
+Number of unmatched sites in CC_B_m0.vcf: 0 (0%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_C_m0.vcf: 258670
+Number of total shared sites: 229131 (A:88%, B:88%)
+Number of shared sites with same alt base: 228760 (99% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 30086 (11%)
+Number of unmatched sites in CC_C_m0.vcf: 29539 (11%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_D_m0.vcf: 256120
+Number of total shared sites: 228107 (A:87%, B:89%)
+Number of shared sites with same alt base: 227722 (99% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 31110 (12%)
+Number of unmatched sites in CC_D_m0.vcf: 28013 (10%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_E_m0.vcf: 263161
+Number of total shared sites: 230989 (A:89%, B:87%)
+Number of shared sites with same alt base: 230601 (99% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 28228 (10%)
+Number of unmatched sites in CC_E_m0.vcf: 32172 (12%)
+Size of CC_B_m0.vcf: 259217
+Size of CC_F_m0.vcf: 254604
+Number of total shared sites: 227670 (A:87%, B:89%)
+Number of shared sites with same alt base: 227254 (99% of shared sites)
+Number of unmatched sites in CC_B_m0.vcf: 31547 (12%)
+Number of unmatched sites in CC_F_m0.vcf: 26934 (10%)
