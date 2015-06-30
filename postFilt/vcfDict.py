@@ -1,4 +1,6 @@
 import sys
+import os    
+
 class vcfDict:
     """
     Represents a hastable for vcf files
@@ -8,6 +10,11 @@ class vcfDict:
         self.file_loc = file_loc
         self.vcf_dict = {}
         self.vcfFile = None 
+    
+
+    def getFileName(self):
+        return os.path.basename(self.file_loc)
+
 
     def isDataLine(self,line):
         """
