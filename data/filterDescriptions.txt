@@ -51,3 +51,7 @@ f9:
 
 f10:
  - Removed sites where the frequency of alternate reads in any non-mutant sample was > 2%
+
+f11:
+ - Reran CC3-3 for filters f0 - f10 without CC_G present. CC_G is a contaminant most likely from GP2-3.
+
