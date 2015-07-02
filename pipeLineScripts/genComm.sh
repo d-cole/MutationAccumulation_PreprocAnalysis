@@ -4,7 +4,7 @@
 
 FILES=$1
 
-for file in $FILES*_m0.vcf
+for file in $FILES*.csv
     do
     for fil2 in $FILES*_m0.vcf
         do

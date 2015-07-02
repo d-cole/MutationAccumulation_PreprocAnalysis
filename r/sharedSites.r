@@ -27,17 +27,17 @@ plot(hist((CC_samples$QD),prob=F,breaks="FD"),
 dev.off()
 
 
-jpeg(paste(args[[2]],"_MQ.jpg",sep=""))
-plot(hist((CC_samples$MQ),prob=F,breaks="FD"),
-    main=paste(args[[2]], "MQ"),xlab="")
-dev.off()
-
-jpeg(paste(args[[2]],"_QUAL.jpg",sep=""))
-plot(hist((CC_samples$QUAL),prob=F,breaks="FD"),
-    main=paste(args[[2]]," QUAL"),xlab="")
-dev.off()
-
-
+#jpeg(paste(args[[2]],"_MQ.jpg",sep=""))
+#plot(hist((CC_samples$MQ),prob=F,breaks="FD"),
+#    main=paste(args[[2]], "MQ"),xlab="")
+#dev.off()
+#
+#jpeg(paste(args[[2]],"_QUAL.jpg",sep=""))
+#plot(hist((CC_samples$QUAL),prob=F,breaks="FD"),
+#    main=paste(args[[2]]," QUAL"),xlab="")
+#dev.off()
+#
+#
 
 
 
