@@ -9,11 +9,11 @@ MAX_DELS = 0.0
 MAX_FREQ_ALT = 0.02
 class filterMethods():
 
-#    def __init__(self):
-#        pass
-    def __init__(self,medianFileLoc,sampleCount):
-        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
-        self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
+    def __init__(self):
+        pass
+#    def __init__(self,medianFileLoc,sampleCount):
+#        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
+#        self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
 
 
     def getSampleMedians(self,medianFileLoc):
