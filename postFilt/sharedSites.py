@@ -75,13 +75,13 @@ if __name__ == "__main__":
     sampleName = sDict.getFileName()
 
     for i in range(0,len(samples_CC)):
-#        outFile = open(os.path.basename(sample) + ":" + samples_CC[i].getFileName() + ".csv","w")
+        outFile = open(os.path.basename(sample) + ":" + samples_CC[i].getFileName() + ".csv","w")
         iSet = getExclInt(samples_CC,i,sDict)
         print "Sites %s excl shares with %s: %i" %(sampleName,samples_CC[i].getFileName(),len(iSet))
-#        writeColumns(outFile)
-#        for key in iSet:
-#            writeInfo(sDict.getLine(key),outFile)
-#        outFile.close()
+        writeColumns(outFile)
+        for key in iSet:
+            writeInfo(sDict.getLine(key),outFile)
+        outFile.close()
 
     for x in samples_GP:
         x.loadDict()
