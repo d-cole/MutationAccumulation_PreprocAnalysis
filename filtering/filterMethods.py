@@ -9,11 +9,13 @@ MAX_DELS = 0.0
 MAX_FREQ_ALT = 0.02
 class filterMethods():
 
-    def __init__(self):
-        pass
-#    def __init__(self,medianFileLoc,sampleCount):
-#        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
-#        self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
+#    def __init__(self):
+#        pass
+
+
+    def __init__(self,medianFileLoc,sampleCount):
+        self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
+        self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
 
 
     def getSampleMedians(self,medianFileLoc):
@@ -24,6 +26,7 @@ class filterMethods():
         """
         medFile = open(medianFileLoc,"r")
         for i, line in enumerate(medFile):
+            print line
             if i == 1:
                 SAMPLE_MEDIANS = [[float(i)*0.5,float(i)*1.5] for i in line.strip("\n").split(" ")]
         return SAMPLE_MEDIANS
@@ -137,7 +140,7 @@ class filterMethods():
 
 
 
-    def sampleFiltering(self,samples,remSample,mutIdx):
+    def sampleFiltering(self,samples):
         """
         For the site to pass samples must:
             - no missing samples
@@ -145,23 +148,18 @@ class filterMethods():
         """
         gt_counts={}
         numValidDP = 0
-        het_count  = 1
-        hom_count = 13
-    
-        if remSample:
-            hom_count = 12 
+        hom_count  = len(samples) - 1
+        het_count = 1
         
 
         for i in range(0,len(samples)):
             if "./." not in samples[i]:
-                if i != mutIdx:
- 
-                    s_col = samples[i].split(":")
+                s_col = samples[i].split(":")
 
-                    if self.validSampleDP(i,s_col[DP]):
-                        numValidDP += 1
+                if self.validSampleDP(i,s_col[DP]):
+                    numValidDP += 1
 
-                    gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
+                gt_counts[s_col[0]] = gt_counts.get(s_col[0],0) + 1
         
             else:
                 #return false if missing sample is present
@@ -172,7 +170,7 @@ class filterMethods():
             return False
 
         if gt_counts.get(HETZ,0) == het_count and gt_counts.get(HOMZ,0) == hom_count:
-            return self.filterMutant(gt_counts,samples,remSample,mutIdx) and self.filterGroup(samples)
+            return self.filterMutant(gt_counts,samples) and self.filterGroup(samples)
 
         return False
 
@@ -193,7 +191,7 @@ class filterMethods():
 
         return not (alt_count/ref_count > MAX_FREQ_ALT)
 
-    def filterMutant(self,gt_counts,samples,remMut,mutIdx):
+    def filterMutant(self,gt_counts,samples):
         """
         Filters on the odd GT individual
         """
@@ -205,10 +203,6 @@ class filterMethods():
             if key in samples[i]:
                 break
 
-        if remMut:
-            if i == mutIdx:
-                return False
         if int(samples[i].split(":")[GQ]) <= MIN_MUT_GQ:
             return False
-
         return self.validSampleDP(i,samples[i].split(":")[DP])
