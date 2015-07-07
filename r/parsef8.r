@@ -18,31 +18,35 @@ if(length(args) < 1) {
 all_samples<-read.csv(args,stringsAsFactors=FALSE,na.string=".")
 #print(head(all_samples))
 #Add column mAltvAltSum which is mutant alt reads divided by sum of alt reads at that site
-all_samples$mAltvAltSum <- all_samples$AD_alt/all_samples$AD_altSum
-all_samples <-transform(all_samples,MLEAC = as.numeric(MLEAC),MLEAF=as.numeric(MLEAF),
-    AC=as.numeric(AC),AN=as.numeric(AN),BaseQRankSum=as.numeric(BaseQRankSum),
-    siteDP=as.numeric(siteDP),Dels=as.numeric(Dels),FS=as.numeric(FS),
-    HaplotypeScore=as.numeric(HaplotypeScore),InbreedingCoeff=as.numeric(InbreedingCoeff),
-    MQ=as.numeric(MQ),MQ0=as.numeric(MQ0),
-    MQRankSum=as.numeric(MQRankSum),QD=as.numeric(QD),ReadPosRankSum=as.numeric(ReadPosRankSum),
-    SOR=as.numeric(SOR))
+all_samples <-transform(all_samples,AD_ref = as.numeric(AD_ref),AD_alt = as.numeric(AD_alt))
+
+#MLEAC = as.numeric(MLEAC),MLEAF=as.numeric(MLEAF),
+#    AC=as.numeric(AC),AN=as.numeric(AN),BaseQRankSum=as.numeric(BaseQRankSum),
+#    siteDP=as.numeric(siteDP),Dels=as.numeric(Dels),FS=as.numeric(FS),
+#    HaplotypeScore=as.numeric(HaplotypeScore),InbreedingCoeff=as.numeric(InbreedingCoeff),
+#    MQ=as.numeric(MQ),MQ0=as.numeric(MQ0),
+#    MQRankSum=as.numeric(MQRankSum),QD=as.numeric(QD),ReadPosRankSum=as.numeric(ReadPosRankSum),
+#    SOR=as.numeric(SOR))
 
 binom <- function(alt,ref){
     n<- alt+ref
     if (pbinom(alt,n,0.5) > 0.01){
         return(TRUE)
+        
     }
+    print(alt)
+    print(ref)
+    print(pbinom(alt,n,0.5))
     return(FALSE)
 }
 
 
 binom_count <-0
-print(head(all_samples[all_samples$AD_alt + all_samples$AD_ref < all_samples$odd_DP,]))
 
 for (i in 1:nrow(all_samples)){
-    if (binom(all_samples[i,"AD_alt"],all_samples[i,"AD_ref"])){
+    if (binom(all_samples[i,"AD_alt"],all_samples[i,"AD_ref"]) == TRUE){
         binom_count<-binom_count+1
-        cat(paste(all_samples[i,"varID"],"\n"))
+        #cat(paste(all_samples[i,"varID"],"\n"))
     }
 }
 print(binom_count)
