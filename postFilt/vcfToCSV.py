@@ -27,14 +27,16 @@ COLUMNS = "\"varID\",\"CHROM\",\"POS\",\"REF\",\"ALT\",\"QUAL\",\"FILTER\",\
 INFO_TAGS = ['AC','AF','AN','BaseQRankSum','DP','Dels','FS','HaplotypeScore','InbreedingCoeff','MLEAC',\
 'MLEAF','MQ','MQ0','MQRankSum','QD','ReadPosRankSum','SOR']
 
-SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"odd_DP\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\",\"Anc_GT\",\"Anc_sample\"'
+SAMPLE_COLUMNS = ',\"odd_GT\",\"odd_sample\",\"cohort_GT\",\"AD_alt\",\"AD_ref\",\"odd_DP\",\"AD_altSum\",\"AD_refSum\",\"odd_GQ\",\"odd_PL\"'#,\"Anc_GT\",\"Anc_sample\"'
 
-SAMPLES_CC = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F","CC3-3_G",\
-"CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_M","CC3-3_N","CC3-3_O"]
+SAMPLES_CC = ["CC3-3_B","CC3-3_C","CC3-3_D","CC3-3_E","CC3-3_F",\
+"CC3-3_H","CC3-3_I","CC3-3_J","CC3-3_K","CC3-3_L","CC3-3_N","CC3-3_O"]
 
 
 SAMPLES_GP = ["GP2-3_B", "GP2-3_C", "GP2-3_D", "GP2-3_E", "GP2-3_F", "GP2-3_G",\
  "GP2-3_H", "GP2-3_I", "GP2-3_J", "GP2-3_K", "GP2-3_L", "GP2-3_M", "GP2-3_N", "GP2-3_O"]
+
+SAMPLES = SAMPLES_CC
 
 
 def isDataLine(line):
@@ -94,11 +96,11 @@ def getSampleString(samples):
     odd_sample = samples[odd_idx].split(":")
     
     #Add which sample was the odd one out
-    csv_string = csv_string + '"' + SAMPLES_CC[odd_idx] +'",'
+    csv_string = csv_string + '"' + SAMPLES[odd_idx] +'",'
 
     #Add the cohortGT the GT that maps to 13 samples
     for key in gt_dict.keys():
-        if len(gt_dict[key]) == 13:
+        if len(gt_dict[key]) == 13 or len(gt_dict[key]) == 11:
             csv_string = csv_string + '"' + key + '"' + ','
 
     #Add ADalt and ADref to csv string
@@ -149,12 +151,12 @@ def writeInfo(line,outFile):
     for item in infoData:
         csvLine = csvLine + item + ","
     #remove last ","
-    csvLine = csvLine + getSampleString(line_col[9:23])
-    try:
-        ancestor = line_col[23]
-    except:
-        ancestor = "."        
-    csvLine = csvLine + getAncestorInfo(ancestor)
+    csvLine = csvLine + getSampleString(line_col[9:21])
+    #try:
+    #    ancestor = line_col[23]
+    #except:
+    #    ancestor = "."        
+    #csvLine = csvLine + getAncestorInfo(ancestor)
     outFile.write(csvLine + "\n")
 
 
