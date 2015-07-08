@@ -1,10 +1,13 @@
 from vcfSample import vcfSample
-
+import sys
 ALT_IDX = 4
 INFO_IDX = 7
 class vcfLine:
     """
     Represents a vcf line
+
+    Fails for sites where there is more than one alt base
+    Currently only works where possiblt genotypes are  0/0 and 0/1
     """
 
     def __init__(self,raw_line):
@@ -16,6 +19,7 @@ class vcfLine:
         self.isAltSite = False
         self.samples = []
         self.raw_line  = raw_line
+        self.multiHap = False
      
         if len(self.raw_line) > 1:
             if self.raw_line[0] == "#":
@@ -27,6 +31,8 @@ class vcfLine:
             if sline[ALT_IDX] != ".":
                 #variant site
                 self.isAltSite = True
+                if "," in sline[ALT_IDX]:
+                    self.multiHap = True
 
             self.__loadSamples(sline) 
             self.__loadInfoVals()
@@ -35,8 +41,14 @@ class vcfLine:
             self.pos = sline[1]
             self.ref = sline[3]
             self.alt = sline[4]
-            self.qual = float(sline[5])
+
+            self.qual = sline[5]
+            if str.isdigit(self.qual):
+                self.qual = float(self.qual)
+
             self.filt = sline[6]
+            
+                
 
     def __loadSamples(self,sline):
         sampleStrings = sline[9:]        
@@ -50,7 +62,9 @@ class vcfLine:
             #populates self.infoValues for every value present
             eqIdx = readInfo.find("=")
             tag = readInfo[0:eqIdx] 
-            value = float(readInfo[eqIdx + 1:])
+            value = (readInfo[eqIdx + 1:])
+            if str.isdigit(value):
+                value = float(value)
             self.infoValues[tag] = value 
         
     
@@ -67,7 +81,30 @@ class vcfLine:
         print self.raw_line
 
 
+    def getAltTotal(self):
+        altTotal = 0
+        for s in self.samples:
+            if isinstance(s.altReads,float):
+                altTotal += s.altReads
+            else:
+                pass
+                #print s.toString()
 
+        return altTotal
+
+
+    def getRefTotal(self):
+        refTotal = 0
+        for s in self.samples:
+            if isinstance(s.refReads,float):
+                refTotal += s.refReads
+            else:
+                pass
+                #print s.toString()
+        print refTotal
+        print self.raw_line
+        sys.exit()
+        return refTotal
 
 
 
