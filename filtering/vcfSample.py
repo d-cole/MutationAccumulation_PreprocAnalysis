@@ -30,8 +30,8 @@ class vcfSample:
         if self.atAltSite:
             #At alt sites
             self.GT = splitSample[0] 
-            self.altReads = splitSample[1].split(",")[1]
-            self.refReads = splitSample[1].split(",")[0]
+            self.altReads = float(splitSample[1].split(",")[1])
+            self.refReads = float(splitSample[1].split(",")[0])
             self.DP = float(splitSample[2])
             self.GQ = float(splitSample[3])
             self.PL = splitSample[4]
@@ -43,7 +43,7 @@ class vcfSample:
 
     def toString(self):
         return "%s,%s,%s,%s,%s,%s,%s,%s,%s" \
-            %(str(self.sampleString) + "\n",\
+            %(str(self.sampleString),\
             self.GT,\
             str(self.altReads),\
             str(self.refReads),\
