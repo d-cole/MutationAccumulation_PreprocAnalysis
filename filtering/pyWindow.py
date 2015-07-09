@@ -1,21 +1,29 @@
 import sys
 from vcfLine import vcfLine
 import traceback
+"""
+pyWindow.py
+
+Analyzes vcf files from sites in a variable sized window
+"""
+WINDOW_SIZE = 50
 
 def processWindow(inWindow):
     """
     Given a list of the 50 sites in the window returns ...
+
+
+    Percent of sites with depth below x?
+    Average depth at sites?
+    Percentage of alt/ref sites?
+    Number of alt/ref reads across all samples
+    Sites with buildign up depth --  rainbow areas??
     """
 
-    #Percent of sites with a depth below x?
-    #Average depth in sites
-    #Percentage of alt reads/ref reads in site
-    #Some sites with 0 depth --> building up to acceptable depths??
     DPtotal = 0 
     alt_reads = 0
     ref_reads = 0 
     alt_sites = 0    
-
 
     for site in inWindow:
         if isinstance(site.infoValues["DP"],float):
@@ -23,12 +31,22 @@ def processWindow(inWindow):
 
         if site.isAltSite:
             alt_sites += 1
-        
-    print "% alt sites: " + str(alt_sites/50.0)
-    print "Average depth in window: " + str(DPtotal/50.0)
+    if alt_sites > 0 :   
+        print "Alt site: " + str(alt_sites)
+        print "ref_sites: " + str(50 - alt_sites)
 
-    print "Alt reads #: " +  str(site.getAltTotal())
-    print "Ref reads #: " + str(site.getRefTotal())
+ 
+    if float(DPtotal/50.0) < 200.00:
+       print inWindow[0].chrom + inWindow[0].pos +":" + inWindow[49].chrom +\
+            inWindow[49].pos
+       print str(DPtotal/50.0) 
+       print ""
+       
+    #print "% alt sites: " + str(alt_sites/50.0)
+    #print "Average depth in window: " + str(DPtotal/50.0)
+    #print "Ref reads #: " + str(site.getRefTotal())
+    #print "Alt reads #: " +  str(site.getAltTotal())
+    #
 
 
 if __name__ == "__main__":
@@ -37,24 +55,27 @@ if __name__ == "__main__":
 
     with open(vcf_loc) as f:
         for raw_line in f:
-            if len(inWindow) == 50:
+            if len(inWindow) == WINDOW_SIZE:
                 #Analyze site
                 processWindow(inWindow)
+#                print raw_line
+#                sys.exit()
                 #Output results
-                
                 inWindow = []
-            try:
 
-                line = vcfLine(raw_line) 
-            except:
-                e = sys.exc_info()[0]
-                print e
-                print traceback.format_exc()
-                print raw_line + "\n"
-    
+            line = vcfLine(raw_line)
+    #        try:
+    #            line = vcfLine(raw_line) 
+    #        except:
+    #            e = sys.exc_info()[0]
+    #            print e
+    #            print traceback.format_exc()
+    #            print raw_line + "\n"
+    #
             if line.isDataLine:
+                #Only add dataLines to the window
                 inWindow.append(line) 
-                
+                    
 
 
 
