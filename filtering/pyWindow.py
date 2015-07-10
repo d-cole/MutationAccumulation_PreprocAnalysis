@@ -31,12 +31,12 @@ def processWindow(inWindow):
 
         if site.isAltSite:
             alt_sites += 1
-    if alt_sites > 0 :   
-        print "Alt site: " + str(alt_sites)
-        print "ref_sites: " + str(50 - alt_sites)
 
  
-    if float(DPtotal/50.0) < 200.00:
+    if float(DPtotal/50.0) < 200.00 or alt_sites > 5:
+       print "Alt site: " + str(alt_sites)
+       print "ref_sites: " + str(50 - alt_sites)
+
        print inWindow[0].chrom + inWindow[0].pos +":" + inWindow[49].chrom +\
             inWindow[49].pos
        print str(DPtotal/50.0) 
