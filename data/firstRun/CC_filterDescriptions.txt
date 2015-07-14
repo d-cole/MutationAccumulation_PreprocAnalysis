@@ -1,0 +1,19 @@
+CC3-3 Fitler descriptions
+
+rf0:
+ - Remove sites with 'LowQual' tag present
+ - For CC3-3 if the odd GT is CC3-3M the site is removed
+ - This was used to calculate median DP for individual samples
+ - Individual DP filtering?
+ - Removal of sites on pseudo0
+    
+rf1:
+ - Filter for sites having 1 GT 0/1, 12 GT 0/0
+ - Filtering on individual sample depth calculated from rf0
+    - 2/3 of samples must pass individual depth filters
+ - Mutant must pass individual depth filters and have GQ > 20
+ - Ignoring sites where missing sample data
+
+
+rf2:
+ - Removal of TE regions

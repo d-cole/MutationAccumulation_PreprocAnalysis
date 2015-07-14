@@ -1,0 +1,9 @@
+Filters for callable sites
+
+c0:
+ - Sites must be one sample 0/1 rest 0/0 or all 0/0
+ - Removed pseudo0
+ - Removed sites flagged lowQual 
+
+c1:
+ - at least 2/3 of samples must pass individual depth filters
