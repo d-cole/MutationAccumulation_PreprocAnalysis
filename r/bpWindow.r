@@ -1,5 +1,5 @@
 args <- commandArgs(TRUE)
-if(length(args) < 1) {
+if(length(args) < 2) {
   cat("Please specify location of .csv file \n")
 }
 
@@ -9,6 +9,9 @@ GP_window<-read.csv(args[2],stringsAsFactors=FALSE,na.string=".")
 
 print(head(CC_window))
 print(head(GP_window))
+
+print(CC_window$altCount)
+print(CC_window[CC_window$altCount != 0,])
 
 jpeg("CC_window.jpg")
 plot(hist(CC_window$altCount,prob=F,breaks="FD",
