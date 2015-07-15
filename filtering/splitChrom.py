@@ -9,7 +9,7 @@ def isDataLine(line):
 
 
 if __name__ == "__main__":
-    file_in = sys.argv[1]
+    file_in,out_dir = sys.argv[1],sys.argv[2]
     chrom = ""
     chrom_file = None
  
@@ -21,12 +21,12 @@ if __name__ == "__main__":
                 if chrom == "":
                     #First line
                     chrom = chrom_line
-                    chrom_file = open(chrom + ".txt","w")
+                    chrom_file = open(out_dir + "/" + chrom + ".txt","w")
 
                 if chrom != chrom_line:
                     chrom_file.close()
                     chrom = chrom_line
-                    chrom_file = open(chrom + ".txt","w") 
+                    chrom_file = open(out_dir + "/" + chrom + ".txt","w") 
                 
                 if chrom == chrom_line:
                     chrom_file.write(line)

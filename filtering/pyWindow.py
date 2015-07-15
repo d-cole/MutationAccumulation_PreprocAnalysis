@@ -33,24 +33,24 @@ def processWindow(inWindow,outFile):
  
     if True:
         csvOutLine = ""
-        csvOutLine  = csvOutLine + inWindow[0].chrom +":"+ inWindow[0].pos + ","
-        csvOutLine = csvOutLine + inWindow[49].chrom +":" + inWindow[49].pos +","
+        csvOutLine  = csvOutLine + inWindow[0].chrom +","+ inWindow[0].pos + ","
+        csvOutLine = csvOutLine + inWindow[-1].chrom +"," + inWindow[-1].pos +","
         csvOutLine = csvOutLine + str(alt_sites) +","
-        csvOutLine = csvOutLine + str(50 - alt_sites) + ","
-        csvOutLine = csvOutLine + str(DPtotal/50.0) + "\n"
+        csvOutLine = csvOutLine + str(len(inWindow) - alt_sites) + ","
+        csvOutLine = csvOutLine + str(DPtotal/len(inWindow)) + "\n"
         outFile.write(csvOutLine)
 
 
 if __name__ == "__main__":
-    vcf_loc = sys.argv[1]
+    vcf_loc,out_loc = sys.argv[1], sys.argv[2]
     inWindow = []
-    outFile = open("CC_windowOut.csv","w")    
+    outFile = open(out_loc,"w")    
     
 # CSV output file format 
 # start,        stop,       #Alt sites,      #Ref sites,     Average depth
 # pseudo0:1000, pseudo0:1050, 5,                45,             197
 #
-    outFile.write("start,stop,altCount,refCount,avgDepth" + "\n")
+    outFile.write("start_chrom,start_pos,stop_chrom,stop_pos,altCount,refCount,avgDepth" + "\n")
     
     with open(vcf_loc) as f:
         for raw_line in f:
@@ -64,7 +64,8 @@ if __name__ == "__main__":
             if line.isDataLine:
                 #Only add dataLines to the window
                 inWindow.append(line) 
-                    
+        #process last incomplete block
+        processWindow(inWindow,outFile)   
 
     outFile.close()
 

@@ -1,3 +1,5 @@
+import subprocess
+
 ALT,QUAL,FILTER,INFO = 4,5,6,7
 MIN_MAP_QUALITY = 0 
 GT,AD,DP,GQ,PL = 0,1,2,3,4;
@@ -7,10 +9,8 @@ CHROM=0
 DELS = 5
 MAX_DELS = 0.0
 MAX_FREQ_ALT = 0.02
-class filterMethods():
 
-#    def __init__(self):
-#        pass
+class filterMethods():
 
 
     def __init__(self,medianFileLoc,sampleCount):
@@ -156,7 +156,18 @@ class filterMethods():
         for i in range(0,len(samples)):
             if key in samples[i]:
                 break
-
-        if int(samples[i].split(":")[GQ]) <= MIN_MUT_GQ:
+        splitSample = samples[i].split(":")
+        if int(splitSample[GQ]) <= MIN_MUT_GQ:
             return False
-        return self.validSampleDP(i,samples[i].split(":")[DP])
+ 
+        altReads = int(splitSample[AD].split(",")[1])
+        refReads = int(splitSample[AD].split(",")[0])
+        print samples[i]
+        print refReads 
+        print altReads
+ 
+        binomResult = "TRUE" in str((subprocess.Popen("../r/binom.r " + str(altReads)\
+             +" "+str(refReads),shell=True,stdout=subprocess.PIPE)).communicate()[0])
+        print binomResult
+        
+        return self.validSampleDP(i,samples[i].split(":")[DP]) and binomResult
