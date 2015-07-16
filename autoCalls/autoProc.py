@@ -30,7 +30,10 @@ def runCommands(commands,threadCount):
             if not procActive(procs[i]):
                 procs[i] = subprocess.Popen(commands[next_command],shell=True,stdout=subprocess.PIPE)
                 next_command+=1
-                break
+
+                if next_command >= len(commands):
+                    break
+
         time.sleep(100)   
     return
 
