@@ -48,12 +48,12 @@ class vcfSample:
             #Load sample info from the format GT:AD:DP:GQ:PL
             self.GT = splitSample[0] 
 
-            self.DP = float(splitSample[2])
+            self.DP = int(splitSample[2])
             self.GQ = float(splitSample[3])
             self.PL = splitSample[4]
 
-            self.altReads = float(splitSample[1].split(",")[1])
-            self.refReads = float(splitSample[1].split(",")[0])
+            self.altReads = int(splitSample[1].split(",")[1])
+            self.refReads = int(splitSample[1].split(",")[0])
             self.otherReads = self.DP - (self.refReads + self.altReads)
 
 
@@ -73,19 +73,19 @@ class vcfSample:
                 pass
                 #print splitSample
     
-    def getAltReads(self):# -> float
+    def getAltReads(self):# -> int
         """
         Returns number of alt reads for this sample
         """
         return self.altReads
 
-    def getRefReads(self):# -> float
+    def getRefReads(self):# -> int
         """
         Return ref read counts from this sample
         """
         return self.refReads
     
-    def getOtherReads(self):# -> float
+    def getOtherReads(self):# -> int
         """ 
         Return nonmajor alt read counts from this sample
         """
