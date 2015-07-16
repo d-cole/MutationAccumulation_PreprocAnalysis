@@ -20,8 +20,11 @@ class vcfSample:
         #Samples with missing info cannot be parsed
         self.missingInfo = False 
         self.GT = None
+
         self.altReads = None
         self.refReads = None
+        self.otherReads = None
+
         self.GQ = None
         self.PL = None
         self.DP = None
@@ -44,25 +47,49 @@ class vcfSample:
         if self.atAltSite:
             #Load sample info from the format GT:AD:DP:GQ:PL
             self.GT = splitSample[0] 
-            self.altReads = float(splitSample[1].split(",")[1])
-            self.refReads = float(splitSample[1].split(",")[0])
+
             self.DP = float(splitSample[2])
             self.GQ = float(splitSample[3])
             self.PL = splitSample[4]
+
+            self.altReads = float(splitSample[1].split(",")[1])
+            self.refReads = float(splitSample[1].split(",")[0])
+            self.otherReads = self.DP - (self.refReads + self.altReads)
+
+
    
-        else:
-            #At ref site sample format is GT:DP
+        else:#At ref site sample format is GT:DP
+
             self.GT = splitSample[0]
             self.DP = float(splitSample[1])
 
             #All ref sites seem to have no occurance of alt reads NOT SURE YET
             self.refReads = float(self.DP)
             self.altReads = 0
+            self.otherReads = 0
 
             #Temp checking for other sample formats
             if len(splitSample) != 2:
                 pass
                 #print splitSample
+    
+    def getAltReads(self):# -> float
+        """
+        Returns number of alt reads for this sample
+        """
+        return self.altReads
+
+    def getRefReads(self):# -> float
+        """
+        Return ref read counts from this sample
+        """
+        return self.refReads
+    
+    def getOtherReads(self):# -> float
+        """ 
+        Return nonmajor alt read counts from this sample
+        """
+        return self.otherReads
 
     def toString(self):# -> str
         """
