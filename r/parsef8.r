@@ -1,12 +1,5 @@
 #!/usr/bin/Rscript
 
-#Columns
-#"varID","CHROM","POS","REF","ALT","QUAL","FILTER","AC",
-#"AF","AN","BaseQRankSum","siteDP","Dels","FS","HaplotypeScore",
-#"InbreedingCoeff","MLEAC","MLEAF","MQ","MQ0","MQRankSum","QD",
-#"ReadPosRankSum","SOR","odd_GT","odd_sample","cohort_GT","AD_alt","odd_DP",
-#"AD_ref","AD_altSum","AD_refSum","odd_GQ","odd_PL","Anc_GT","Anc_sample"
-
 ## Collect arguments
 #Commandline arg info from http://www.r-bloggers.com/parse-arguments-of-an-r-script/
 args <- commandArgs(TRUE)
@@ -29,14 +22,14 @@ all_samples <-transform(all_samples,AD_ref = as.numeric(AD_ref),AD_alt = as.nume
 #    SOR=as.numeric(SOR))
 
 binom <- function(alt,ref){
+    print(alt)
+    print(ref)
     n<- alt+ref
+    print(pbinom(alt,n,0.5))
     if (pbinom(alt,n,0.5) > 0.01){
         return(TRUE)
         
     }
-    print(alt)
-    print(ref)
-    print(pbinom(alt,n,0.5))
     return(FALSE)
 }
 
@@ -44,14 +37,16 @@ binom <- function(alt,ref){
 binom_count <-0
 
 for (i in 1:nrow(all_samples)){
-    if (binom(all_samples[i,"AD_alt"],all_samples[i,"AD_ref"]) == TRUE){
+    alt<-all_samples[i,"AD_alt"]
+    ref<-all_samples[i,"AD_ref"]
+    if (binom(alt,ref) == TRUE){    
         binom_count<-binom_count+1
+        print("TRUE")
         #cat(paste(all_samples[i,"varID"],"\n"))
     }
 }
 print(binom_count)
 print(NROW(all_samples))
-
 
 
 #hard_filter<-all_samples[!is.na(all_samples$Anc_sample) & all_samples$mAltvAltSum > 0.7 & all_samples$Dels == 0.0 & all_samples$FS < 60 & all_samples$MQ > 40.0 & all_samples$QD > 2.0 & all_samples$MQRankSum > -12.5 & all_samples$ReadPosRankSum > -8.0,]

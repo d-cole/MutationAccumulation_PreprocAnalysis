@@ -39,16 +39,23 @@ def processWindow(inWindow,outFile):
         refReadTotal += site.getRefTotal()     
         altReadTotal += site.getAltTotal()
         otherReadTotal += site.getOtherTotal()
-            
  
     if True:
+        wlen = float(len(inWindow))
         csvOutLine = ""
-        csvOutLine  = csvOutLine + inWindow[0].chrom +","+ inWindow[0].pos + ","
+        #Add site range info
+        csvOutLine = csvOutLine + inWindow[0].chrom +","+ inWindow[0].pos + ","
         csvOutLine = csvOutLine + inWindow[-1].chrom +"," + inWindow[-1].pos +","
+
+        #Add number of alt sites in window
         csvOutLine = csvOutLine + str(alt_sites) +","
-        csvOutLine = csvOutLine + str(len(inWindow) - alt_sites) + ","
-        csvOutLine = csvOutLine + str(DPtotal/len(inWindow)) + ","
-        csvOutLine = csvOutLine + "," + str(refReadTotal) + "," +  str(altReadTotal) + "," +  str(otherReadTotal) +  "\n"
+        #Add number of ref sites in window
+        csvOutLine = csvOutLine + str(wlen - alt_sites) + ","
+        #Add average site depth
+        csvOutLine = csvOutLine + str(DPtotal/wlen) + ","
+        #Add average refReadTotal,altReadTotal, and otherReadTotal
+        csvOutLine = csvOutLine + str(refReadTotal/wlen) + "," +  str(altReadTotal/wlen) + "," +  str(otherReadTotal/wlen) +  "\n"
+
         outFile.write(csvOutLine)
 
 
@@ -61,7 +68,7 @@ if __name__ == "__main__":
 # start,        stop,       #Alt sites,      #Ref sites,     Average depth, Alt Reads (sum from all samples), ref reads (sum from all samples), 
 # pseudo0:1000, pseudo0:1050, 5,                45,             197
 #
-    outFile.write("start_chrom,start_pos,stop_chrom,stop_pos,altSiteCount,refSiteCount,avgDepth,altReadTotal,refReadTotal,otherReadTotal" + "\n")
+    outFile.write("start_chrom,start_pos,stop_chrom,stop_pos,altSiteCount,refSiteCount,avgDepth,avgRefReads,avgAltReads,avgOtherReads" + "\n")
     
     with open(vcf_loc) as f:
         for raw_line in f:

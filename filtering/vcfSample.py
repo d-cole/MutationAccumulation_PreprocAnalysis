@@ -21,9 +21,9 @@ class vcfSample:
         self.missingInfo = False 
         self.GT = None
 
-        self.altReads = None
-        self.refReads = None
-        self.otherReads = None
+        self.altReads = 0
+        self.refReads = 0
+        self.otherReads = 0
 
         self.GQ = None
         self.PL = None
