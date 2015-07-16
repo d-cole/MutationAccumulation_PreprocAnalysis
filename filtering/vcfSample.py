@@ -56,7 +56,6 @@ class vcfSample:
             self.refReads = int(splitSample[1].split(",")[0])
             self.otherReads = self.DP - (self.refReads + self.altReads)
 
-
    
         else:#At ref site sample format is GT:DP
 

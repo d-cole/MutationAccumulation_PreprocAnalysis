@@ -90,6 +90,8 @@ class vcfLine:
             self.altTotal += sample.getAltReads()
             self.refTotal += sample.getRefReads()
             self.otherTotal += sample.getOtherReads()
+            
+            
         
     def __loadInfoVals(self):# -> None
         """
