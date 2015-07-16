@@ -31,6 +31,11 @@ class vcfLine:
         self.raw_line  = raw_line
         self.multiHap = False
 
+        #Calculate read totals while creating vcfSample objects
+        self.altTotal = 0
+        self.refTotal = 0
+        self.otherTotal = 0
+
         #Determines if the line is represents a site     
         if len(self.raw_line) > 1:
             if self.raw_line[0] == "#":
@@ -78,7 +83,13 @@ class vcfLine:
         #For this vcf format samples are from item 9 -> in the line
         sampleStrings = sline[9:]        
         for s in sampleStrings:
-            self.samples.append(vcfSample(s,self.isAltSite))
+            sample = vcfSample(s,self.isAltSite)            
+            self.samples.append(sample)
+            
+            #Add this samples alt/ref read counts to the total at this site
+            self.altTotal += sample.getAltReads()
+            self.refTotal += sample.getRefReads()
+            self.otherTotal += sample.getOtherReads()
         
     def __loadInfoVals(self):# -> None
         """
@@ -133,19 +144,21 @@ class vcfLine:
 
     def getRefTotal(self):# -> int
         """
-        Calculates and returns number of reference reads 
-            from all samples at the site.
+        Return the ref read count total for all samples at this site
         """
-        refTotal = 0
-        for s in self.samples:
-            if isinstance(s.refReads,float):
-                refTotal += s.refReads
-            else:
-                pass
-        return refTotal
+        return self.refTotal
+
+    def getAltTotal(self):# -> int
+        """
+        Return the alt read count total for all samples at this site
+        """
+        return self.altTotal
 
 
-
-
+    def getOtherTotal(self):# -> int    
+        """
+        Return the other read count total for all samples at this site
+        """
+        return self.otherTotal
 
 
