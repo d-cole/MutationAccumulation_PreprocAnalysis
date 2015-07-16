@@ -1,28 +1,34 @@
 library(ggplot2)
 
+# ----------- Column names ------------
+#start_chrom,start_pos,stop_chrom,stop_pos,altSiteCount,refSiteCount
+#avgDepth,avgRefReads,avgAltReads,avgOtherReads
+# -------------------------------------
+
 args <- commandArgs(TRUE)
 if(length(args) < 2) {
-  cat("Please specify location of .csv file \n")
+  cat("Please specify location of .csv file & name of output file\n")
 }
 
 #Read in csv file
-CC_window<-read.csv(args[1],stringsAsFactors=FALSE,na.string=".")
-#GP_window<-read.csv(args[2],stringsAsFactors=FALSE,na.string=".")
-CC_window<-transform(CC_window,altCount<-as.numeric(altCount),refCount<-as.numeric(refCount))
-print(head(CC_window))
+window<-read.csv(args[1],stringsAsFactors=FALSE,na.string=".")
 
-CC_window<-transform(CC_window,altRatio<-as.numeric(altCount/refCount))
+#transform appropriate columns to numeric
+window<-transform(window,
+    altSiteCount<-as.numeric(altSiteCount),
+    refSiteCount<-as.numeric(refSiteCount),
+    avgRefReads<-as.numeric(avgRefReads),
+    avgAltReads<-as.numeric(avgAltReads),
+    avgOtherReads<-as.numeric(avgAltReads))
 
-CC_window$altRatio <- CC_window$altCount/CC_window$refCount
+print(head(window))
 
-CC_w<-CC_window[CC_window$altCount != 0,]
-print(head(CC_w))
 
-jpeg("CC_window.jpg")
-#plot(hist(CC_w$altRatio,breaks="FD",
-#   main=paste("CC alt reads")))
-ggplot(data=CC_w,aes(CC_w$altRatio)) + geom_histogram(binwidth=0.01) + xlim(c(0,1))
+jpeg(args[2])
+ggplot(data=window,aes(avgRefReads)) + geom_histogram(binwidth=0.01) + xlim(c(0,1))
 dev.off()
 
-
+#jpeg(paste("pos_",args[2]))
+#ggplot(date=window,aes(start_pos,avgRefReads)) + geom_point()
+#dev.off()
 
