@@ -76,7 +76,6 @@ if __name__ == "__main__":
                 #Analyze site
                 processWindow(inWindow,outFile)
                 inWindow = []
-            
 
             line = vcfLine(raw_line)
             if line.isDataLine:

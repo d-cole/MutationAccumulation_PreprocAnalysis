@@ -8,7 +8,7 @@ HETZ,HOMZ='0/1','0/0'
 CHROM=0
 DELS = 5
 MAX_DELS = 0.0
-MAX_FREQ_ALT = 0.02
+MAX_FREQ_ALT = 0.01
 
 class filterMethods():
 
@@ -16,7 +16,6 @@ class filterMethods():
     def __init__(self,medianFileLoc,sampleCount):
         self.SAMPLE_MEDIANS = self.getSampleMedians(medianFileLoc)
         self.MIN_VALID_SAMPLES_DP = int(sampleCount*(2.0/3.0))
-
 
     def getSampleMedians(self,medianFileLoc):
         """
