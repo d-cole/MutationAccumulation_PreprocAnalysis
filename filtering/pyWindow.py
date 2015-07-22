@@ -6,7 +6,7 @@ pyWindow.py
 
 Analyzes vcf files from sites in a variable sized window
 """
-WINDOW_SIZE = 50
+WINDOW_SIZE = 1
 
 def processWindow(inWindow,outFile):
     """

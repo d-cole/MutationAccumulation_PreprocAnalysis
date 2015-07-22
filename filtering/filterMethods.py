@@ -25,7 +25,7 @@ class filterMethods():
         """
         medFile = open(medianFileLoc,"r")
         for i, line in enumerate(medFile):
-            print line
+            #print line
             if i == 1:
                 SAMPLE_MEDIANS = [[float(i)*0.5,float(i)*1.5] for i in line.strip("\n").split(" ")]
         return SAMPLE_MEDIANS
@@ -161,12 +161,12 @@ class filterMethods():
  
         altReads = int(splitSample[AD].split(",")[1])
         refReads = int(splitSample[AD].split(",")[0])
-        print samples[i]
-        print refReads 
-        print altReads
+        #print samples[i]
+        #print refReads 
+        #print altReads
  
         binomResult = "TRUE" in str((subprocess.Popen("../r/binom.r " + str(altReads)\
              +" "+str(refReads),shell=True,stdout=subprocess.PIPE)).communicate()[0])
-        print binomResult
+        #print binomResult
         
         return self.validSampleDP(i,samples[i].split(":")[DP]) and binomResult

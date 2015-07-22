@@ -1,0 +1,6 @@
+Size of CC_M_m0.vcf: 306771
+Size of GP2-3_N_m0.vcf: 290178
+Number of total shared sites: 260015 (A:84%, B:89%)
+Number of shared sites with same alt base: 259590 (99% of shared sites)
+Number of unmatched sites in CC_M_m0.vcf: 46756 (15%)
+Number of unmatched sites in GP2-3_N_m0.vcf: 30163 (10%)

@@ -151,7 +151,7 @@ def writeInfo(line,outFile):
     for item in infoData:
         csvLine = csvLine + item + ","
     #remove last ","
-    csvLine = csvLine + getSampleString(line_col[9:21])
+    csvLine = csvLine + getSampleString(line_col[9:23])
     #try:
     #    ancestor = line_col[23]
     #except:

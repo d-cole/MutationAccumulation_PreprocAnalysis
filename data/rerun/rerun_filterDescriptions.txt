@@ -1,0 +1,28 @@
+GP2-3 Filter descriptions
+
+rf0:
+ - Calculated median DP for individual samples
+ - No filtering output from Unified genotyper ~128,000,000 bp
+
+rf1:
+ - Remove sites with 'LowQual' tag present
+ - Removal of sites on pseudo0
+ - Filtering for ALT sites
+    
+rf2:
+ - Filter for sites having 1 GT 0/1, 13 GT 0/0
+ - Filtering on individual sample depth calculated from rf0
+    - 2/3 of samples must pass individual depth filters
+ - Mutant must pass individual depth filters and have GQ > 20
+ - Ignoring sites where missing sample data
+
+
+rf3:
+ - Removal of TE regions
+
+rf4:
+ - Binomial filter
+ - No more than 2% frequency of focal sample alternate base reads in other samples
+
+rf5:
+ - No more than 1% frequency of focal sample alternate base reads in other samples
