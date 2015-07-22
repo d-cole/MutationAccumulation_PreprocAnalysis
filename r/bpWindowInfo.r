@@ -37,7 +37,7 @@ print(NROW(window[window$otherAvgByDepth > 0.02,]))
 cat("altAvg > 0.01: ")
 print(NROW(window[window$altAvgByDepth > 0.01,]))
 
-cat("refAvg < 0.98: ")
+cat("refAvg < 0.99: ")
 print(NROW(window[window$refAvgByDepth < 0.99,]))
 
 
