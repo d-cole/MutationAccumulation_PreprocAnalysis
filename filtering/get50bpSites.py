@@ -30,7 +30,6 @@ def processWindow(inWindow,outFile):
     altReadTotal = 0 
     otherReadTotal = 0 
 
-
     for site in inWindow:
         if isinstance(site.infoValues["DP"],float):
             DPtotal = DPtotal + site.infoValues["DP"]
@@ -41,10 +40,14 @@ def processWindow(inWindow,outFile):
         refReadTotal += site.getRefTotal()    
         altReadTotal += site.getAltTotal()
         otherReadTotal += site.getOtherTotal()
+    
+    targetSite = inWindow[WINDOW_SIZE/2]
+    siteID = targetSite.chrom + ":" + targetSite.pos
  
     if True:
         wlen = float(len(inWindow))
         csvOutLine = ""
+        csvOutLine = csvOutLine + siteID + ","
         #Add site range info
         csvOutLine = csvOutLine + inWindow[0].chrom +","+ inWindow[0].pos + "," 
         csvOutLine = csvOutLine + inWindow[-1].chrom +"," + inWindow[-1].pos +","
@@ -61,9 +64,6 @@ def processWindow(inWindow,outFile):
     outFile.write(csvOutLine)
 
 
-
-
-
 def checkSite(lineVcf,targetSitesDict):
     """
     Return whether the given site is one of the target sites
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     vcf_unfilt,vcf_targetSites,out_loc = sys.argv[1], sys.argv[2], sys.argv[3]
 
     outFile = open(out_loc,"w")    
-    outFile.write("start_chrom,start_pos,stop_chrom,stop_pos,altSiteCount,refSiteCount,avgDepth,avgRefReads,avgAltReads,avgOtherReads" + "\n")
+    outFile.write("siteID,start_chrom,start_pos,stop_chrom,stop_pos,altSiteCount,refSiteCount,avgDepth,avgRefReads,avgAltReads,avgOtherReads" + "\n")
 
     targetSitesDict = vcfDict(vcf_targetSites)
     targetSitesDict.loadDict()
@@ -92,7 +92,8 @@ if __name__ == "__main__":
                 
                 if len(window) == WINDOW_SIZE + 1:#Remove oldest site seen keep size == WINDOW_SIZE
                     window.pop(0) 
-                    
+
+                     
                     #Check if the site in the middle of the window is a target site
                     if checkSite(window[WINDOW_SIZE/2],targetSitesDict):
                         processWindow(window,outFile)
