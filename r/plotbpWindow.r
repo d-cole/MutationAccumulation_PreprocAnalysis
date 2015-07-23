@@ -77,7 +77,9 @@ colours <- list("cornsilk3","dodgerblue4","cornflowerblue",
                 "lightgoldenrod2","grey39","sienna2",
                 "chocolate1","indianred4","palevioletred4",
                 "paleturquoise1","red")
-print(chroms)
+
+
+
 altPlot <- ggplot(data=window,aes(start_pos,altAvgByDepth,colour = start_chrom)) + geom_point() + 
     scale_colour_manual(breaks = window$start_chrom,values = colours)
 
@@ -91,11 +93,15 @@ testPlot <- ggplot(data=window,aes(start_pos,avgDepthByDepth,colour = start_chro
      scale_colour_manual(breaks = window$start_chrom,values = colours)
 
 refPlotHist <- ggplot(data=window,aes(refAvgByDepth)) + geom_histogram()
+otherPlotHist <- ggplot(data=window,aes(otherAvgByDepth)) + geom_histogram()
+altPlotHist <- ggplot(data=window,aes(altAvgByDepth)) + geom_histrogram()
 ggsave(refPlotHist,file=paste(name,"_refPlotHist.jpg",sep=""))
+ggsave(otherPlotHist,file=paste(name,"_otherPlotHist.jpg",sep=""))
+ggsave(altPlotHist,file=paste(name,"_altPlotHist.jpg",sep=""))
 
 #ggsave(altPlot,file=paste(name,"altAvgByDepth.jpg",sep=""),dpi=600)
 #ggsave(refPlot,file=paste(name,"refAvgByDepth.jpg",sep=""),dpi=600)
-#ggsave(otherPlot,file=paste(name,"otherAvgByDepth.jpg",sep=""),dpi=600)
+ggsave(otherPlot,file=paste(name,"otherAvgByDepth.jpg",sep=""),dpi=600)
 #ggsave(testPlot,file=paste(name,"avgDepthAvgByDepth.jpg",sep=""),dpi=600)
 
 
