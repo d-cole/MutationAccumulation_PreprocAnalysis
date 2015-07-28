@@ -18,13 +18,15 @@ pValues<-read.csv(args[1],stringsAsFactors=FALSE,na.string=".")
 #    avgOtherReads<-as.numeric(avgAltReads))
 
 name <- (args[2])
+print(head(pValues))
 
 for(col in names(pValues)){
-    print(head(pValues$col))
+    print(col)
+    pValues <-transform(pValues,col<-as.numeric(col))
+    col_data  <- pValues[,col]
+    plot <- ggplot() + aes(col_data) + geom_histogram()
+    ggsave(plot,file=paste(name,col,".jpg",sep=""))
 }
-
-
-
 
 #refPlot <- ggplot(data=window,aes(start_pos,refAvgByDepth,colour = start_chrom)) + geom_point() + 
 #     scale_colour_manual(breaks = window$start_chrom,values = colours)
