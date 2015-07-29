@@ -9,7 +9,7 @@ if(length(args) < 1) {
 
 binom <- function(alt,ref){
     n<- alt+ref
-    if (pbinom(alt,n,0.5) > 0.01){
+    if (pbinom(alt,n,0.5) > 0.02){
         return(TRUE)
     }
 #    print(alt)

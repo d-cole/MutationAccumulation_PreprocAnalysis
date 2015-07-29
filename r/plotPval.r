@@ -7,50 +7,37 @@ if(length(args) < 2) {
 }
 
 #Read in csv file
-pValues<-read.csv(args[1],stringsAsFactors=FALSE,na.string=".")
-
-#transform appropriate columns to numeric
-#window<-transform(window,
-#    B<-as.numeric(altSiteCount),
-#    refSiteCount<-as.numeric(refSiteCount),
-#    avgRefReads<-as.numeric(avgRefReads),
-#    avgAltReads<-as.numeric(avgAltReads),
-#    avgOtherReads<-as.numeric(avgAltReads))
-
+readVals<-read.csv(args[1],stringsAsFactors=FALSE,na.string=".")
 name <- (args[2])
-print(head(pValues))
 
-for(col in names(pValues)){
-    print(col)
-    pValues <-transform(pValues,col<-as.numeric(col))
-    col_data  <- pValues[,col]
-    plot <- ggplot() + aes(col_data) + geom_histogram()
-    ggsave(plot,file=paste(name,col,".jpg",sep=""))
-}
+readVals<-transform(readVals,pVal<-as.numeric(pVal))
+readVals$altRef<-readVals$AD_alt/readVals$AD_ref
 
-#refPlot <- ggplot(data=window,aes(start_pos,refAvgByDepth,colour = start_chrom)) + geom_point() + 
-#     scale_colour_manual(breaks = window$start_chrom,values = colours)
-#
-#otherPlot <- ggplot(data=window,aes(start_pos,otherAvgByDepth,colour = start_chrom)) + geom_point() + 
-#     scale_colour_manual(breaks = window$start_chrom,values = colours)
-#
-#testPlot <- ggplot(data=window,aes(start_pos,avgDepthByDepth,colour = start_chrom)) + geom_point() + 
-#     scale_colour_manual(breaks = window$start_chrom,values = colours)
-#
-#refPlotHist <- ggplot(data=window,aes(refAvgByDepth)) + geom_histogram()
-#otherPlotHist <- ggplot(data=window,aes(otherAvgByDepth)) + geom_histogram()
-#altPlotHist <- ggplot(data=window,aes(altAvgByDepth)) + geom_histrogram()
-#ggsave(refPlotHist,file=paste(name,"_refPlotHist.jpg",sep=""))
-#ggsave(otherPlotHist,file=paste(name,"_otherPlotHist.jpg",sep=""))
-#ggsave(altPlotHist,file=paste(name,"_altPlotHist.jpg",sep=""))
-#
-##ggsave(altPlot,file=paste(name,"altAvgByDepth.jpg",sep=""),dpi=600)
-##ggsave(refPlot,file=paste(name,"refAvgByDepth.jpg",sep=""),dpi=600)
-#ggsave(otherPlot,file=paste(name,"otherAvgByDepth.jpg",sep=""),dpi=600)
-##ggsave(testPlot,file=paste(name,"avgDepthAvgByDepth.jpg",sep=""),dpi=600)
+#samples<-unique(readVals$sample)
+#print(samples)
+#for(s in samples){
+#    sample_data <- readVals[readVals$sample == s,6]
+#    print(NROW(sample_data))
+#    print(head(sample_data))
+#    plot <- ggplot() + aes(sample_data) + geom_histogram()
+#    ggsave(plot,file=paste(name,s,".jpg",sep=""))
+#}
+print(head(readVals))
+plot_alt_ref <- ggplot() + aes(readVals[readVals$AD_alt > 7,6]) + geom_histogram(binwidth = 0.1) + coord_cartesian(xlim=c(0,5))
+ggsave(plot_alt_ref,file=paste(name,"_alt_ref.jpg",sep=""))
+
+plot_pVal <- ggplot() + aes(readVals[readVals$AD_alt > 5,5]) + geom_histogram(binwidth = 0.01)
+ggsave(plot_pVal,file=paste(name,"_pVal.jpg",sep=""))
+
+plot_alt <- ggplot() + aes(readVals[readVals$AD_alt > 5,3]) + geom_histogram()
+ggsave(plot_alt,file=paste(name,"_alt.jpg",sep=""))
 
 
 
 
-
-
+#    print(col)
+#    pValues <-transform(pValues,col<-as.numeric(col))
+#    col_data  <- pValues[,col]
+#    plot <- ggplot() + aes(col_data) + geom_histogram()
+#    ggsave(plot,file=paste(name,col,".jpg",sep=""))
+#}

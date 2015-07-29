@@ -41,6 +41,6 @@ cat("refAvg < 0.99: ")
 print(NROW(window[window$refAvgByDepth < 0.99,]))
 
 
-
+write.csv(window[window$refAvgByDepth >= 0.99,],"passed50bp")
 
 
