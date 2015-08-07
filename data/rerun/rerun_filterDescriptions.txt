@@ -5,11 +5,13 @@ rf0:
  - No filtering output from Unified genotyper ~128,000,000 bp
 
 rf1:
+ - rf0 + 
  - Remove sites with 'LowQual' tag present
  - Removal of sites on pseudo0
  - Filtering for ALT sites
     
 rf2:
+ - rf1 + 
  - Filter for sites having 1 GT 0/1, 13 GT 0/0
  - Filtering on individual sample depth calculated from rf0
     - 2/3 of samples must pass individual depth filters
@@ -18,11 +20,25 @@ rf2:
 
 
 rf3:
+ - rf2 +
  - Removal of TE regions
 
 rf4:
+ - rf4 + 
  - Binomial filter
  - No more than 2% frequency of focal sample alternate base reads in other samples
 
 rf5:
- - No more than 1% frequency of focal sample alternate base reads in other samples
+ - rf4 +  
+ - Removed sites that did not pass 50bp filter( >= 99% of reads are reference
+        across the 50bp window)
+
+rf6:
+ - rf5 + 
+ - No more than 1% frequency of focal sample alt base in other samples
+
+rf7:
+ - rf6 + 
+ - requires 7 alternate reads present in mutant sample
+     - based on uneven P-value dist. from binomial test
+

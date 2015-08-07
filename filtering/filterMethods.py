@@ -9,6 +9,7 @@ CHROM=0
 DELS = 5
 MAX_DELS = 0.0
 MAX_FREQ_ALT = 0.01
+MIN_ALT_READS = 7
 
 class filterMethods():
 
@@ -159,14 +160,20 @@ class filterMethods():
         if int(splitSample[GQ]) <= MIN_MUT_GQ:
             return False
  
+
         altReads = int(splitSample[AD].split(",")[1])
         refReads = int(splitSample[AD].split(",")[0])
+
+        # Filter based on MIN_ALT_READS
+        if altReads < MIN_ALT_READS:
+            return False
+
         #print samples[i]
         #print refReads 
         #print altReads
  
-        binomResult = "TRUE" in str((subprocess.Popen("../r/binom.r " + str(altReads)\
-             +" "+str(refReads),shell=True,stdout=subprocess.PIPE)).communicate()[0])
+        #binomResult = "TRUE" in str((subprocess.Popen("../r/binom.r " + str(altReads)\
+        #     +" "+str(refReads),shell=True,stdout=subprocess.PIPE)).communicate()[0])
         #print binomResult
         
-        return self.validSampleDP(i,samples[i].split(":")[DP]) and binomResult
+        return self.validSampleDP(i,samples[i].split(":")[DP]) #and binomResult
