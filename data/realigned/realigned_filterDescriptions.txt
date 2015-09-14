@@ -1,0 +1,17 @@
+
+r1:
+ - Filter for sites where one sample different from rest
+ - Removal of lowQual
+ - Removal of sites where 'mutant' has GQ < 20
+ - Removal of pseudo0
+ - Removal of sites where other samples have > 1% alt reads
+ 
+r2:
+ - Removal of TE's
+
+
+r3:
+ - Application of binomial filter
+
+r4 (not implemented):
+ - Removal of intersection between CC_r3 and GP_r3 
