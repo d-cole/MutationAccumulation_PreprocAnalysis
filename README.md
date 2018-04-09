@@ -1,4 +1,3 @@
 # spirodela
- - Contains scripts for the spirodela polyrhiza mutation accumulation pipeline
-
+ Contains scripts to pre-process and map raw reads to reference genome and for the discovery of novel mutations.
 
